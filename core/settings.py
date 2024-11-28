@@ -33,7 +33,13 @@ SECRET_KEY = 'django-insecure-(2sz2f@eob*q24i&rdu5qxxo_b_hfm6vhe1c5+(6!9rbx5pong
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["neotrip.uz", '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = [
+    'https://neotrip.uz',
+]
+CORS_ALLOWED_ORIGINS = [
+    "https://neotrip.uz",
+]
 
 # Application definition
 
