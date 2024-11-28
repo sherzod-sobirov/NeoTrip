@@ -1,0 +1,463 @@
+* {
+  margin: 0;
+  border: 0;
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: $body-font;
+  color: $text-color;
+  vertical-align: baseline;
+  line-height: 30px;
+  font-smoothing: antialiased;
+  direction: ltr;
+}
+p {
+  margin: 0 0 15px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  font-family: $body-font;
+  color: $black;
+  font-style: normal;
+  @include transition;
+}
+
+h1 {
+  font-size: 78px;
+  line-height: 110%;
+  font-weight: 700;
+}
+h2 {
+  font-size: 48px;
+  line-height: 120%;
+  font-weight: 700;
+}
+h3 {
+  font-size: 38px;
+  line-height: 120%;
+  font-weight: 700;
+}
+h4 {
+  font-size: 28px;
+  line-height: 130%;
+  font-weight: 700;
+}
+h5 {
+  font-size: 24px;
+  line-height: 140%;
+  font-weight: 700;
+}
+h6 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 140%;
+}
+label {
+  color: $text-color;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+}
+button {
+  cursor: pointer;
+  @include transition;
+}
+a:not([href]):not([tabindex]) {
+  color: inherit;
+  text-decoration: none;
+}
+a,
+.button {
+  text-decoration: none;
+  @include transition;
+}
+a:focus,
+.button:focus {
+  text-decoration: none;
+  outline: none;
+}
+a:focus {
+  color: $primary-color;
+  text-decoration: none;
+  @include transition;
+}
+a,
+button {
+  color: $primary-color;
+  outline: medium none;
+  @include transition;
+
+  &:hover {
+    color: #ff6731;
+    @include transition;
+  }
+}
+button:focus,
+input:focus,
+input:focus,
+textarea,
+textarea:focus {
+  outline: 0;
+}
+ul {
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+}
+
+::-moz-selection {
+  background: $primary-color;
+  text-shadow: none;
+  color: #fff;
+}
+::selection {
+  background: $primary-color;
+  text-shadow: none;
+  color: #fff;
+}
+textarea:focus,
+input:focus {
+  outline: none;
+}
+.background-black-3{
+  background-color: $black-3;
+}
+.background-black {
+  background-color: #041126;
+}
+
+.bg-light-black {
+  background-color: #041126;
+}
+.background-blue {
+  background-color: $blue-color;
+}
+.bg-dark-blue {
+  background-color: rgb(14, 49, 81);
+}
+.background-light-blue {
+  background-color: $primary-color;
+}
+.background-skye {
+  background-color: $sky-color;
+}
+.background-gray {
+  background-color: $gray-2;
+}
+.background-light-gray {
+  background-color: #FAFAFA;
+}
+.page-bg {
+  background-color: $black;
+}
+
+.page-area {
+  padding:120px
+}
+.blog-area {
+  padding: 120px 0;
+}
+.page-area,
+.blog-area {
+
+  @include rmaxwd(991) {
+    padding: 100px 0;
+  }
+  @include rmaxwd(767) {
+    padding: 80px 0;
+  }
+  .page-links {
+    margin-bottom: 20px;
+  }
+}
+.border-radius-12 {
+  border-radius: 12px;
+}
+.text-white-100 {
+  color: $white-100;
+}
+code {
+  color: $orange-color;
+}
+.theme-btn,
+.wp-block-loginout a,
+input.theme-btn {
+  display: inline-flex;
+  color: $white;
+  padding: 17px 38px;
+  text-align: center;
+  font-weight: 700;
+  font-family: $body-font;
+  background-color: $black;
+  position: relative;
+  z-index: 1;
+  @include transition;
+  font-size: 16px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  overflow: hidden;
+  line-height: 180%;
+  flex-shrink: 0;
+  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  @include sm{
+    padding: 12px 20px;
+  }
+  &:after{
+    position: absolute;
+    width: 100%;
+    height: 0;
+    left: 0;
+    top: 0;
+    background-color: $primary-color;
+    content: "";
+    @include transition;
+    z-index: -1;
+    color: $white;
+  }
+  &:before {
+    content: '';
+    pointer-events: none;
+    opacity: 0.6;
+    background:
+      radial-gradient(circle at 20% 35%, transparent 0, transparent 2px, $white 3px, $white 4px, transparent 4px),
+      radial-gradient(circle at 75% 44%, transparent 0, transparent 2px, $white 3px, $white 4px, transparent 4px),
+      radial-gradient(circle at 31% 22%, transparent 0, transparent 2px, $white 3px, $white 4px, transparent 4px),
+      radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, $white 5px, $white 6px, transparent 6px);
+    width: 100%;
+    height: 300%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    animation: bubbles 5s linear infinite both;
+  }
+  &.style-2{
+    background-color: $white;
+    color: $black;
+    &:before {
+      content: '';
+      pointer-events: none;
+      opacity: 0.6;
+      background:
+        radial-gradient(circle at 20% 35%, transparent 0, transparent 2px, $black 3px, $black 4px, transparent 4px),
+        radial-gradient(circle at 75% 44%, transparent 0, transparent 2px, $black 3px, $black 4px, transparent 4px),
+        radial-gradient(circle at 31% 22%, transparent 0, transparent 2px, $black 3px, $black 4px, transparent 4px),
+        radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, $black 5px, $black 6px, transparent 6px);
+      width: 100%;
+      height: 300%;
+      top: 0;
+      left: 0;
+      position: absolute;
+      animation: bubbles 5s linear infinite both;
+    }
+  }
+  &:hover{
+    color: $white;
+    &:after{
+      height: 100%;
+      @include transition;
+    }
+    &.style-2{
+      &:before {
+        background:
+          radial-gradient(circle at 20% 35%, transparent 0, transparent 2px, $white 3px, $white 4px, transparent 4px),
+          radial-gradient(circle at 75% 44%, transparent 0, transparent 2px, $white 3px, $white 4px, transparent 4px),
+          radial-gradient(circle at 31% 22%, transparent 0, transparent 2px, $white 3px, $white 4px, transparent 4px),
+          radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, $white 5px, $white 6px, transparent 6px);
+      }
+    }
+  }
+}
+
+.wp-block-loginout {
+  a {
+    position: relative;
+
+    &:after {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      content: "\f105";
+      font-family: $font-awesome;
+      width: 44px;
+      height: 44px;
+      border-radius: 6px;
+      background-color: $primary-color;
+      color: #fff;
+      font-size: 16px;
+    }
+  }
+}
+.contact-form-btn {
+  justify-content: center;
+  width: 100%;
+  display: block;
+  line-height: 42px;
+
+  .icon {
+    float: right;
+  }
+
+}
+input.theme-btn {
+  display: inline-block !important;
+  width: inherit !important;
+  border: 0 !important;
+}
+
+//  .select2-results{
+//   position: absolute;
+//   background-color: red;
+//   z-index: 20;
+// }
+
+
+// Select2 
+  .select2-container--open{
+    // margin-top: 780px;
+    // top: 0px !important;
+    background-color: $white;
+    z-index: 99;
+    padding: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0px 24px 64px 0px rgba(199, 206, 218, 0.25);
+    .select2-search{
+      margin: 10px 20px;
+      input{
+        width: 130px;
+        border: 1px solid $gray-2;
+        border-radius: 8px;
+        position: relative;
+        cursor: default;
+        padding: 0 10px;
+        background-color: $black-3;
+        font-family: $body-font;
+        color: $black-2;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 170%;
+        margin: 0px;
+        cursor: default;
+        &:after{
+          position: absolute;
+          content: "-";
+          color: $black-2;
+        }
+      }
+    }
+    ul{
+      padding: 0;
+      margin: 0 20px;
+      li{
+        list-style: none;
+        font-family: $body-font;
+        color: $black-2;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 170%;
+        margin: 0px;
+        cursor: default;
+      }
+    }
+    .select2-results{
+      padding-bottom: 20px;
+    }
+  }
+
+// Date Picker
+.ui-datepicker{
+  // top: 784px !important;
+  background: $white;
+  // padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 24px 64px 0px rgba(199, 206, 218, 0.25);
+  .ui-datepicker-header, .ui-datepicker-calendar{
+    padding: 0 20px;
+  }
+  .ui-datepicker-header{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    .ui-datepicker-prev{
+      width: 50%;
+      position: relative;
+      display: flex;
+      justify-content: start;
+      align-items: start;
+      &:before{
+        content: "";
+        content: "\f060";
+        font-family: $font-awesome;
+        color: $primary-color;
+      }
+      span{
+        display: none;
+      }
+    }
+    .ui-datepicker-next{
+      width: 50%;
+      display: flex;
+      justify-content: end;
+      align-items: end;
+      &:before{
+        content: "\f061";
+        font-family: $font-awesome;
+        color: $primary-color;
+      }
+      span{
+        display: none;
+      }
+    }
+  }
+  th{
+    border-color: $white;
+    background-color: $primary-color;
+    span{
+      color: $white;
+      font-family: $body-font;
+      font-size: 14px;
+    }
+  }
+  .ui-datepicker-calendar{
+    td{
+          line-height: 20px;
+      &:hover{
+          background-color: $primary-color;
+          color: $white;
+          a{
+            color: $white;
+          }
+        }
+      a{
+        font-family: $body-font;
+        font-size: 14px;
+        font-weight: 500; 
+        color: $black;
+      }
+    }
+  }
+}

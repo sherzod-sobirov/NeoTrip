@@ -1,0 +1,122 @@
+.location-slider-area{
+    &.style-1{
+        padding: 120px 0;
+        @include md{
+            padding: 100px 0;
+        }
+        @include sm{
+            padding: 80px 0;
+        }
+        .slick-track{
+            .slick-slide{
+                margin-top: 0;
+            }
+            .slick-active{
+                margin-top: 0px;
+                @include transition;
+                &:nth-child(4n+2),&:nth-child(4n+4){
+                    margin-top: 40px;
+                    @include transition;
+                    @include rmaxwd(1200){
+                        margin-top: 0px;
+                    }
+                }
+            }
+        }
+        .section-title{
+            margin-top: 10px;
+            margin-bottom: 48px;
+            @include rmaxwd(1400){
+                margin-top: 0px;
+            }
+            .bottom-shape {
+                @include rmaxwd(992){
+                    width: 345px;
+                }
+            }
+        }
+        .location-card{
+            .image-wrapper{
+                height: 370px;
+            }
+        }
+    }
+    // Slick Control
+    .slick-list{
+        margin: 0 -12px;
+        .slick-slide{
+            margin: 0 12px;
+        }
+    }
+    .slick-dots{
+        display: none !important;
+    }
+    .slick-arrow{
+        display: none !important;
+    }
+
+    // Slider Arrow Button
+    .location-slider-arrow{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        .location-arrow-btn{
+            width: 56px;
+            height: 56px;
+            border-radius: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &.prev-btn, &.next-btn{
+                overflow: hidden;
+                @include transition;
+                position: relative;
+                &:before {
+                    position: absolute;
+                    width: 0;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    background-color: $primary-color;
+                    content: "";
+                    @include transition;
+                    color: $white;
+                }
+                &:hover{
+                    &:before{
+                        width: 100%;
+                        @include transition;
+                    }
+                    i{
+                        color: $white;
+                        @include transition;
+                    }
+                }
+            }
+            &.prev-btn{
+                background-color: $white;
+                border: 1px solid $gray-2;
+                i{
+                    color: $black;
+                    position: relative;
+                    z-index: 10;
+                    @include transition;
+                }
+            }
+            &.next-btn{
+                background-color: $sky-2;
+                i{
+                    color: $primary-color;
+                    position: relative;
+                    z-index: 10;
+                    @include transition;
+                }
+            }
+        }
+        @include sm{
+            display: none !important;
+        }
+    }
+}

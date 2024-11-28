@@ -1,0 +1,326 @@
+.slider-area {
+  // overflow: hidden;
+  position: relative;
+  &.style-1{
+    position: relative ;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-repeat: no-repeat;
+    .banner-shape-1{
+      position: absolute;
+      top: 23.4%;
+      left: 5%;
+      -webkit-animation: fadeInLeft 1s alternate infinite;
+      animation: fadeInLeft 1s alternate infinite;
+      @include rmaxwd(1400){
+        top: 14%;
+        left: 1%;
+      }
+    }
+    .banner-shape-2{
+      position: absolute;
+      bottom: 0;
+      left: 5.3%;
+      -webkit-animation: fadeInUp 1s alternate infinite;
+      animation: fadeInUp 1s alternate infinite;
+      @include rmaxwd(1200){
+        height: 60px;
+      }
+      @include sm{
+        display: none;
+      }
+    }
+    .banner-shape-3{
+      position: absolute;
+      top: 25%;
+      right: 0;
+      -webkit-animation: fadeInLeft 5s alternate infinite;
+      animation: fadeInLeft 5s alternate infinite;
+    }
+
+    .banner-shape-4{
+      position: absolute;
+      bottom: 8%;
+      right: 4.8%;
+      -webkit-animation: fadeInDown 1s alternate infinite;
+      animation: fadeInDown 1s alternate infinite;
+      @include rmaxwd(992){
+        display: none;
+      }
+    }
+
+
+
+  }
+  .slider-wrapper {
+    // Active Slider Animate
+    .slick-active .slider-short-title,
+    .slick-active .slider-title,
+    .slick-active .slider-short-desc,
+    .slick-active .slider-btn-wrapper {
+      -webkit-animation-name: MovefadeUp;
+      animation-name: MovefadeUp;
+      -webkit-animation-fill-mode: both;
+    }
+
+
+    .slick-active .slider-short-title {
+      -webkit-animation-delay: 0.3s;
+      animation-delay: 0.3s;
+      -webkit-animation-duration: 0.3s;
+      animation-duration: 0.3s;
+    }
+    .slick-active .slider-title {
+      -webkit-animation-delay: 0.5s;
+      animation-delay: 0.5s;
+      -webkit-animation-duration: 0.5s;
+      animation-duration: 0.5s;
+    }
+
+    .slick-active .slider-short-desc {
+      -webkit-animation-delay: 0.7s;
+      animation-delay: 0.7s;
+      -webkit-animation-duration: 0.7s;
+      animation-duration: 0.7s;
+    }
+
+    .slick-active .slider-btn-wrapper {
+      -webkit-animation-delay: 0.9s;
+      animation-delay: 0.9s;
+      -webkit-animation-duration: 0.9s;
+      animation-duration: 0.9s;
+    }
+
+    // Slick Dots
+    .slick-dots {
+      display: none;
+      gap: 20px;
+      flex-direction: column;
+      position: absolute;
+      top: 50%;
+      right: 46px;
+      transform: translateY(-50%);
+      z-index: 2;
+      flex-direction: column;
+      
+
+      @include sm {
+        display: none !important;
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        margin-right: 30px;
+        bottom: 70px;
+        top: unset;
+        left: unset;
+        right: unset;
+        transform: none;
+      }
+
+      li {
+        display: inline-block;
+        line-height: 0;
+        outline: 1px solid transparent;
+        border: 4px solid transparent;
+        border-radius: 50px;
+        @include transition;
+
+        button {
+          font-size: 0;
+          padding: 0;
+          width: 11px;
+          height: 11px;
+          background-color: #c3e4de;
+          border-radius: 50px;
+          position: relative;
+          @include transition;
+
+          &:hover {
+            background-color: $orange-color;
+            @include transition;
+          }
+        }
+        &.slick-active {
+          @include transition;
+          outline: 1px solid $orange-color;
+
+          button {
+            @include transition;
+          }
+        }
+      }
+    }
+  }
+
+  .single-slider{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    z-index: 2;
+    // overflow: hidden;
+    height: 959px;
+
+    // @media only screen and (min-width: 768px) and (max-width: 1199px) {
+    //   height: 620px;
+    //   padding-bottom: 80px;
+    // }
+    @include rmaxwd(1200){
+      height: 700px;
+    }
+    @include sm{
+      // height: 800px;
+      height: auto;
+      // padding-bottom: 30px;
+    }
+ 
+
+    .slider-content-wrapper {
+        position: relative;
+        z-index: 99;
+        padding-top: 48px;
+
+        @include rmaxwd(992) {
+          padding-top: 140px;
+        }
+        @include rmaxwd(767) {
+          padding-top: 80px;
+        }
+        .slider-content {
+          position: relative;
+          @include sm {
+            text-align: center;
+          }
+          .topbar-shape{
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin-right: -47px;
+            margin-top: -25px;
+            -webkit-animation: tada 5s alternate infinite;
+            animation: tada 5s alternate infinite;
+            @include rmaxwd(1400){
+              height: 50px;
+              margin: 0;
+              top: 20px;
+              right: 20px;
+            }
+            @include rmaxwd(1200){
+              height: 50px;
+              margin: 0;
+              top: -8px;
+              right: 0;
+            }
+          }
+          .bottom-shape{
+            margin-top: -40px;
+          }
+
+          .slider-short-title {
+            font-family: $heading-font;
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 150%;
+            color: $primary-color;
+            display: inline-block;
+            width: 100%;
+            cursor: default;
+
+            @include lg {
+              font-size: 18px;
+            }
+            @include sm {
+              font-size: 16px;
+            }
+          }
+          .slider-title {
+            font-family: $body-font;
+            color: $black;
+            margin-bottom: 0px;
+            font-size: 78px;
+            font-weight: 700;
+            line-height: 110%; 
+            letter-spacing: -1.56px;
+            cursor: default;
+
+            @media only screen and (min-width: 992px) and (max-width: 1400px){
+              font-size: 60px;
+              line-height: 64px;
+            }
+            @include lg {
+              font-size: 48px;
+              line-height: 56px;
+            }
+            @include md {
+              font-size: 42px;
+              line-height: 52px;
+            }
+            @include sm {
+              font-size: 38px;
+              line-height: 44px;
+              margin-bottom: 20px;
+            }
+          }
+          .slider-short-desc {
+            font-family: $body-font;
+            color: $black-2;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 180%;
+            cursor: default;
+            @include lg {
+              font-size: 18px;
+              line-height: 32px;
+            }
+            @include md {
+              font-size: 18px;
+              line-height: 32px;
+            }
+            @include sm {
+              font-size: 18px;
+              line-height: 32px;
+            }
+          }
+          .slider-btn-wrapper {
+            margin-top: 41px;
+
+            @include sm {
+              margin-top: 30px;
+            }
+          }
+        }
+
+    }
+    .slider-image {
+      margin-left: 130px;
+      position: relative;
+      z-index: 2;
+      width: 860px;
+      animation: MoveUpDown 2s linear infinite alternate;
+      right: 35px;
+      top: 111px;
+
+      &.moblile-slider-img {
+        @include sm {
+          left: -30px;
+        }
+      }
+
+      @include sm {
+        margin-left: 40px;
+        animation: none;
+        top: 70px;
+        //margin-bottom: -150px;
+        right: unset;
+        text-align: center;
+      }
+      @include rmaxwd(1799) {
+        width: auto;
+        margin-top: inherit;
+      }
+
+    }
+  }
+}

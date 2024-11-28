@@ -1,0 +1,31 @@
+.why-choose-us-area {
+    &.style-3{
+        background-color: $black-3;
+        position: relative;
+        .shape{
+            position: absolute;
+            top: 0;
+            right: 0;
+            @include rmaxwd(992){
+                height: 80px;
+            }
+        }
+        .section-title{
+            margin-top: 0px;
+        }
+        .info-card{
+            width: auto;
+            
+            .icon-wrapper{
+                background: transparent;
+                width: 60px;
+                height: 60px;
+                box-shadow: none;
+                img{
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+        }
+    }
+}

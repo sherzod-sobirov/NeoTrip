@@ -1,0 +1,82 @@
+.accordion-wrapper {
+  .accordion-box-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: start;
+    align-items: start;
+  }
+  .accordion-list-item {
+    border-radius: 12px;
+    width: 746px;
+    background-color: $white;
+    box-shadow: 0px 20px 40px 0px rgba(199, 206, 218, 0.20);
+    @include rmaxwd(1080){
+      width: 100%;
+      border-radius: 10px;
+    }
+    .divider{
+      margin: 16px 0px;
+      padding: 0px 16px;
+      .outline{
+        width: 100%;
+        height: 1px;
+        background-color: $gray-4;
+      }
+    }
+    .accordion-head {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      cursor: pointer;
+      padding: 28px;
+      // padding: 12px 0;
+      position: relative;
+      justify-content: space-between;
+      @include rmaxwd(1080){
+        padding: 14px !important;
+    }
+      @include rmaxwd(1080){
+      gap: 0px;
+    }
+      &:after {
+        content: "\f077";
+        font-family: $font-awesome;
+        color: $white;
+        font-weight: 700;
+      }
+      &.collapsed {
+        &:after {
+          position: relative;
+          content: "\f078";
+          font-family: $font-awesome;
+          color: $white;
+          font-weight: 500;
+        }
+      }
+      .accordion-title {
+        font-size: 21px;
+        line-height: 32px;
+        color: $black;
+        font-weight: 500;
+        margin-bottom: 0;
+      }
+    }
+    .accordion-item-body {
+      padding: 0px 28px;
+      padding-bottom: 28px;
+      margin-top: -16px;
+      @include transition;
+      p{
+        border-top: 1px solid $gray-4;
+        padding-top: 16px;
+        cursor: default;
+        font-size: 16px;
+        color: $black-2;
+      }
+      @include rmaxwd(1080){
+        padding: 20px !important;
+      }
+    }
+  }
+}

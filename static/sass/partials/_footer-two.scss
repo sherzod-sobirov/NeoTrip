@@ -1,0 +1,82 @@
+.footer {
+  &.style-two {
+    .footer-sec {
+      padding-top: 225px;
+      @include sm {
+        padding-top: 180px;
+      }
+    }
+    // Subscribe Form
+    .subscribe-form-wrapper {
+      p {
+        color: $white-100;
+        margin-bottom: 30px;
+      }
+      .subscribe-form-widget {
+        border-radius: 6px;
+
+        .single-field {
+          input {
+            height: 60px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer-triangle-image-wrapper {
+  position: absolute;
+  width: 730px;
+  top: 0;
+  height: 100%;
+  left: 0;
+  z-index: -1;
+
+  @media only screen and (min-width: 781px) and (max-width: 991px){
+    width: 120%;
+  }
+  @include rmaxwd(780) {
+    width: 100%;
+  }
+}
+.footer-triangle-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: polygon(0 0, 100% 0, 65% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 65% 100%, 0 100%);
+
+  @media only screen and (min-width: 781px) and (max-width: 991px){
+    -webkit-clip-path: polygon(0 0, 100% 0, 57% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 57% 100%, 0 100%);
+  }
+  @include rmaxwd(780) {
+    clip-path: none;
+  }
+
+
+  &:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $primary-color;
+    opacity: 0.90;
+    z-index: 1;
+  }
+
+  img {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    height: 100%;
+  }
+}
+

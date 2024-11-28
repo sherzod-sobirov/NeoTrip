@@ -1,0 +1,45 @@
+.location-area{
+    &.style-4{
+        .location-card-wrapper{
+            display: flex;
+            flex-direction: column;
+            gap: 27px;
+        }
+        .location-card{
+            &.style-1{
+                 @include transition;
+                .image-inner{
+                    &:before {
+                        position: absolute;
+                        top: 0;
+                        left: -85%;
+                        z-index: 2;
+                        display: block;
+                        content: '';
+                        width: 50%;
+                        height: 100%;
+                        background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .8) 100%);
+                        background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, .8)));
+                        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .8) 100%);
+                        -webkit-transform: skewX(-25deg);
+                        -ms-transform: skewX(-25deg);
+                        transform: skewX(-25deg);
+                        z-index: 20;
+                    }
+                }
+                &:hover{
+                    margin-top: -10px;
+                    @include transition;
+                    .image-wrapper{
+                        .image-inner{
+                            &:before{
+                                -webkit-animation: shine 1s;
+                                animation: shine 1s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

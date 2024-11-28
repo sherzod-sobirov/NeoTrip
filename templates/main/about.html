@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block body %}
+    <!--==============================
+    Breadcumb
+============================== -->
+    <div class="breadcumb-wrapper " data-bg-src="{% static 'assets/img/bg/breadcumb-bg.jpg' %}">
+        <div class="container">
+            <div class="breadcumb-content">
+                <h1 class="breadcumb-title">{% trans "About NEO TRIP" %}</h1>
+                <ul class="breadcumb-menu">
+                    <li><a href="{% url 'main_home_view' %}">{% trans "Home" %}</a></li>
+                    <li>{% trans "About NEO TRIP" %}</li>
+                </ul>
+            </div>
+        </div>
+    </div><!--==============================
+About Area  
+==============================-->
+    <div class="about-area position-relative overflow-hidden overflow-hidden space" id="about-sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-7">
+                    <div class="img-box3">
+                        <div class="img1">
+                            <img src="{% static 'assets/img/normal/about_3_1.jpg' %}" alt="{% trans 'About' %}">
+                        </div>
+                        <div class="img2">
+                            <img src="{% static 'assets/img/normal/about_3_2.jpg' %}" alt="{% trans 'About' %}">
+                        </div>
+                        <div class="img3 movingX">
+                            <img src="{% static 'assets/img/normal/about_3_3.jpg' %}" alt="{% trans 'About' %}">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-5">
+                    <div class="ps-xl-4">
+                        <div class="title-area mb-20">
+                            <span class="sub-title style1 ">{% trans "Welcome To NEO TRIP" %}</span>
+                            <h2 class="sec-title mb-20 pe-xl-5 me-xl-5 heading">{% trans "We are world reputed travel agency" %}</h2>
+                        </div>
+                        <p class="pe-xl-5">{% trans "We are a world-renowned and trusted travel agency. We offer the best services to make your journey unforgettable. We create travel options tailored to the unique needs of each of our clients." %}</p>
+                        <div class="about-item-wrap">
+                            <div class="about-item style2">
+                                <div class="about-item_img"><img src="{% static 'assets/img/icon/about_1_1.svg' %}" alt=""></div>
+                                <div class="about-item_centent">
+                                    <h5 class="box-title">{% trans "Exclusive Trip" %}</h5>
+                                    <p class="about-item_text">{% trans "Our exclusive trips will take you to the most beautiful and unique destinations. We provide the opportunity to travel comfortably and safely, with carefully crafted programs designed just for you." %}</p>
+                                </div>
+                            </div>
+                            <div class="about-item style2">
+                                <div class="about-item_img"><img src="{% static 'assets/img/icon/about_1_2.svg' %}" alt=""></div>
+                                <div class="about-item_centent">
+                                    <h5 class="box-title">{% trans "Safety First Always" %}</h5>
+                                    <p class="about-item_text">{% trans "Your safety is our top priority. We ensure that every trip is as safe and secure as possible. The best safety measures are always in place for each journey." %}</p>
+                                </div>
+                            </div>
+                            <div class="about-item style2">
+                                <div class="about-item_img"><img src="{% static 'assets/img/icon/about_1_3.svg' %}" alt=""></div>
+                                <div class="about-item_centent">
+                                    <h5 class="box-title">{% trans "Professional Guide" %}</h5>
+                                    <p class="about-item_text">{% trans "Our experienced and knowledgeable guides offer you the best travel experience. They have the expertise to make your journey even more enriching and enjoyable." %}</p>
+                                </div>
+                            </div>
+                        </div><br><br>
+                        <div class="mt-35"><a href="{% url 'main_contact' %}" class="th-btn style3 th-icon">{% trans "Contact With Us" %}</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shape-mock up movingX d-none d-xxl-block" data-top="4%" data-left="2%">
+            <img src="{% static 'assets/img/shape/shape_2_1.png' %}" alt="{% trans 'shape' %}">
+        </div>
+        <div class="shape-mockup jump d-none d-xxl-block" data-top="28%" data-right="5%">
+            <img src="{% static 'assets/img/shape/shape_2_2.png' %}" alt="{% trans 'shape' %}">
+        </div>
+        <div class="shape-mockup spin d-none d-xxl-block" data-bottom="18%" data-left="2%">
+            <img src="{% static 'assets/img/shape/shape_2_3.png' %}" alt="{% trans 'shape' %}">
+        </div>
+        <div class="shape-mockup movixgX d-none d-xxl-block" data-bottom="18%" data-right="2%">
+            <img src="{% static 'assets/img/shape/shape_2_4.png' %}" alt="{% trans 'shape' %}">
+        </div>
+    </div>
+    <div class="sidebar-gallery-area space">
+        <div class="container-fluid">
+            <div class="slider-area">
+                <div class="swiper th-slider has-shadow" data-slider-options='{"centeredSlides":"true","breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"3"},"1300":{"slidesPerView":"4"}}}'>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="gallery-thumb style2 global-img">
+                                <img src="{% static 'assets/img/gallery/gallery_4_1.jpg' %}" style="width: 450px; height: 420px;" alt="{% trans 'Gallery Image' %}">
+                                <a target="_blank" href="https://www.instagram.com/neotripuz/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery-thumb style2 global-img">
+                                <img src="{% static 'assets/img/gallery/gallery_4_2.jpg' %}" style="width: 450px; height: 420px;" alt="{% trans 'Gallery Image' %}">
+                                <a target="_blank" href="https://www.instagram.com/neotripuz/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery-thumb style2 global-img">
+                                <img src="{% static 'assets/img/gallery/gallery_4_3.jpg' %}" style="width: 450px; height: 420px;" alt="{% trans 'Gallery Image' %}">
+                                <a target="_blank" href="https://www.instagram.com/neotripuz/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery-thumb style2 global-img">
+                                <img src="{% static 'assets/img/gallery/gallery_4_4.jpg' %}" style="width: 450px; height: 420px;" alt="{% trans 'Gallery Image' %}">
+                                <a target="_blank" href="https://www.instagram.com/neotripuz/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery-thumb style2 global-img">
+                                <img src="{% static 'assets/img/gallery/gallery_4_5.jpg' %}" style="width: 450px; height: 420px;" alt="{% trans 'Gallery Image' %}">
+                                <a target="_blank" href="https://www.instagram.com/neotripuz/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery-thumb style2 global-img">
+                                <img src="{% static 'assets/img/gallery/gallery_4_1.jpg' %}" style="width: 450px; height: 420px;" alt="{% trans 'Gallery Image' %}">
+                                <a target="_blank" href="https://www.instagram.com/neotripuz/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery-thumb style2 global-img">
+                                <img src="{% static 'assets/img/gallery/gallery_4_2.jpg' %}" style="width: 450px; height: 420px;" alt="{% trans 'Gallery Image' %}">
+                                <a target="_blank" href="https://www.instagram.com/neotripuz/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery-thumb style2 global-img">
+                                <img src="{% static 'assets/img/gallery/gallery_4_3.jpg' %}" style="width: 450px; height: 420px;" alt="{% trans 'Gallery Image' %}">
+                                <a target="_blank" href="https://www.instagram.com/neotripuz/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery-thumb style2 global-img">
+                                <img src="{% static 'assets/img/gallery/gallery_4_4.jpg' %}" style="width: 450px; height: 420px;" alt="{% trans 'Gallery Image' %}">
+                                <a target="_blank" href="https://www.instagram.com/neotripuz/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery-thumb style2 global-img">
+                                <img src="{% static 'assets/img/gallery/gallery_4_5.jpg' %}" style="width: 450px; height: 420px;" alt="{% trans 'Gallery Image' %}">
+                                <a target="_blank" href="https://www.instagram.com/neotripuz//" class="gallery-btn"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery-thumb style2 global-img">
+                                <img src="{% static 'assets/img/gallery/gallery_4_2.jpg' %}" style="width: 450px; height: 420px;" alt="{% trans 'Gallery Image' %}">
+                                <a target="_blank" href="https://www.instagram.com/neotripuz/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}

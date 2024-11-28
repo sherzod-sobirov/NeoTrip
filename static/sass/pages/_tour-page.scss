@@ -1,0 +1,38 @@
+.tour-area{
+    .location-area{
+        &.style-1{
+            .portfolio-filter{
+                margin-top: 17px;
+                margin-bottom: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                @include rmaxwd(992){
+                    flex-wrap: wrap;
+                    justify-content: start;
+                    align-items: start;
+                }
+                @include sm{
+                    gap: 6px;
+                }
+                li{
+                    cursor: pointer;
+                    @extend .theme-btn;
+                    &.active{
+                        background-color: $primary-color !important;
+                    }
+                    &:hover{
+                        &:after{
+                            height: 0 !important;
+                        }
+                    }
+                }
+            }
+            .basic-pagination{
+                margin-top: 64px;
+                margin-bottom: 0px;
+            }
+        }
+    }
+}

@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block body %}
+<!--==============================
+    Breadcumb
+============================== -->
+<div class="breadcumb-wrapper " data-bg-src="{% static 'assets/img/bg/breadcumb-bg.jpg' %}">
+    <div class="container">
+        <div class="breadcumb-content">
+            <h1 class="breadcumb-title">{% trans "Contact Us" %}</h1>
+            <ul class="breadcumb-menu">
+                <li><a href="{% url 'main_home_view' %}">{% trans "Home" %}</a></li>
+                <li>{% trans "Contact Us" %}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--==============================
+Contact Area  
+==============================-->
+<div class="space">
+    <div class="container">
+        <div class="title-area text-center">
+            <span class="sub-title">{% trans "Get In Touch" %}</span>
+            <h2 class="sec-title">{% trans "Our Contact Information" %}</h2>
+        </div>
+        <div class="row gy-4 justify-content-center">
+            <div class="col-xl-4 col-lg-6">
+                <div class="about-contact-grid style2">
+                    <div class="about-contact-icon">
+                        <img src="{% static 'assets/img/icon/location-dot2.svg' %}" alt="">
+                    </div>
+                    <div class="about-contact-details">
+                        <h6 class="box-title">{% trans "Our Address" %}</h6>
+                        <p class="about-contact-details-text">2690 Hiltona Street Victoria</p>
+                        <p class="about-contact-details-text">{% trans "Road, New York, Canada" %}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6">
+                <div class="about-contact-grid">
+                    <div class="about-contact-icon">
+                        <img src="{% static 'assets/img/icon/call.svg' %}" alt="">
+                    </div>
+                    <div class="about-contact-details">
+                        <h6 class="box-title">{% trans "Phone Number" %}</h6>
+                        <p class="about-contact-details-text"><a href="tel:01234567890">+998 97 925 17 13</a></p>
+                        <p class="about-contact-details-text"><a href="tel:01234567890">+998 91 557 77 13</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6">
+                <div class="about-contact-grid">
+                    <div class="about-contact-icon">
+                        <img src="{% static 'assets/img/icon/mail.svg' %}" alt="">
+                    </div>
+                    <div class="about-contact-details">
+                        <h6 class="box-title">{% trans "Email Address" %}</h6>
+                        <p class="about-contact-details-text"><a href="mailto:mailinfo00@tourm.com">mailinfo00@tourm.com</a></p>
+                        <p class="about-contact-details-text"><a href="mailto:support24@tourm.com">support24@tourm.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--==============================
+Video Area  
+==============================-->
+<div class="space-extra2-top space-extra2-bottom" 
+     data-bg-src="{% static 'assets/img/bg/video_bg_1.jpg' %}" 
+     style="border: 1px solid #000; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);">
+    <div class="container">
+        <div class="row flex-row-reverse justify-content-center align-items-center">
+            <div class="col-lg-6">
+                <div class="video-box1">
+                    <a href="https://www.youtube.com/watch?v=01_upSvzTRs" 
+                       class="play-btn style2 popup-video" 
+                       aria-label="{% trans 'Play Video' %}">
+                        <i class="fa-sharp fa-solid fa-play"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div>
+                    <form method="POST" action="{% url 'main_contact' %}" class="contact -form style2 ajax-contact">
+                        {% csrf_token %}
+                        <h3 class="sec-title mb-30 text-capitalize">{% trans "Contact Us" %}</h3>
+
+                        <!-- Display Success or Error Messages -->
+                        {% if messages %}
+                            <div class="alert alert-success">
+                                {% for message in messages %}
+                                    <p>{{ message }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+
+                        <div class="row">
+                            <div class="col-12 form-group">
+                                <label for="first_name" class="sr-only">{% trans "First Name" %}</label>
+                                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="{% trans 'First Name' %}">
+                                <img src="{% static 'assets/img/icon/user.svg' %}" alt="">
+                            </div>
+                            <div class="col-12 form-group">
+                                <label for="last_name" class="sr-only">{% trans "Last Name" %}</label>
+                                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="{% trans 'Last Name' %}">
+                                <img src="{% static 'assets/img/icon/user.svg' %}" alt="">
+                            </div>
+                            <div class="col-12 form-group">
+                                <label for="email" class="sr-only">{% trans "Email" %}</label>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="{% trans 'Your Mail' %}">
+                                <img src="{% static 'assets/img/icon/mail.svg' %}" alt="">
+                            </div>
+                            <div class="col-12 form-group">
+                                <label for="phone_number" class="sr-only">{% trans "Phone Number" %}</label>
+                                <input type="text" class="form-control" name="phone_number" id="phone_number" placeholder="{% trans 'Phone Number' %}">
+                            </div>
+                            <div class="form-group col-12">
+                                <label for="comment" class="sr-only">{% trans "Message" %}</label>
+                                <textarea name="comment" id="comment" cols="30" rows="3" class="form-control" placeholder="{% trans 'Your Message' %}"></textarea>
+                                <img src="{% static 'assets/img/icon/chat.svg' %}" alt="">
+                            </div>
+                            <div class="form-btn col-12 mt-24">
+                                <button type="submit" class="th-btn style3">
+                                    {% trans "Send message" %}
+                                    <img src="{% static 'assets/img/icon/plane.svg' %}" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--==============================
+Map Area  
+==============================-->
+<div class="">
+    <br> <br>
+    <div class="container-fluid">
+        <div class="contact-map style2">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2925.237706196069!2d66.93668731577716!3d39.6442596770721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d1931fa4044e3%3A0xef41591b30dcc37a!2s448%2C%20Firdavsiy%20ko&#39;chasi%2084%2C%20Samarqand%2C%20Samarqand%20viloyati!5e0!3m2!1sen!2sus!4v1609863674710!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="contact-icon">
+                <img src="{% static 'assets/img/icon/location-dot3.svg' %}" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,20 @@
+.location-area{
+    &.style-5{
+        .location-card{
+            border: none !important;
+            box-shadow: none;
+            .content-wrapper{
+                margin: 0px;
+                margin-top: 28px;
+                .title{
+                    a{
+                        font-size: 24px;
+                    }
+                }
+                .time-zone{
+                    gap: 20px;
+                }
+            }
+        }
+    }
+}

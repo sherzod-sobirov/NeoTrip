@@ -1,0 +1,59 @@
+.location-filter-wrapper{
+    &.style-2{
+        position: absolute;
+        top: 0;
+        transform: translate(0%, -50%);
+        padding: 40px;
+        @include rmaxwd(1200){
+            position: unset;
+        }
+        @include rmaxwd(767){
+           transform: translate(0%, -12%);
+        }
+        
+        form{
+            gap:118px;
+            @include rmaxwd(1400){
+                gap: 40px;
+            }
+            
+            button{
+                height: auto;
+                width: auto;
+                padding: 16px 38px;
+                i{
+                    margin-right: 12px;
+                }
+            }
+            .single-item{
+
+            }
+        }
+    }
+}
+
+.location-filter-card{
+    &.style-2{
+        position: absolute;
+        top: 0;
+        transform: translate(0%, -50%);
+        padding: 40px;
+        gap:153px;
+        @include rmaxwd(992){
+            flex-wrap: wrap;
+            position: unset;
+            transform: unset;
+            top: unset;
+            gap: 40px;
+        }
+        button{
+            height: auto;
+            width: auto;
+            padding: 16px 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+        }
+    }
+}

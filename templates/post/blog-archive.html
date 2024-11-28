@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block body %}
+
+    <!--==============================
+    Breadcumb
+============================== -->
+<div class="breadcumb-wrapper " data-bg-src="{% static 'assets/img/bg/breadcumb-bg1.jpg' %}">
+    <div class="container">
+        <div class="breadcumb-content">
+            <h1 class="breadcumb-title">{% trans "Blog Lists View" %}</h1>
+            <ul class="breadcumb-menu">
+                <li><a href="{% url 'main_home_view' %}">{% trans "Home" %}</a></li>
+                <li>{% trans "Blog Lists View" %}</li>
+            </ul>
+        </div>
+    </div>
+</div><!--==============================
+Blog Area
+==============================-->
+<section class="th-blog-wrapper space-top space-extra-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-8 col-lg-7">
+                {% for post in page_obj %}
+                <div class="th-blog blog-single has-post-thumbnail">
+                    <div class="blog-img">
+                        <a href="{% url 'detail_post' post.id %}"><img src="{{ post.photo.url }}" alt="{% trans 'Blog Image' %}"></a>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <a class="author" href="{% url 'post_post_list' %}"><i class="fa-light fa-user"></i>{% trans "by David Smith" %}</a>
+                            <a href="{% url 'post_post_list' %}"><i class="fa-solid fa-calendar-days"></i>{{ post.created_at|date:"l, j F Y" }}</a>
+                            <a href="{% url 'detail_post' post.id %}"><img src="{% static 'assets/img/icon/map.svg' %}" alt="">{% trans "Tour Guide" %}</a>
+                        </div>
+                        <h2 class="blog-title"><a href="{% url 'detail_post' post.id %}">{{ post.title }}</a></h2>
+                        <p class="blog-text">
+                            {% if post.body|length > 500 %}
+                                {{ post.body|slice:":500" }}... <a href="{% url 'detail_post' post.id %}">{% trans "more" %}</a>
+                            {% else %}
+                                {{ post.body|safe }}
+                            {% endif %}
+                        </p>
+                        <a href="{% url 'detail_post' post.id %}" class="th-btn style4 th-icon">{% trans "Read More" %}</a>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="th-pagination">
+                    <ul>
+                        {% if page_obj.has_previous %}
+                            <li>
+                                <a class="prev-page" href="?page={{ page_obj.previous_page_number }}">
+                                    <img src="{% static 'assets/img/icon/arrow-left4.svg' %}" alt="">
+                                </a>
+                            </li>
+                        {% endif %}
+                    
+                        {% for num in page_obj.paginator.page_range %}
+                            <li>
+                                <a href="?page={{ num }}" 
+                                    class="{% if page_obj.number == num %}active{% endif %}">
+                                    {{ num }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                                
+                        {% if page_obj.has_next %}
+                            <li>
+                                <a class="next-page" href="?page={{ page_obj.next_page_number }}">
+                                    {% trans "Next" %} <img src="{% static 'assets/img/icon/arrow-right4.svg' %}" alt="">
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xxl-4 col-lg-5">
+                <aside class="sidebar-area">
+                    <div class="widget widget_search  ">
+                        <form class="search-form">
+                            <input type="text" placeholder="{% trans 'Search' %}">
+                            <button type="submit"><i class="far fa-search"></i></button>
+                        </form>
+                    </div>
+                    <div class="widget widget_categories  ">
+                        <h3 class="widget_title">{% trans "Categories" %}</h3>
+                        <ul>
+                            <li>
+                                <a href="{% url 'post_post_list' %}"><img src="{% static 'assets/img/theme-img/map.svg' %}" alt="">{% trans "City Tour" %}</a>
+                                <span>(8)</span>
+                            </li>
+ <li>
+                                <a href="{% url 'post_post_list' %}"><img src="{% static 'assets/img/theme-img/map.svg' %}" alt="">{% trans "Beach Tours" %}</a>
+                                <span>(6)</span>
+                            </li>
+                            <li>
+                                <a href="{% url 'post_post_list' %}"><img src="{% static 'assets/img/theme-img/map.svg' %}" alt="">{% trans "Wildlife Tours" %}</a>
+                                <span>(2)</span>
+                            </li>
+                            <li>
+                                <a href="{% url 'post_post_list' %}"><img src="{% static 'assets/img/theme-img/map.svg' %}" alt="">{% trans "News & Tips" %}</a>
+                                <span>(7)</span>
+                            </li>
+                            <li>
+                                <a href="{% url 'post_post_list' %}"><img src="{% static 'assets/img/theme-img/map.svg' %}" alt="">{% trans "Adventure Tours" %}</a>
+                                <span>(9)</span>
+                            </li>
+                            <li>
+                                <a href="{% url 'post_post_list' %}"><img src="{% static 'assets/img/theme-img/map.svg' %}" alt="">{% trans "Mountain Tours" %}</a>
+                                <span>(10)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="widget widget_tag_cloud  ">
+                        <h3 class="widget_title">{% trans "Popular Tags" %}</h3>
+                        <div class="tagcloud">
+                            <a href="{% url 'post_post_list' %}">{% trans "Tour" %}</a>
+                            <a href="{% url 'post_post_list' %}">{% trans "Adventure" %}</a>
+                            <a href="{% url 'post_post_list' %}">{% trans "Rent" %}</a>
+                            <a href="{% url 'post_post_list' %}">{% trans "Innovate" %}</a>
+                            <a href="{% url 'post_post_list' %}">{% trans "Hotel" %}</a>
+                            <a href="{% url 'post_post_list' %}">{% trans "Modern" %}</a>
+                            <a href="{% url 'post_post_list' %}">{% trans "Luxury" %}</a>
+                            <a href="{% url 'post_post_list' %}">{% trans "Travel" %}</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock body %}

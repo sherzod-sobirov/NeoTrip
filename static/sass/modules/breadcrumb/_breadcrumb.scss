@@ -1,0 +1,131 @@
+.page-breadcrumb-area {
+  padding: 200px 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: $primary-color;
+
+  @include rmaxwd(991) {
+    padding: 100px 0;
+  }
+  @include rmaxwd(767) {
+    padding: 80px 0;
+  }
+}
+.page-overlay {
+  background-image: linear-gradient( 135deg, rgb(30,174,152) 0%, rgb(0,91,172) 100%);
+  opacity: 0.6;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.page-heading {
+  h3,
+  .page-title {
+    text-align: center;
+    color: $white;
+    font-family: $body-font;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.96px;
+    margin-bottom: 15px;
+    cursor: default;
+    @include rmaxwd(992) {
+      font-size: 42px;
+      line-height: 52px;
+    }
+    @include rmaxwd(375) {
+      font-size: 32px;
+      line-height: 42px;
+    }
+  }
+}
+.breadcrumb-wrapper {
+  padding: 0 100px;
+
+  @include rmaxwd(1199) {
+    padding: 0;
+  }
+}
+.breadcrumb-list {
+  text-align: center;
+
+  ul {
+    margin-bottom: 0;
+    padding-left: 0;
+    display: inline-flex;
+    gap:0 25px;
+
+    @include rmaxwd(375) {
+      flex-direction: column;
+    }
+    li {
+      list-style: none;
+      display: inline-flex;
+      gap:0 25px;
+      align-items: center;
+      color: $white;
+      &.active {
+        // color: $orange-color;
+      }
+      a {
+        font-family: $body-font;
+        font-size: 16px;
+        text-align: center;
+        color: $white;
+        text-transform: capitalize;
+        line-height: 30px;
+        font-weight: 400;
+        margin-bottom: 0;
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        &:after{
+          position: absolute;
+          bottom: 0;
+          content: "";
+          width: 0;
+          background-color: $white;
+          height: 1px;
+          @include transition; 
+        }
+
+
+        &:hover {
+           &:after{
+            width: 100%;
+            @include transition; 
+          }
+        }
+      }
+
+       &:before{
+         content: "\f054";
+         font-size: 12px;
+         color: #fff;
+         font-family: $font-awesome;
+         display: inline-flex;
+       }
+
+      &:first-child {
+       &:before {
+         display: none;
+
+         @include rmaxwd(375) {
+           display: block !important;
+         }
+       }
+      }
+    }
+  }
+}

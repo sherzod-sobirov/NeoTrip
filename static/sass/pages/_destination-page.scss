@@ -1,0 +1,9 @@
+.destination-page{
+    .location-card{
+        &.style-1{
+            &:hover{
+                margin-top: 0 !important;
+            }
+        }
+    }
+}

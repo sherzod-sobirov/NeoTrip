@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block body %}
+<!--==============================
+Breadcumb
+==============================-->
+<div class="breadcumb-wrapper" data-bg-src="{% static 'assets/img/bg/breadcumb-bg.jpg' %}">
+    <div class="container">
+        <div class="breadcumb-content">
+            <h1 class="breadcumb-title">{% trans 'Destination' %}</h1>
+            <ul class="breadcumb-menu">
+                <li><a href="{% url 'main_home_view' %}">{% trans 'Home' %}</a></li>
+                <li>{% trans 'Destination' %}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Location Area Start -->
+<div class="destination-page location-area style-4">
+    <div class="container">
+        <div class="section-title justify-content-start text-start">
+            <div class="sec-content">
+                <h2 class="title">{% trans 'Popular destination' %}</h2>
+            </div>
+        </div>
+        <div class="row gy-4">
+            {% for destination in dests %}
+                {% if forloop.counter0 == 0 %}
+                <!-- Single Location Start -->
+                <div class="col-md-8 wow fadeInUp" data-wow-delay="0s">
+                    <div class="location-card-wrapper">
+                        <div class="location-card style-1">
+                            <div class="image-wrapper">
+                                <a href="{% url 'destination_detail' destination.id %}" class="image-inner">
+                                    <img src="{{ destination.photo.url }}" alt="Location Image" style="width: 851px; height: 404px; border-radius: 20px;">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Location End -->
+                {% elif forloop.counter0 == 6 %}
+                <!-- Single Location Start -->
+                <div class="col-md-8 wow fadeInUp" data-wow-delay="1.6s">
+                    <div class="location-card-wrapper">
+                        <div class="location-card style-1">
+                            <div class="image-wrapper">
+                                <a href="{% url 'destination_detail' destination.id %}" class="image-inner" style="border-radius: 10px;">
+                                    <img src="{{ destination.photo.url }}" alt="Location Image" style="width: 851px; height: 404px; border-radius: 50px; border-radius: 20px;">
+                                </a>
+                                <div class="card-location">
+                                    <div class="location-inner">
+                                        <span><i class="fa-regular fa-location-dot"></i></span>
+                                        <span class="address">{{ destination.city }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Location End -->
+                {% else %}
+                <!-- Single Location Start -->
+                <div class="col-md-4 wow fadeInUp" data-wow-delay="{{ forloop.counter|divisibleby:2|yesno:'1.4s,0.4s' }}">
+                    <div class="location-card-wrapper">
+                        <div class="location-card style-1">
+                            <div class="image-wrapper">
+                                <a href="{% url 'destination_detail' destination.id %}" class="image-inner">
+                                    <img src="{{ destination.photo.url }}" alt="Location Image" style="width: 405px; height: 404px; border-radius: 20px;">
+                                </a>
+                                <div class="card-location">
+                                    <div class="location-inner">
+                                        <span><i class="fa-regular fa-location-dot"></i></span>
+                                        <span class="address">{{ destination.city }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Location End -->
+                {% endif %}
+            {% empty %}
+                <p>{% trans 'No destinations available.' %}</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Location Area End -->
+
+{% endblock body %}

@@ -1,0 +1,53 @@
+// Location Slider
+
+
+// About Us Area
+.about-us-area{
+    &.style-1{
+        position: relative;
+        border-color: $gray-2;
+        .shape-1{
+            position: absolute;
+            top: 71px;
+            left: 76px;
+            animation: MoveUpDown 2s linear infinite alternate;
+            @include rmaxwd(1400){
+                top: 20px;
+                left: 20px;
+            }
+            @include rmaxwd(992){
+                display: none;
+            }
+        }
+    }
+}
+
+// Why Choose Us Area
+.why-choose-us-area{
+    &.style-1{
+        position: relative;
+        .shape-1{
+            position: absolute;
+            top: 0;
+            left: 76px;
+            animation: MoveLeftRight 2s linear infinite alternate;
+            @include rmaxwd(1400){
+                left: 20px;
+            }
+        }
+        .shape-2{
+            position: absolute;
+            bottom: 106px;
+            right: 82px;
+            animation: MoveUpDown 2s linear infinite alternate;
+            @include rmaxwd(1650){
+                right: 40px;
+                bottom: 40px;
+            }
+            @include rmaxwd(992){
+                display: none;
+            }
+        }
+
+    }
+}

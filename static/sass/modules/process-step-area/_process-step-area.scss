@@ -1,0 +1,35 @@
+.process-step-area{
+    position: relative;
+    padding: 120px 0;
+    @include md{
+        padding: 100px 0;
+    }
+    @include sm{
+        padding: 80px 0;
+    }
+    .bg-shape{
+        position: absolute;
+        top: 47.5%;
+        left: 24.5%;
+        @include rmaxwd(1400){
+            display: none;
+        }
+    }
+    .section-title{
+        margin-bottom: 49px;
+        .title{
+            width: 550px;
+            @include rmaxwd(767){
+                width: auto;
+            }
+        }
+        .bottom-shape{
+            // width: 343px;
+            margin-left: 50px;
+            @include rmaxwd(767){
+                width: 275px;
+                margin-left: 30px;
+            }
+        }
+    }
+}

@@ -1,0 +1,221 @@
+// Blog Details Page
+.blog-details-wrapper {
+  // .comment-respond {
+  //   margin-top: 78px;
+  //   margin-bottom: 40px;
+  // }
+  .post-comments {
+    margin-top: 70px;
+  }
+  .wp-block-group.has-background {
+    .wp-block-button {
+      .wp-block-button__link {
+        color: $white !important;
+      }
+    }
+  }
+  .single-post-item {
+    border: 0;
+    overflow: visible;
+    margin-right: 32px;
+    padding: 0px;
+    @include rmaxwd(992){
+      margin-right: 0px;
+    }
+    iframe {
+      width: 100%;
+      height: 522px;
+    }
+    .post-meta {
+      margin-bottom: 20px;
+    }
+    .post-gallery {
+      &:hover {
+        img {
+          transform: scale(1) !important;
+        }
+      }
+    }
+    .post-thumbnail,
+    .post-video,
+    .post-gallery,
+    .postbox-audio,
+    .wp-block-post-featured-image {
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 45px;
+      position: relative;
+
+      @include rmaxwd(767) {
+        margin-bottom: 30px;
+      }
+      &:hover {
+        img {
+          transform: scale(1.06);
+          @include transition;
+        }
+      }
+
+      img {
+        transform: scale(1);
+        @include transition;
+      }
+    }
+    .post-content-wrapper {
+      // padding: 0 0 10px 0;
+    }
+    .post-content {
+      // margin-bottom: 17px;
+      /* Unit Test Data Compatibility Start */
+
+      .wp-block-query .wp-block-post-template {
+        padding-left: 0;
+
+        .wp-block-post {
+          margin-bottom: 30px;
+        }
+      }
+      .wp-block-navigation__responsive-container-content {
+        .wp-block-page-list {
+          padding-left: 0;
+        }
+      }
+
+      .wp-block-group {
+        margin: 15px 0;
+        p {
+          margin-bottom: 0;
+        }
+      }
+      /* Unit Test Data Compatibility End */
+      p {
+        margin-bottom: 20px;
+
+        img {
+          margin: 20px 0;
+          border-radius: 8px;
+        }
+      }
+    }
+    .blog-post-tag {
+      .social-share {
+        padding-bottom: 20px;
+      }
+    }
+  }
+  .wp-block-calendar {
+    margin-bottom: 30px;
+  }
+}
+// Blog Details End
+
+// Author
+.author-info {
+  background-color: #F6F9FF;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  border-radius: 14px;
+  position: relative;
+  margin-top: 60px;
+  margin-bottom: 80px;
+  @include sm{
+    text-align: center;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .author-thumb {
+    flex-shrink: 0;
+    width: 165px;
+    height: 165px;
+    border-radius: 50%;
+    background-color: $primary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    img {
+      border-radius: 50%;
+    }
+  }
+  .author-text {
+    .title-wrapper{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include sm{
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+    h3,a {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 34px;
+      margin: 0;
+      @extend .animated-text-blue;
+      &:hover{
+        background-position: -100%;
+      }
+    }
+    .designation {
+      font-family: $body-font;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 27px;
+      cursor: default;
+    }
+    p {
+      margin-top: 8px;
+      margin-bottom: 0;
+      cursor: default;
+      @include sm{
+        margin-top: 16px;
+      }
+    }
+  }
+  .author-social-profiles {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+
+    a {
+      font-size: 18px;
+      color: $black;
+      @include transition;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      border-radius: 50px;
+      border: 1px solid $black;
+      &:hover {
+        @include transition;
+        background-color: $black;
+        color: $white;
+      }
+    }
+  }
+  .author-post {
+    a {
+      font-size: 16px;
+      font-weight: 700;
+      font-family: $heading-font;
+      color: $secondary-color;
+      border-bottom: 2px solid $orange-color;
+      margin-top: 30px;
+      display: inline-block;
+
+      &:hover {
+        color: $orange-color;
+      }
+    }
+  }
+}

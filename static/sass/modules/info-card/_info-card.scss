@@ -1,0 +1,52 @@
+.info-card{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-shrink: 0;
+    .icon-wrapper{
+        background-color: $white;
+        border-radius: 100%;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+        img{
+            width: 34px;
+            height: 34px;
+        }
+    }
+    .content{
+        margin-top: 24px;
+        .title{
+            font-family: $body-font;
+            color: $black;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 140%;
+            cursor: default;
+        }
+        .desc{
+            font-family: $body-font;
+            color: $black-2;
+            font-size: 16px;
+            font-weight: 400;
+            margin-top: 2px;
+            margin-bottom: 0px;
+            line-height: 170%;
+            cursor: default;
+        }
+    }
+    &:hover {
+        .icon-wrapper {
+            -webkit-animation: bounce 1s alternate;
+            animation: bounce 1s alternate;
+            img {
+                transform: rotateY(360deg);
+                @include transition;
+            }
+        }
+    }
+}

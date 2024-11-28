@@ -1,0 +1,404 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block body %}
+
+<div class="th-hero-wrapper hero-1" id="hero">
+    <div class="swiper th-slider hero-slider-1" id="heroSlide1" data-slider-options='{"effect":"fade","menu": ["", "", ""],"heroSlide1": {"swiper-container": {"pagination": {"el": ".swiper-pagination", "clickable": true }}}}'>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="hero-inner">
+                    <div class="th-hero-bg" data-bg-src="{% static 'assets/img/hero/hero_bg_1_1.jpg' %}">
+                    </div>
+                    <div class="container">
+                        <div class="hero-style1">
+                            <span class="sub-title style1" data-ani="slideinup" data-ani-delay="0.2s">{% trans 'Get unforgetable pleasure with us' %}</span>
+                            <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">
+                                {% trans 'Natural Wonder of the world' %} </h1>
+                            <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s">
+                                <a href="{% url 'tours' %}" class="th-btn th-icon">{% trans 'Explore Tours' %}</a>
+                                <a href="service.html" class="th-btn style2 th-icon">{% trans 'About Us' %}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="hero-inner">
+                    <div class="th-hero-bg" data-bg-src="{% static 'assets/img/hero/hero_bg_1_2.jpg' %}">
+                    </div>
+                    <div class="container">
+                        <div class="hero-style1">
+                            <span class="sub-title style1" data-ani="slideinup" data-ani-delay="0.2s">{% trans 'Get unforgetable pleasure with us' %}</span>
+                            <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">
+                                {% trans 'Let’s make your best trip with us' %} </h1>
+                            <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s">
+                                <a href="{% url 'tours' %}" class="th-btn th-icon">{% trans 'Explore Tours' %}</a>
+                                <a href="{% url 'main_about' %}" class="th-btn style2 th-icon">{% trans 'About Us' %}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="hero-inner">
+                    <div class="th-hero-bg" data-bg-src="{% static 'assets/img/hero/hero_bg_1_3.jpg' %}">
+                    </div>
+                    <div class="container">
+                        <div class="hero-style1">
+                            <span class="sub-title style1" data-ani="slideinup" data-ani-delay="0.2s">{% trans 'Get unforgetable pleasure with us' %}</span>
+                            <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">
+                                {% trans 'Explore beauty of the whole world' %} </h1>
+                            <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s">
+                                <a href="" class="th-btn th-icon">{% trans 'Explore Tours' %}</a>
+                                <a href="service.html" class="th-btn style2 th-icon">{% trans 'About Us' %}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="th-swiper-custom">
+            <button data-slider-prev="#heroSlide1" class="slider-arrow slider-prev"><img src="{% static 'assets/img/icon/right-arrow.svg' %}" alt=""></button>
+            <div class="slider-pagination"></div>
+            <button data-slider-next="#heroSlide1" class="slider-arrow slider-next"><img src="{% static 'assets/img/icon/left-arrow.svg' %}" alt=""></button>
+        </div>
+
+    </div>
+</div>
+<!--======== / Hero Section ========--><!--==============================
+Booking Area  
+==============================-->
+<!--==============================
+Category Area  
+==============================-->
+<br></br> <!--==============================
+destination Area  
+==============================-->
+<div class="destination-area position-relative overflow-hidden ">
+    <div class="container">
+        <div class="title-area text-center">
+            <span class="sub-title">{% trans 'Top Destination' %}</span>
+            <h2 class="sec-title">{% trans 'Popular Destination' %}</h2>
+        </div>
+        <div class="swiper th-slider destination-slider slider-drag-wrap" id="aboutSlider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"3"}},"effect":"coverflow","coverflowEffect":{"rotate":"0","stretch":"95","depth":"212","modifier":"1"},"centeredSlides":"true"}'>
+            <div class="swiper-wrapper">
+                {% for destination in last_three_dests %}
+                <div class="swiper-slide">
+                    <div class="destination-box gsap-cursor">
+                        <div class="destination-img" style="width: 100%; height: 100%;">
+                            <img src="{{ destination.photo.url }}" style="width: 500px; height: 700px;" alt="destination image">
+                            <div class="destination-content">
+                                <div class="media-left">
+                                    <h4 class="box-title">
+                                        <a href="{% url 'destination_detail' destination.id %}">{{ destination.city }}</a>
+                                    </h4>
+                                    <span class="destination-subtitle">{{ destination.country.name }}</span>
+                                </div>
+                                <div class="">
+                                    <a href="{% url 'destination_detail' destination.id %}" class="th-btn style2 th-icon">View All</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--==============================
+About Area  
+==============================-->
+<div class="about-area position-relative overflow-hidden space" id="about-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="img-box1">
+                    <div class="img1">
+                        <img src="{% static 'assets/img/normal/about_1_1.jpg' %}" alt="About">
+                    </div>
+                    <div class="img2">
+                        <img src="{% static 'assets/img/normal/about_1_2.jpg' %}" alt="About">
+                    </div>
+                    <div class="img3">
+                        <img src="{% static 'assets/img/normal/about_1_3.jpg' %}" alt="About">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="ps-xl-4 ms-xl-2">
+                    <div class="title-area mb-20 pe-xl-5 me-xl-5">
+                        <span class="sub-title style1 ">{% trans "Let’s Go Together" %}</span>
+                        <h2 class="sec-title mb-20 pe-xl-5 me-xl-5 heading">{% trans 'Plan Your Trip With us' %}</h2>
+
+                        <p class="sec-text mb-30">{% trans 'Discover the world with us! Every journey is uniquely crafted, ensuring unforgettable memories and seamless experiences.' %}</p>
+                    </div>
+                    <div class="about-item-wrap">
+                        <div class="about-item">
+                            <div class="about-item_img"><img src="{% static 'assets/img/icon/map3.svg' %}" alt=""></div>
+                            <div class="about-item_centent">
+                                <h5 class="box-title">{% trans 'Exclusive Trip' %}</h5>
+                                <p class="about-item_text">{% trans 'Tailored adventures designed just for you, offering a perfect blend of comfort and excitement.' %}</p>
+                            </div>
+                        </div>
+                        <div class="about-item">
+                            <div class="about-item_img"><img src="{% static 'assets/img/icon/guide.svg' %}" alt=""></div>
+                            <div class="about-item_centent">
+                                <h5 class="box-title">{% trans 'Professional Guide' %}</h5>
+                                <p class="about-item_text">{% trans 'Expert guides passionate about sharing insights, culture, and hidden gems, making every moment remarkable.' %}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-35"><a href="{% url 'main_about' %}" class="th-btn style3 th-icon">{% trans 'Learn More' %}</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="shape-mockup shape1 d-none d-xl-block" data-top="12%" data-left="2%">
+        <img src="{% static 'assets/img/shape/shape_1.png' %}" alt="shape">
+    </div>
+    <div class="shape-mockup shape2 d-none d-xl-block" data-top="20%" data-left="3%">
+        <img src="{% static 'assets/img/shape/shape_2.png' %}" alt="shape">
+    </div>
+    <div class="shape-mockup shape3 d-none d-xl-block" data-top="14%" data-left="8%">
+        <img src="{% static 'assets/img/shape/shape_3.png' %}" alt="shape">
+    </div>
+
+    <div class="shape-mockup about-shape movingX d-none d-xxl-block" data-bottom="0%" data-right="8%">
+        <img src="{% static 'assets/img/hero/travel1.png' %}" style="width: 310px; height: 546px;" alt="shape">
+    </div>
+    <div class="shape-mockup about-rating d-none d-xxl-block" data-bottom="45%" data-right="2%">
+        <i class="fa-sharp fa-solid fa-star"></i><span>4.9k</span>
+    </div>
+    <div class="shape-mockup about-emoji d-none d-xxl-block" data-bottom="25%" data-right="22%"><img src="{% static 'assets/img/icon/emoji.png' %}" alt="">
+    </div>
+</div>
+<!--==============================
+Service Area  
+==============================-->
+
+<section class="position-relative bg-top-center overflow-hidden space" id="service-sec" style="background-size: 1920px 750px; background-repeat: no-repeat; background-position: center center;" data-bg-src="{% static 'assets/img/bg/tour_bg_1.jpg' %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="title-area text-center">
+                    <span class="sub-title">{% trans 'Best Place For You' %}</span>
+                    <h2 class="sec-title">{% trans 'Most Popular Tour' %}</h2>
+                    <p class="sec-text">{% trans 'Start an unforgettable journey! We’ve selected the most exciting and popular destinations just for you.' %}</p>
+                </div>
+            </div>
+        </div>
+        <div class="slider-area tour-slider ">
+            <div class="swiper th-slider has-shadow slider-drag-wrap" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"},"1300":{"slidesPerView":"4"}}}'>
+                <div class="swiper-wrapper">
+                    {% for tour in last_four_tours %}
+                    <div class="swiper-slide">
+                        <div class="tour-box th-ani gsap-cursor">
+                            <div class="tour-box_img global-img">
+                                <!-- Fixed the image src -->
+                                <img src="{{ tour.photo.url }}" alt="Tour Image" style="width: 600px; height: 274px;">
+                            </div>
+                            <div class="tour-content">
+                                <h3 class="box-title">
+                                    <!-- Ensure the URL name 'tour_tour_detail' matches your Django URL configuration -->
+                                    <a href="{% url 'tour_tour_detail' tour.id %}">{{ tour.title }}</a>
+                                </h3>
+                                <div class="tour-rating">
+                                    <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
+                                        <span style="width:100%">
+                                            Rated <strong class="rating"></strong> out of 5 based on 
+                                            <span class="rating">4.8</span> (4.8 Rating)
+                                        </span>
+                                    </div>
+                                    <a href="{% url 'tour_tour_detail' tour.id %}" class="woocommerce-review-link">
+                                        (<span class="count">4.8</span> Rating)
+                                    </a>
+                                </div>
+                                <h4 class="tour-box_price">
+                                    <span class="currency">{{ tour.calc_disc }} UZS</span>
+                                </h4>
+                                <div class="tour-action">
+                                    <span><i class="fa-light fa-clock"></i> {{ tour.duration }}</span>
+                                    <a href="{% url 'tour_tour_detail' tour.id %}" class="th-btn style4 th-icon">{% trans 'Book Now' %}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+<!--==============================
+Gallery Area  
+==============================-->
+<div class="gallery-area ">
+    <div class="container th-container">
+        <div class="title-area text-center">
+            <span class="sub-title">{% trans 'Make Your Tour More Pleasure' %}</span>
+            <h2 class="sec-title">{% trans 'Recent Gallery' %}</h2>
+        </div>
+        <div class="row gy-10 gx-10 justify-content-center align-items-center">
+            <div class="col-md-6 col-lg-2">
+                <div class="gallery-card">
+                    <div class="box-img global-img">
+                        <a href="{% static 'assets/img/gallery/gallery_1_1.jpg' %}" class="popup-image">
+                            <div class="icon-btn"><i class="fal fa-magnifying-glass-plus"></i></div>
+                            <img src="{% static 'assets/img/gallery/gallery_1_1.jpg' %}" alt="gallery image">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6 col-lg-2">
+                <div class="gallery-card">
+                    <div class="box-img global-img">
+                        <a href="{% static 'assets/img/gallery/gallery_1_2.jpg' %}" class="popup-image">
+                            <div class="icon-btn"><i class="fal fa-magnifying-glass-plus"></i></div>
+                            <img src="{% static 'assets/img/gallery/gallery_1_2.jpg' %}" alt="gallery image">
+                        </a>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <div class="box-img global-img">
+                        <a href="{% static 'assets/img/gallery/gallery_1_3.jpg' %}" class="popup-image">
+                            <div class="icon-btn"><i class="fal fa-magnifying-glass-plus"></i></div>
+                            <img src="{% static 'assets/img/gallery/gallery_1_3.jpg' %}" alt="gallery image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-2">
+                <div class="gallery-card">
+                    <div class="box-img global-img">
+                        <a href="{% static 'assets/img/gallery/gallery_1_4.jpg' %}" class="popup-image">
+                            <div class="icon-btn"><i class="fal fa-magnifying-glass-plus"></i></div>
+                            <img src="{% static 'assets/img/gallery/gallery_1_4.jpg' %}" alt="gallery image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-2">
+                <div class="gallery-card">
+                    <div class="box-img global-img">
+                        <a href="{% static 'assets/img/gallery/gallery_1_5.jpg' %}" class="popup-image">
+                            <div class="icon-btn"><i class="fal fa-magnifying-glass-plus"></i></div>
+                            <img src="{% static 'assets/img/gallery/gallery_1_5.jpg' %}" alt="gallery image">
+                        </a>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <div class="box-img global-img">
+                        <a href="{% static 'assets/img/gallery/gallery_1_6.jpg' %}" class="popup-image">
+                            <div class="icon-btn"><i class="fal fa-magnifying-glass-plus"></i></div>
+                            <img src="{% static 'assets/img/gallery/gallery_1_6.jpg' %}" alt="gallery image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-2">
+                <div class="gallery-card">
+                    <div class="box-img global-img">
+                        <a href="{% static 'assets/img/gallery/gallery_1_7.jpg' %}" class="popup-image">
+                            <div class="icon-btn"><i class="fal fa-magnifying-glass-plus"></i></div>
+                            <img src="{% static 'assets/img/gallery/gallery_1_7.jpg' %}" alt="gallery image">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="shape-mockup  d-none d-xl-block" data-top="-25%" data-left="0%">
+        <img src="{% static 'assets/img/shape/line.png' %}" alt="shape">
+    </div>
+    <div class="shape-mockup movingX d-none d-xl-block" data-top="30%" data-left="3%">
+        <img class="gmovingX" src="{% static 'assets/img/shape/shape_4.png' %}" alt="shape">
+    </div>
+</div><!--==============================
+Counter Area  
+==============================-->
+<div class="counter-area space">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-6 col-xl-3 counter-card-wrap">
+                <div class="counter-card">
+                    <div class="counter-shape"><span></span></div>
+                    <div class="media-body">
+                        <h3 class="box-number"><span class="counter-number">3</span></h3>
+                        <h6 class="counter-title">{% trans 'Years Experience' %}</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3 counter-card-wrap">
+                <div class="counter-card">
+                    <div class="counter-shape"><span></span></div>
+                    <div class="media-body">
+                        <h3 class="box-number"><span class="counter-number">97</span>%</h3>
+                        <h6 class="counter-title">{% trans 'Retention Rate' %}</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3 counter-card-wrap">
+                <div class="counter-card">
+                    <div class="counter-shape"><span></span></div>
+                    <div class="media-body">
+                        <h3 class="box-number"><span class="counter-number">100</span>+</h3>
+                        <h6 class="counter-title">{% trans 'Tour Completed' %}</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3 counter-card-wrap">
+                <div class="counter-card">
+                    <div class="counter-shape"><span></span></div>
+                    <div class="media-body">
+                        <h3 class="box-number"><span class="counter-number">250</span>+</h3>
+                        <h6 class="counter-title">{% trans 'Happy Travellers' %}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shape-mockup shape1 d-none d-xl-block" data-top="30%" data-left="2%">
+        <img src="{% static 'assets/img/shape/shape_1.png' %}" alt="shape">
+    </div>
+    <div class="shape-mockup shape2 d-none d-xl-block" data-top="45%" data-left="2%">
+        <img src="{% static 'assets/img/shape/shape_2.png' %}" alt="shape">
+    </div>
+    <div class="shape-mockup shape3 d-none d-xl-block" data-top="32%" data-left="7%">
+        <img src="{% static 'assets/img/shape/shape_3.png' %}" alt="shape">
+    </div>
+    <div class="shape-mockup d-none d-xl-block" data-bottom="0%" data-left="3%">
+        <img src="{% static 'assets/img/shape/shape_6.png' %}" alt="shape">
+    </div>
+    <div class="shape-mockup jump d-none d-xl-block" data-top="5%" data-right="5%">
+        <img src="{% static 'assets/img/shape/shape_5.png' %}" alt="shape">
+    </div>
+</div> <!--==============================
+Team Area  
+==============================-->
+<!--==============================
+Brand Area  
+==============================-->
+<!--==============================
+Blog Area  
+==============================-->
+
+{% endblock body %}

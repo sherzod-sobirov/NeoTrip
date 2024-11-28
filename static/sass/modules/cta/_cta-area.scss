@@ -1,0 +1,66 @@
+.cta-area{
+    &.style-1{
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+    .section-title{
+        flex-direction: column;
+        align-items: start;
+        margin-bottom: 0px;
+        padding: 120px 0;
+        @include md{
+            padding: 100px 0;
+        }
+        @include sm{
+            padding: 80px 0;
+        }
+        .title{
+            padding-right: 20px;
+        }
+        .bottom-shape{
+            width: 294px;
+        }
+        .sec-btn{
+            display: flex;
+            gap: 16px;
+            @include rmaxwd(992){
+                margin-top: 0px;
+            }
+        }
+    }
+    .image-wrapper{
+        position: relative;
+        // margin-top: 51px;
+        @include sm{
+            display: none;
+        }
+        .wave-shape{
+            position: absolute;
+            top: 28.6%;
+            left: 9.7%;
+        }
+        .top-circle{
+            position: absolute;
+            top: 24.8%;
+            right: -5.5%;
+            animation: MoveUpDown 3s linear infinite alternate;
+        }
+        .bottom-circle{
+            position: absolute;
+            bottom: 9.6%;
+            left: 20.4%;
+            animation: MoveUpDown 2s linear infinite alternate;
+            @include rmaxwd(1400){
+                left: 7%;
+            }
+            @include rmaxwd(1200){
+                left: -7%;
+            }
+        }
+        .side-img{
+            position: relative;
+            margin-top: 50px;
+            margin-right: 116px;
+        }
+    }
+}

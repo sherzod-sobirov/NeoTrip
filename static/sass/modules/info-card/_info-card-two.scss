@@ -1,0 +1,15 @@
+.info-card {
+    &.style-2 {
+        flex-direction: column;
+        align-items: start;
+        width: 228px;
+        gap: 25px;
+        @include sm{
+            flex-direction: row;
+            width: auto;
+        }
+        .content{
+            margin-top: 0px;
+        }
+    }
+}

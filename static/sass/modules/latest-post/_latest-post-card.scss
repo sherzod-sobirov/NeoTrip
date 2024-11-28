@@ -1,0 +1,77 @@
+.latest-post-card{
+    display: flex;
+    flex-direction: column;
+    .img-wrapper{
+        border-radius: 16px;
+        overflow: hidden;
+        flex-shrink: 0;
+        height: 371px;
+        position: relative;
+        img{
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
+        &:before {
+            position: absolute;
+            top: 0;
+            left: -85%;
+            z-index: 2;
+            display: block;
+            content: '';
+            width: 50%;
+            height: 100%;
+            background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .8) 100%);
+            background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, .8)));
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .8) 100%);
+            -webkit-transform: skewX(-25deg);
+            -ms-transform: skewX(-25deg);
+            transform: skewX(-25deg);
+            z-index: 20;
+        }
+    }
+    .content-wrapper{
+        .short-title{
+            font-family: $body-font;
+            color: $black-2;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 180%;
+            margin: 0px;
+            margin-top: 30px;
+            cursor: default;
+        }
+        .post-title{
+            margin: 0px;
+            line-height: 0;
+            margin-top: 16px;
+            a{
+                font-family: $body-font;
+                color: $black;
+                font-size: 28px;
+                font-weight: 700;
+                line-height: 130%; 
+                letter-spacing: -0.56px;
+                margin: 0px;
+                @include rmaxwd(1400){
+                    font-size: 22px;
+                }
+                &:hover{
+                    @extend .animated-text-blue;
+                    background-position: -100%;
+                }
+            }
+        }
+    }
+    &:hover{
+        .img-wrapper{
+            &:before{
+                -webkit-animation: shine 1s;
+	            animation: shine 1s;
+            }
+        }
+    }
+}

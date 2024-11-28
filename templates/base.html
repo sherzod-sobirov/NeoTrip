@@ -1,0 +1,516 @@
+{% load i18n %}
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>NEO TRIP - Travel & Tour Booking Agency</title>
+    <meta name="author" content="NEO TRIP">
+    <meta name="description" content="NEO TRIP - Travel & Tour Booking Agency">
+    <meta name="keywords" content="NEO TRIP - Travel & Tour Booking Agency">
+    <meta name="robots" content="INDEX,FOLLOW">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicons - Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'assets/img/favicons/apple-icon-57x57.png' %}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'assets/img/favicons/apple-icon-60x60.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'assets/img/favicons/apple-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'assets/img/favicons/apple-icon-76x76.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'assets/img/favicons/apple-icon-114x114.png' %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'assets/img/favicons/apple-icon-120x120.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'assets/img/favicons/apple-icon-144x144.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'assets/img/favicons/apple-icon-152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/img/favicons/apple-icon-180x180.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'assets/img/favicons/android-icon-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/img/favicons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'assets/img/favicons/favicon-96x96.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/img/favicons/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'assets/img/favicons/manifest.json' %}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{% static 'assets/img/favicons/ms-icon-144x144.png' %}">
+    <meta name="theme-color" content="#ffffff">
+
+    <!--==============================
+	  Google Fonts
+	============================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Manrope:wght@200..800&family=Montez&display=swap" rel="stylesheet">
+
+
+
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <!--==============================
+	    All CSS File
+	============================== -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <!-- Fontawesome Icon -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.min.css' %}">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.min.css' %}">
+
+    <!-- Swiper css -->
+    <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.min.css' %}">
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+</head>
+
+<body>
+
+    <!--[if lte IE 9]>
+    	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  	<![endif]-->
+
+
+    <!--********************************
+   		Code Start From Here 
+	******************************** -->
+
+    <div class="magic-cursor relative z-10">
+        <div class="cursor"></div>
+        <div class="cursor-follower"></div>
+    </div>
+
+
+    <!--==============================
+     Preloader
+  ==============================-->
+    <div id="preloader" class="preloader ">
+        <div class="preloader-inner">
+            <img src="{% static 'assets/img/COLORVAR2.png' %}" style="width: 300px;" alt="">
+        </div>
+
+        <div id="loader" class="th-preloader">
+            <div class="animation-preloader">
+                <div class="txt-loading">
+                    <span preloader-text="T" class="characters">T </span>
+
+                    <span preloader-text="O" class="characters">O </span>
+
+                    <span preloader-text="U" class="characters">U </span>
+
+                    <span preloader-text="R" class="characters">R </span>
+
+                    <span preloader-text="S" class="characters">S </span>
+                </div>
+            </div>
+        </div>
+
+    </div> <!--==============================
+    Sidemenu
+============================== -->
+    <div class="sidemenu-wrapper sidemenu-info ">
+        <div class="sidemenu-content">
+            <button class="closeButton sideMenuCls"><i class="far fa-times"></i></button>
+            <div class="widget  ">
+                <div class="th-widget-about">
+                    <div class="about-logo">
+                        <a href="{% url 'main_home_view' %}"><img src="{% static 'assets/img/COLORVAR2.png' %}" alt="NEO TRIP"></a>
+                    </div>
+                    <p class="about-text">Rapidiously myocardinate cross-platform intellectual capital model. Appropriately create interactive infrastructures</p>
+                    <div class="th-social">
+                        <a href="https://www.facebook.com/profile.php?id=61568818148836"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="widget  ">
+                <h3 class="widget_title">Recent Posts</h3>
+                <div class="recent-post-wrap">
+                    <div class="recent-post">
+                        <div class="media-img">
+                            <a href="blog-details.html"><img src="{% static 'assets/img/blog/recent-post-1-1.jpg' %}" alt="Blog Image"></a>
+                        </div>
+                        <div class="media-body">
+                            <div class="recent-post-meta">
+                                <a href="{% url 'post_post_list' %}"><i class="far fa-calendar"></i>24 Jun , 2024</a>
+                            </div>
+                            <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Where Vision Meets Concrete
+                                    Reality</a></h4>
+                        </div>
+                    </div>
+                    <div class="recent-post">
+                        <div class="media-img">
+                            <a href="blog-details.html"><img src="{% static 'assets/img/blog/recent-post-1-2.jpg' %}" alt="Blog Image"></a>
+                        </div>
+                        <div class="media-body">
+                            <div class="recent-post-meta">
+                                <a href="{% url 'post_post_list' %}"><i class="far fa-calendar"></i>22 Jun , 2024</a>
+                            </div>
+                            <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Raising the Bar in Construction.</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="widget  ">
+                <h3 class="widget_title">Get In Touch</h3>
+                <div class="th-widget-contact">
+                    <div class="info-box_text">
+                        <div class="icon">
+                            <img src="{% static 'assets/img/icon/phone.svg' %}" alt="img">
+                        </div>
+                        <div class="details">
+                            <p><a href="tel:+01234567890" class="info-box_link">+01 234 567 890</a></p>
+                            <p><a href="tel:+09876543210" class="info-box_link">+09 876 543 210</a></p>
+                        </div>
+                    </div>
+                    <div class="info-box_text">
+                        <div class="icon">
+                            <img src="{% static 'assets/img/icon/envelope.svg' %}" alt="img">
+                        </div>
+                        <div class="details">
+                            <p><a href="mailto:mailinfo00@tourm.com" class="info-box_link">mailinfo00@tourm.com</a></p>
+                            <p><a href="mailto:support24@tourm.com" class="info-box_link">support24@tourm.com</a></p>
+                        </div>
+                    </div>
+                    <div class="info-box_text">
+                        <div class="icon"><img src="{% static 'assets/img/icon/location-dot.svg' %}" alt="img"></div>
+                        <div class="details">
+                            <p>789 Inner Lane, Holy park, California, USA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-search-box">
+        <button class="searchClose"><i class="fal fa-times"></i></button>
+        <form action="#">
+            <input type="text" placeholder="What are you looking for?">
+            <button type="submit"><i class="fal fa-search"></i></button>
+        </form>
+    </div><!--==============================
+    Mobile Menu
+  ============================== -->
+    <div class="th-menu-wrapper onepage-nav">
+        <div class="th-menu-area text-center">
+            <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
+            <div class="mobile-logo">
+                <a href="{% url 'main_home_view' %}"><img src="{% static 'assets/img/COLORVAR2.png' %}" alt="NEO TRIP"></a>
+            </div>
+            <div class="th-mobile-menu">
+                <ul>
+                    <li class="">
+                        <a class="active" href="{% url 'main_home_view' %}">{% trans 'Home' %}</a>
+                    </li>
+                    <li><a href="{% url 'main_about' %}">{% trans 'About Us' %}</a></li>
+                    <li class="">
+                        <a href="#">Destination</a>
+                    </li>
+                    <li class="">
+                        <a href="{% url 'tours' %}">Tour</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'post_post_list' %}">Blog</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'main_contact' %}">Contact us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div> <!--==============================
+	Header Area
+==============================-->
+    <header class="th-header header-layout1">
+        <div class="header-top">
+            <div class="container th-container" >
+                <div class="row justify-content-center justify-content-xl-between align-items-center" >
+                    <div class="col-auto d-none d-md-block">
+                        <div class="header-links">
+                            <ul>
+                                <li class="d-none d-xl-inline-block"><i class="fa-sharp fa-regular  fa-location-dot"></i>
+                                    <span>Firdavsiy 84/448, Samarqand, Ouzbékistan</span>
+                                </li>
+                                <li class="d-none d-xl-inline-block"><i class="fa-regular fa-clock"></i>
+                                    <span>Mon to Sat: 9.00 am - 6.00 pm</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="header-right"> 
+                            <form method="get" action="{% url 'set_language' %}">
+                                <div class="currency-menu">
+                                    <select class="form-select nice-select" onchange="window.location.href=this.value;">
+                                        <option value="/en/" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>
+                                            {% if LANGUAGE_CODE == 'en' %}ENG - United States{% else %}ENG{% endif %}
+                                        </option>
+                                        <option value="/ru/" {% if LANGUAGE_CODE == 'ru' %}selected{% endif %}>
+                                            {% if LANGUAGE_CODE == 'ru' %}RUS - Russia{% else %}RUS{% endif %}
+                                        </option>
+                                        <option value="/fr/" {% if LANGUAGE_CODE == 'fr' %}selected{% endif %}>
+                                            {% if LANGUAGE_CODE == 'fr' %}FRA - France{% else %}FRA{% endif %}
+                                        </option>
+                                    </select>
+                                </div>
+                            </form>
+                            <div class="header-links">
+                                <ul>
+                                    {% if user.is_authenticated %}
+                                        <li><a href="{% url 'logout' %}">{% trans 'Logout' %}</a></li>
+                                    {% else %}
+                                        <li><a href="{% url 'register' %}" id="login-register-btn">{% trans 'Sign In / Register' %}</a></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sticky-wrapper">
+            <!-- Main Menu Area -->
+            <div class="menu-area">
+                <div class="container th-container" >
+                    <div class="row align-items-center justify-content-between" >
+                        <div class="col-auto">
+                            <div class="header-logo">
+                                <a href="{% url 'main_home_view' %}"><img src="{% static 'assets/img/COLORVAR2.png' %}" style="width: 175px;" alt="NEO TRIP"></a>
+                            </div>
+                        </div>
+                        <div class="col-auto me-xl-auto">
+                            <nav class="main-menu d-none d-xl-inline-block">
+                                <ul>
+                                    <li>
+                                        <a class="active" href="{% url 'main_home_view' %}">{% trans 'Home' %}</a>
+                                    </li>
+                                    <li><a href="{% url 'main_about' %}">{% trans 'About Us' %}</a></li>
+                                    <li class="">
+                                        <a href="{% url 'main_destination' %}">{% trans 'Destination' %}</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="{% url 'tours' %}">{% trans 'Tour' %}</a>
+                                    </li>   
+                                    <li class="">
+                                        <a href="{% url 'post_post_list' %}">{% trans 'Blog' %}</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'main_contact' %}">{% trans 'Contact us' %}</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <button type="button" class="th-menu-toggle d-block d-xl-none"><i class="far fa-bars"></i></button>
+                        </div>
+                        <div class="col-auto d-none d-xl-block">
+                            <div class="header-button">
+                                <a href="{% url 'tours' %}" class="th-btn style3 th-icon">{% trans 'Book Now' %}</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="logo-bg" style="background-color: grey; width: 300px;" data-mask-src="{% static 'assets/img/logo_bg_mask.png' %}"></div>
+            </div>
+        </div>
+    </header>
+
+         {% block body %}
+         {% endblock %}
+<!--==============================
+	Footer Area
+==============================-->
+<footer class="footer-wrapper footer-layout1">
+    <div class="widget-area">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-md-6 col-xl-3">
+                    <div class="widget footer-widget">
+                        <div class="th-widget-about">
+                            <div class="about-logo">
+                                <a href="{% url 'main_home_view' %}"><img src="{% static 'assets/img/COLORVAR2.png' %}" alt="NEO TRIP"></a>
+                            </div>
+                            <p class="about-text">{% trans 'Our agency is your trusted partner in making your dream journey a reality. We offer unforgettable trips with the best service and affordable prices.' %}</p>
+                            <div class="th-social">
+                                <a href="https://www.facebook.com/profile.php?id=61568818148836"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+                                <a href="https://www.instagram.com/neotripuz/"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-auto">
+                    <div class="widget widget_nav_menu footer-widget">
+                        <h3 class="widget_title">{% trans 'Quick Links' %}</h3>
+                        <div class="menu-all-pages-container">
+                            <ul class="menu">
+                                <li><a href="index.html">{% trans 'Home' %}</a></li>
+                                <li><a href="{% url 'main_about' %}">{% trans 'About us' %}</a></li>
+                                <li><a href="{% url 'main_contact' %}">{% trans 'Terms of Service' %}</a></li>
+                                <li><a href="{% url 'tours' %}">{% trans 'Tour Booking Now' %}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-auto">
+                    <div class="widget footer-widget">
+                        <h3 class="widget_title">{% trans 'Address' %}</h3>
+                        <div class="th-widget-contact">
+                            <div class="info-box_text">
+                                <div class="icon">
+                                    <img src="{% static 'assets/img/icon/phone.svg' %}" alt="img">
+                                </div>
+                                <div class="details">
+                                    <p><a href="tel:++998979251713" class="info-box_link">+998979251713</a></p>
+                                    <p><a href="tel:+998915577713" class="info-box_link">+998915577713</a></p>
+                                </div>
+                            </div>
+                            <div class="info-box_text">
+                                <div class="icon">
+                                    <img src="{% static 'assets/img/icon/envelope.svg' %}" alt="img">
+                                </div>
+                                <div class="details">
+                                    <p><a href="mailto:contactsardor@gmail.com" class="info-box_link">contactsardor@gmail.com</a></p>
+                                    <p><a href="mailto:contactsardor@gmail.com" class="info-box_link">contactsardor@gmail.com</a></p>
+                                </div>
+                            </div>
+                            <div class="info-box_text">
+                                <div class="icon"><img src="{% static 'assets/img/icon/location-dot.svg' %}" alt="img"></div>
+                                <div class="details">
+                                    <p>Firdavsiy 84/448, Samarqand, Ouzbékistan</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-auto">
+                    <div class="widget footer-widget">
+                        <h3 class="widget_title">Instagram Post</h3>
+                        <div class="sidebar-gallery">
+                            <div class="gallery-thumb">
+                                <img src="{% static 'assets/img/widget/gallery_1_1.jpg' %}" style="height: 96px;" alt="Gallery Image">
+                                <a target="_blank" href="https://www.instagram.com/neotripuz/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
+                            </div>
+                            <div class="gallery-thumb">
+                                <img src="{% static 'assets/img/widget/gallery_1_2.jpg' %}" style="height: 96px;" alt="Gallery Image">
+                                <a target="_blank" href="https://www.instagram.com/neotripuz/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
+                            </div>
+                            <div class="gallery-thumb">
+                                <img src="{% static 'assets/img/widget/gallery_1_3.jpg' %}" style="height: 96px;" alt="Gallery Image">
+                                <a target="_blank" href="https://www.instagram.com/neotripuz/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
+                            </div>
+                            <div class="gallery-thumb">
+                                <img src="{% static 'assets/img/widget/gallery_1_4.jpg' %}" style="height: 96px;" alt="Gallery Image">
+                                <a target="_blank" href="https://www.instagram.com/neotripuz/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
+                            </div>
+                            <div class="gallery-thumb">
+                                <img src="{% static 'assets/img/widget/gallery_1_5.jpg' %}" style="height: 96px;" alt="Gallery Image">
+                                <a target="_blank" href="https://www.instagram.com/neotripuz/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
+                            </div>
+                            <div class="gallery-thumb">
+                                <img src="{% static 'assets/img/widget/gallery_1_6.jpg' %}" style="height: 96px;" alt="Gallery Image">
+                                <a target="_blank" href="https://www.instagram.com/neotripuz/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-wrap" data-bg-src="{% static 'assets/img/bg/copyright_bg_1.jpg' %}" style="height: 90px;">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-6">
+                    <p class="copyright-text">Created By MRIT<a href="{% url 'main_home_view' %}"></a></p>
+                </div>
+                <div class="col-md-6 text-end d-none d-md-block">
+                    <div class="footer-card">
+                        <span class="title">We Accept</span>
+                        <img src="{% static 'assets/img/shape/cards.png' %}" style="width: 30px;" alt="">
+                        <img src="{% static 'assets/img/shape/cards1.png' %}" style="width: 50px;" alt="">
+                        <img src="{% static 'assets/img/shape/cards12.png' %}" style="width: 50px;" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</footer>
+
+<!--********************************
+        Code End  Here 
+******************************** -->
+
+<!-- Scroll To Top -->
+<div class="scroll-top">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
+        </path>
+    </svg>
+</div>
+<!--==============================
+modal Area  
+==============================-->
+
+{% comment %} const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+document.querySelector('#login-form').addEventListener('submit', function(e) {
+    e.preventDefault();  // Prevent the form from submitting in the usual way
+
+    const formData = new FormData(this);
+    
+    fetch('{% url "login_register" %}', {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': csrftoken,  // Include CSRF token
+        },
+        body: formData  // Form data to be submitted
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+}); {% endcomment %}
+
+<!--==============================
+All Js File
+============================== -->
+<!-- Jquery -->
+<!-- Jquery -->
+<script src="{% static 'assets/js/vendor/jquery-3.6.0.min.js' %}"></script>
+<!-- Swiper Js -->
+<script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+<!-- Bootstrap -->
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<!-- Magnific Popup -->
+<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+<!-- Counter Up -->
+<script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+<!-- Range Slider -->
+<script src="{% static 'assets/js/jquery-ui.min.js' %}"></script>
+<!-- imagesloaded -->
+<script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+<!-- isotope -->
+<script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+<!-- gsap -->
+<script src="{% static 'assets/js/gsap.min.js' %}"></script>
+
+<!-- circle-progress -->
+<script src="{% static 'assets/js/circle-progress.js' %}"></script>
+
+<script src="{% static 'assets/js/matter.min.js' %}"></script>
+<script src="{% static 'assets/js/matterjs-custom.js' %}"></script>
+
+
+<!-- nice select -->
+<script src="{% static 'assets/js/nice-select.min.js' %}"></script>
+
+<!-- Main Js File -->
+<script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+</html>

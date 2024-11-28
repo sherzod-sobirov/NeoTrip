@@ -1,0 +1,42 @@
+.latest-post-card{
+    &.style-2{
+        flex-direction: row;
+        gap: 24px;
+        @include rmaxwd(992){
+            flex-direction: column;
+            gap: 0px;
+        }
+        .img-wrapper{
+            border-radius: 16px;
+            overflow: hidden;
+            flex-shrink: 0;
+            width: 256px;
+            height: 253px;
+            @include rmaxwd(1400){
+                width: 230px;
+                height: 230px;
+            }
+            @include rmaxwd(992){
+                width: 100%;
+            }
+
+        }
+        .content-wrapper{
+            .short-title{
+                @include rmaxwd(1400){
+                    margin-top: 0;
+                }
+                @include rmaxwd(992){
+                    margin-top: 30px;
+                }
+            }
+            .post-meta{
+                @include rmaxwd(1400){
+                    flex-direction: column;
+                    align-items: start;
+                    justify-content: start;
+                }
+            }
+        }
+    }
+}

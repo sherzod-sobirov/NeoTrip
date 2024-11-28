@@ -1,0 +1,156 @@
+{% extends 'base.html' %} 
+{% load i18n %}
+{% block body %}
+         <main id="content" class="site-main">
+            <section class="inner-page-wrap">
+               <!-- Page Header Start !-->
+               <div class="page-breadcrumb-area page-bg" style="background-image: url('images/breadcrumb/about.jpg')">        <!-- <div class="page-overlay"></div> -->
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-md-12">
+                                 <div class="breadcrumb-wrapper">
+                                    <div class="page-heading">
+                                       <h3 class="page-title">{% trans 'My Orders' %}</h3>
+                                    </div>
+                                    <div class="breadcrumb-list">
+                                       <ul>
+                                             <li><a href="{% url 'main_home_view' %}">{% trans 'Home' %}</a></li>
+                                             <li class="active"><a href="#">{% trans 'My Orders' %}</a></li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                           </div>
+                        </div>
+                     </div>
+               </div>
+               <!-- Page Header End !-->
+
+{% comment %} {% extends "base.html" %} {% load static %} {% load i18n %} 
+{% block body %}
+<main id="content" class="site-main">
+  <section class="inner-page-wrap">
+    <!-- ***Inner Banner html start form here*** -->
+    <div class="inner-banner-wrap">
+      <div
+        class="inner-baner-container"
+        style="background-image: url({%static'images/cart.jpg'%})"
+      >
+        <div class="container">
+          <div class="inner-banner-content">
+            <h1 class="page-title">{% trans "My Orders" %}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ***Inner Banner html end here*** -->
+    <!-- ***package section html start form here*** -->
+    <div class="package-item-wrap">
+      <div class="container" style="width: 65em">
+        {% for my_order in my_orders %}
+        <div class="package-item" style="grid-template-columns: 60% 40% 26.9%">
+          <div class="package-content">
+            <h3>
+              <a href="#"> # {{my_order.id}} </a>
+            </h3>
+            <div class="package-meta">
+              <ul>
+                <li>
+                  <i class="fas fa-clock"></i>
+                  {{my_order.create_at.date}}
+                </li>
+                <li>
+                  <i class="fas fa-user-friends"></i>
+                  {{ my_order.user.first_name }}
+                </li>
+                <li>
+                  <i
+                    class="bx bxs-credit-card"
+                    style="color: #3a78c9; font-weight: bolder; font-size: 13px"
+                  ></i>
+                  {% trans "Paid" %}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="package-price" style="margin-left: auto">
+            <h6 class="price-list">
+              <span>${{my_order.total}}</span>
+            </h6>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock body %} {% endcomment %} 
+
+    <main id="content" class="site-main">
+      <section class="booking-inner-page">
+        <!-- ***Inner Banner html start form here*** -->
+        <div class="inner-banner-wrap">
+          <div
+            class="inner-baner-container"
+            style="background-image: url('images/breadcrumb/about.jpg')"
+          >
+            <div class="container">
+              <div class="inner-banner-content">
+                <h2 class="page-title">{% trans "My Orders" %}</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ***Inner Banner html end here*** -->
+        <div class="cart-list-inner">
+          <div class="container">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>{% trans "Product ID" %}</th>
+                    <th>{% trans "Price" %}</th>
+                    <th>{% trans "Status" %}</th>
+                    <th>{% trans "Date" %}</th>
+                  </tr>
+                </thead>
+
+                {% for my_order in my_orders %}
+                <tr>
+                  <td style="max-width: 300px" data-column="Product Name">
+                  <span># {{my_order.id}}</span>
+                  </td>
+                  <td data-column="Price">
+                    {{my_order.amount}} so'm
+                  </td>
+                  <td data-column="Quantity" class="count-input">
+                    {{my_order.status}}
+                  </td>
+                  <td id="subtotal" data-column="Sub Total">{{ my_order.created_at }}</td>
+                </tr>
+                {% endfor %}
+              </table>
+            </div>
+            {% if cart_items %}
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="text-right">
+                <a href="{% url 'payment' %}" class="round-btn"
+                  >{% trans "Go to payment" %}</a
+                >
+              </div>
+              <ul class="list-unstyled text-nowrap mt-2">
+                <li>
+                  <strong>{% trans "Total" %}:</strong>
+                  <span class="grandTotal">{{cart.total}} so'm</span>
+                </li>
+              </ul>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      $(document).ready(function () {});
+    </script>
+
+{% endblock body %}

@@ -1,0 +1,191 @@
+.about-us-area{
+    &.style-2{
+        background-color: $white;
+    }
+}
+.about-us-info-card-wrapper{
+    display: flex;
+    gap:70px;
+    @include sm{
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+.about-us-content-wrapper-2{
+    .section-title{
+        margin-bottom: 42px;
+        width: 550px;
+        .bottom-shape{
+            margin-top: -28px;
+            width: 404px;
+        }
+        @include rmaxwd(992){
+            width: 360px;
+            .bottom-shape {
+                margin-top: -25px;
+                width: 300px;
+            }
+        }
+        @include rmaxwd(767){
+            width: auto;
+        }
+    }
+    .counter-area{
+        &.style-2{
+            gap: 95px !important;
+        }
+    }
+}
+.about-us-image-wrapper-2{
+    position: relative;
+    .image-inner{
+        position: relative;
+        .main-img{
+            position: absolute;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-top: -36px;
+            left: 14.6%;
+            @include rmaxwd(1200){
+                position: unset;
+                left: 0;
+                margin-top: 0px;
+            }
+            img{
+                border-radius: 16px;
+            }
+        }
+        .sub-img{
+            position: absolute;
+            top: 221px;
+            left: 54.4%;
+            background-color: $white;
+            padding: 14px;
+            border-radius: 16px;
+            overflow: hidden;
+            @include rmaxwd(992){
+                top: 270px;
+            }
+            @include sm{
+                display: none;
+            }
+            img{
+                border-radius: 16px;
+            }
+        }
+    }
+}
+.link-card{
+    display: flex;
+    border-radius: 10px;
+    background-color: $white;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0px 24px 64px 0px rgba(199, 206, 218, 0.25);
+    &.style-1{
+        top: 40px;
+        right: 0;
+        padding: 23px 49px 22px 23px;
+        animation: MoveUpDown 3s linear infinite alternate;
+        @include sm{
+            padding: 20px;
+            top: 10px;
+            right: 10px;
+        }
+    }
+    &.style-2{
+        top: 376px;
+        right: 247px;
+        padding: 22px 80px 22px 27px;
+        animation: MoveUpDown 2s linear infinite alternate;
+        @include sm{
+            top: inherit;
+            right: inherit;
+            bottom: 10px;
+            left: 10px;
+            padding: 20px;
+        }
+    }
+    .video-btn{
+        a{
+            width: 44px;
+            height: 44px;
+            border-radius: 100%;
+            background-color: $primary-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: none;
+            i{
+                color: $white;
+                font-size: 18px;
+            }
+        }
+    }
+    .icon-wrapper{
+        border-radius: 100%;
+        background-color: $primary-color;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i{
+            color: $white;
+        }
+    }
+    .content-wrapper{
+        .title{
+            font-family: $body-font;
+            color: $black;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 140%;
+            margin-bottom: 0px;
+            cursor: default;
+            a{
+                @extend .animated-text-blue;
+                &:hover{
+                     background-position: -100%;
+                }
+            }
+        }
+        .location-inner{
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            .icon{
+                width: 22px;
+                height: 22px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .address{
+                font-family: $body-font;
+                color: $black-2;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 170%;
+                margin: 0px !important;
+                cursor: default;
+            }
+        }
+        .link-up{
+            position: relative;
+            font-family: $body-font;
+            color: $primary-color;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 170%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+}

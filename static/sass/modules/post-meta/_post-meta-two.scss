@@ -1,0 +1,30 @@
+.post-meta{
+    &.style-2{
+        justify-content: space-between;
+        .post-meta-inner{
+            display: flex;
+            gap: 12px;
+            @include sm{
+                flex-direction: column;
+                gap: 6px;
+                justify-content: start;
+                align-items: start;
+            }
+        }
+        .badge{
+            display: flex;
+            padding: 4px 12px;
+            align-items: flex-start;
+            gap: 10px;
+            background-color: $sky-2;
+            border-radius: 50px;
+            .badge-btn{
+                font-family: $body-font;
+                color: $primary-color;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 170%;
+            }
+        }
+    }
+}

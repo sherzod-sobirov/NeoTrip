@@ -1,0 +1,74 @@
+.icon-card {
+    &.style-2{
+        padding: 0;
+        flex-direction: column;
+        gap: 0;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+        border-radius: 16px;
+        overflow: hidden;
+        background-color: $white;
+        padding:40px;
+        box-shadow: 0px 24px 64px 0px rgba(199, 206, 218, 0.25);
+        .icon {
+            width: 92px;
+            height: 92px;
+            background: $blue-2;
+            border-radius: 50px;
+            justify-content: center;
+            align-items: center;
+            // transform: translate(0, 50%);
+            i {
+                font-size: 32px;
+                color: $primary-color;
+            }
+        }
+        .content {
+            width: 100%;
+            
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 8px;
+            .info {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                a,span,.desc{
+                    color: $black-2;
+                }
+                a{
+                    @extend .animated-text-blue;
+                    &:hover{
+                        background-position: -100%;
+                    }
+                }
+                span,.address-desc{
+                    font-family: $body-font;
+                    color: $black-2;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 170%;
+                    text-align: center;
+                    @include rmaxwd(1400){
+                        br{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        &:hover{
+            .icon{
+                -webkit-animation: bounce 1s alternate;
+                animation: bounce 1s alternate;
+                i{
+                    @include transition;
+                    transform: rotateY(360deg);
+                }
+            }
+        }
+    }
+}

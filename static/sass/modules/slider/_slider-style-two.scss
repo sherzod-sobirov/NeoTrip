@@ -1,0 +1,211 @@
+.slider-feature-area{
+  position: absolute;
+  display: flex;
+  z-index: 10;
+  bottom: 0;
+  margin-bottom: 60px;
+  // margin-left: 200px;
+  gap: 56px;
+  @include rmaxwd(1200){
+    margin:0;
+    left: unset;
+    bottom: 14%;
+  }
+  @include rmaxwd(992){
+    margin:0;
+    left: unset;
+    bottom: 10%;
+  }
+  @include sm{
+    display: none;
+  }
+  .single-feature-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    .icon{
+      width: 48px;
+      height: 48px;
+      border-radius: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.20);
+      i{
+        color: $white;
+      }
+    }
+    .desc{
+      font-family: $body-font;
+      color: $white;
+      width: 245px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 170%;
+      margin: 0px;
+      cursor: default;
+    }
+  }
+}
+.slider-area {
+  &.style-2 {
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 103px;
+    border-radius: 32px;
+    overflow: hidden;
+     @include rmaxwd(1600){
+      margin: 0px;
+      border-radius: 0px;
+    }
+    .slick-slide{
+      border: none !important;
+    }
+    .slider-arrow-btn{
+      display: none !important;
+    }
+    .slider-arrow-btn-wrapper{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-right: 200px;
+      margin-bottom: 56px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      z-index: 20;
+      @include rmaxwd(1200){
+        right: unset;
+        left: 10%;
+        margin: 0;
+        bottom: 2%;
+      }
+      @include rmaxwd(992){
+        display: none;
+      }
+      .header-slider-arrow-btn{
+        border-radius: 100%;
+        width: 56px;
+        height: 56px;
+        overflow: hidden;
+        
+        i{
+          position: relative;
+          z-index: 10;
+        }
+        &.prev-btn, &.next-btn{
+          &:before{
+              position: absolute;
+              width: 0;
+              height: 100%;
+              left: 0;
+              top: 0;
+              background-color: $primary-color;
+              border-color: transparent !important;
+              content: "";
+              @include transition;
+              color: $white;
+          }
+        }
+        &.prev-btn{
+          background-color: transparent;
+          color: $white;
+          position: relative;
+          border: 1px solid $gray-2;
+          &:hover{
+            border-color: transparent;
+             &:before{
+                width: 100%;
+                @include transition;
+             }
+             i{
+                color: $white;
+                @include transition;
+             }
+          }
+        }
+        &.next-btn{
+          background-color: $gray-2;
+          color: $black;
+          position: relative;
+          border: 1px solid transparent;
+          &:hover{
+            background-color: transparent;
+            border-color: transparent !important;
+             &:before{
+                width: 100%;
+                @include transition;
+             }
+             i{
+                color: $white;
+                @include transition;
+             }
+          }
+        }
+      }
+    }
+    .slider-content-wrapper {
+      margin-top: 0px;
+      padding-top: 161px;
+      padding-bottom: 267px;
+      @include rmaxwd(992){
+        padding: 0px;
+      }
+      .slider-short-desc{
+        margin-top: 24px !important;
+        padding-right: 60px;
+        @include rmaxwd(1400){
+          padding-right: 0px;
+        }
+      }
+      .slider-btn-wrapper{
+        margin-top: 49px !important;
+      }
+    }
+    .single-slider {
+      height: auto;
+      // height: 848px;
+      position: relative;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        height: 720px;
+      }
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        height: 700px;
+      }
+      @include sm {
+        height: 600px;
+      }
+      .slider-short-title,.slider-title,.slider-short-desc{
+        color: $white !important;
+        margin: 0px;
+      }
+    }
+    
+    .slider-wrapper {
+      .container {
+        position: relative;
+      }
+     
+      .slider-image {
+        position: relative;
+        z-index: 2;
+        float: right;
+        margin-top: inherit;
+        animation: MoveLeftRight 2s linear infinite alternate;
+        right: -50px;
+        img {
+          float: right;
+        }
+      }
+    }
+
+  }
+}

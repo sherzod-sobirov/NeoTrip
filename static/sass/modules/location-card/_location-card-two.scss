@@ -1,0 +1,119 @@
+.location-card {
+    &.style-2{
+        border: 1px solid $gray-2;
+        overflow: hidden;
+        box-shadow: 0px 24px 64px 0px rgba(199, 206, 218, 0.25);
+        @include transition;
+        .image-wrapper{
+            .image-inner{
+                border-radius: 16px 16px 0 0;
+                &:before {
+                    position: absolute;
+                    top: 0;
+                    left: -85%;
+                    z-index: 2;
+                    display: block;
+                    content: '';
+                    width: 50%;
+                    height: 100%;
+                    background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .8) 100%);
+                    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, .8)));
+                    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .8) 100%);
+                    -webkit-transform: skewX(-25deg);
+                    -ms-transform: skewX(-25deg);
+                    transform: skewX(-25deg);
+                    z-index: 20;
+                }
+            }
+            .rating{
+                left: 0 !important;
+                right: inherit;
+                margin-left: 18px;
+            }
+        }
+        .content-wrapper{
+            visibility: visible;
+            margin-bottom: 0px;
+            position: relative;
+            margin-top: 34px;
+            margin: 32px;
+            .content-inner{
+                opacity: 1;
+                flex-direction: column;
+                justify-content: start;
+                align-items: start ;
+                padding: 0px ;
+                gap: 3px;
+                .price{
+                    color: $primary-color;
+                    font-family: $body-font;
+                    font-size: 24px;
+                    font-weight: 700;
+                    line-height: 140%;
+                    cursor: default;
+                }
+                .content-title{
+                    width: auto;
+                    background-position: -100%;
+                    a{
+                        font-size: 28px;
+                        line-height: 130%;
+                        letter-spacing: -0.56px;
+                        @extend .animated-text-blue;
+                        @include rmaxwd(1400){
+                            font-size: 22px;
+                        }
+                        &:hover{
+                            background-position: -100%;
+                        }
+                    }
+                }
+                .time-zone{
+                    border-top: 1px solid $gray-2;
+                    padding-top: 24px;
+                    margin-top: 12px;
+                    width: 100%;
+                    display: flex;
+                    gap: 28px;
+                    flex-wrap: wrap;
+                    row-gap: 12px;
+                    column-gap: 24px;
+                    
+                    .time-zone-inner{
+                        display: flex;
+                        gap: 12px;
+                        justify-content: center;
+                        align-items: center;
+                        i{
+                            color: $primary-color;
+                            font-size: 18px;
+                        }
+                        .title{
+                            font-family: $body-font;
+                            color: $black-2;
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 170%;
+                            margin: 0px;
+                            cursor: default;
+                        }
+                    }
+                }
+            }
+        }
+        &:hover{
+            margin-top: -10px;
+            // box-shadow: 0px 24px 64px 0px rgba(199, 206, 218, 0.25);
+            @include transition;
+            .image-wrapper{
+                .image-inner{
+                    &:before{
+                        -webkit-animation: shine 1s;
+	                    animation: shine 1s;
+                    }
+                }
+            }
+        }
+    }
+}

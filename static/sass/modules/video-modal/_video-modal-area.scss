@@ -1,0 +1,24 @@
+.video-modal-area{
+    background-color: $black-3;
+    padding: 120px 0;
+    @include md{
+        padding: 100px 0;
+    }
+    @include sm{
+        padding: 80px 0;
+    }
+    .section-title{
+        gap: 202px;
+        margin-bottom: 34px;
+        @include rmaxwd(992){
+            gap: 60px;
+        }
+        @include rmaxwd(767){
+            gap: 30px;
+            flex-direction: column;
+        }
+        .btn-sec-inner{
+            margin-top: -12px;
+        }
+    }
+}
