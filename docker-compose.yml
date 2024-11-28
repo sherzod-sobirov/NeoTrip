@@ -3,7 +3,7 @@ version: "3.9"
 services:
   web:
     build: .
-    container_name: cambridge-container
+    container_name: NeoTrip-container
     ports:
       - "8098:8098"
     volumes:
