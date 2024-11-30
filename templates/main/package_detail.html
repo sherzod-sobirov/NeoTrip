@@ -89,11 +89,15 @@ tour Area
                             <div class="row g-4">
                                 <div class="col-12">
                                     <div class="header-button d-flex justify-content-center">
-                                        <a href="{% url 'payment' tour.id %}" class="th-btn style3 th-icon w-100">{% trans 'Book Now' %}</a>
+                                        {% if user.is_authenticated %}
+                                            <a href="{% url 'payment' tour.id %}" class="th-btn style3 th-icon w-100">{% trans 'Book Now' %}</a>
+                                        {% else %}
+                                            <a href="{% url 'login' %}" class="th-btn style3 th-icon w-100">{% trans 'Login to Book' %}</a>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>                        
                         <!-- New Booking Form Widget End -->
                         <div class="widget widget_categories  ">
                             <h3 class="widget_title">{% trans 'Categories' %}</h3>
