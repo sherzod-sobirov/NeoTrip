@@ -38,12 +38,11 @@ Blog Area
                         <h2 class="blog-title"><a href="{% url 'detail_post' post.id %}">{{ post.title }}</a></h2>
                         <p class="blog-text">
                             {% if post.body|length > 500 %}
-                                {{ post.body|slice:":500" }}... <a href="{% url 'detail_post' post.id %}">{% trans "more" %}</a>
+                                {{ post.body|safe|slice:":500" }}... <a href="{% url 'detail_post' post.id %}">{% trans "Read More" %}</a>
                             {% else %}
                                 {{ post.body|safe }}
                             {% endif %}
                         </p>
-                        <a href="{% url 'detail_post' post.id %}" class="th-btn style4 th-icon">{% trans "Read More" %}</a>
                     </div>
                 </div>
                 {% endfor %}
