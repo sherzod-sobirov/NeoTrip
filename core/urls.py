@@ -13,11 +13,11 @@ from order.views import GeneratePayLinkAPIView
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="Marokand Tour API",
+      title="Neo Trip Tour API",
       default_version='v1',
       description="Test description",
       terms_of_service="https://www.google.com/policies/terms/",
-      contact=openapi.Contact(email="barndtour@gmail.com"),
+      contact=openapi.Contact(email="contactsardor@gmail.com"),
       license=openapi.License(name="BSD License"),
    ),
    public=True,
@@ -31,7 +31,7 @@ urlpatterns = [
     path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-    path('payments/merchant/', PaymeCallBackAPIView.as_view()),  # call back for merchant transactions
+    path('payments/merchant/', PaymeCallBackAPIView.as_view(), name='payme_callback'),
     path('pay-link/', GeneratePayLinkAPIView.as_view(), name='generate-pay-link')
 ]
 

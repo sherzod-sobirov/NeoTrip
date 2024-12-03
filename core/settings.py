@@ -41,7 +41,6 @@ CSRF_TRUSTED_ORIGINS = [
 CORS_ALLOWED_ORIGINS = [
     "https://neotrip.uz",
 ]
-
 # Application definition
 
 INSTALLED_APPS = [
