@@ -16,20 +16,20 @@
     <div class="tab-content" id="pills-tabContent" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background-image: url('{% static 'assets/img/travel.jpg' %}'); background-size: cover; background-position: center center;">
         <!-- Login Tab -->
         <div class="tab-pane fade active show" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab" style="width: 30%; border-radius: 20px; box-shadow: 0px 0px 15px 0px; padding: 20px; backdrop-filter: blur(10px); background-color: rgba(0, 0, 0, 0.1);">
-            <h3 class="th-form-title mb-30">Log in to your account</h3>
+            <h3 class="th-form-title mb-30">{% trans 'Log in to your account' %}</h3>
             <form action="{% url 'login' %}" method="POST" class="login-form ajax-contact">
                 {% csrf_token %}
                 <div class="row">
                     <div class="form-group col-12">
-                        <label>Your email*</label>
+                        <label>{% trans 'Your email' %}*</label>
                         <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email address" required>
                     </div>
                     <div class="form-group col-12">
-                        <label>Password*</label>
+                        <label>{% trans 'Password' %}*</label>
                         <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" required>
                     </div>
                     <div class="form-btn mt-20 col-12">
-                        <button type="submit" class="th-btn btn-fw th-radius2">Log in</button>
+                        <button type="submit" class="th-btn btn-fw th-radius2">{% trans 'Log in' %}</button>
                     </div>
                 </div>
                 {% if error_message %}
@@ -37,7 +37,7 @@
                 {% endif %}
                 <div class="mt-3 text-center">
                     <p><a href="{% url 'reset_password' %}" class="forgot_pass_btn">{% trans "Forget password?" %}</a></p>
-                    <p>Don't have an account? <a href="{% url 'register' %}" class="th-link" style="color: blue;">Sign up</a></p>
+                    <p>{% trans "Don't have an account? " %}<a href="{% url 'register' %}" class="th-link" style="color: blue;">{% trans 'Sign up' %}</a></p>
                 </div>
             </form>
         </div>
