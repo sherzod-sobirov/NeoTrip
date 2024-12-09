@@ -85,7 +85,7 @@ Video Area
                 <div>
                     <form method="POST" action="{% url 'main_contact' %}" class="contact -form style2 ajax-contact">
                         {% csrf_token %}
-                        <h3 class="sec-title mb-30 text-capitalize">{% trans "Contact Us" %}</h3>
+                        <h3 class="sec-title mb-30 text-capitalize" style="color: white;">{% trans "Contact Us" %}</h3>
 
                         <!-- Display Success or Error Messages -->
                         {% if messages %}

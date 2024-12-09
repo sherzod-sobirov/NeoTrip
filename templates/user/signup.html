@@ -10,49 +10,69 @@
     <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.min.css' %}">
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <style>
+        #nimadir {
+            max-width: 600px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-image: url('{% static 'assets/img/travel.jpg' %}');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-container {
+            border-radius: 20px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+    </style>
 </head>
 <body>
-    <div class="tab-content" id="pills-tabContent" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background-image: url('{% static 'assets/img/travel.jpg' %}'); background-size: cover; background-position: center;">
-        <!-- Register Tab -->
-        <div class="tab-pane fade active show" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" style="width: 30%; border-radius: 20px; box-shadow: 0px 0px 15px 0px; padding: 20px; backdrop-filter: blur(10px); background-color: rgba(0, 0, 0, 0.1);">
-            <h3 class="th-form-title mb-30">Create a new account</h3>
-            <form action="{% url 'register' %}" method="POST" class="login-form ajax-contact">
-                {% csrf_token %}
-                <div class="row">
-                    <div class="form-group col-12">
-                        <label>First name*</label>
-                        <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter your first name" required>
-                    </div>
-                    <div class="form-group col-12">
-                        <label>Last name*</label>
-                        <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Enter your last name" required>
-                    </div>
-                    <div class="form-group col-12">
-                        <label>Your email*</label>
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email address" required>
-                    </div>
-                    <div class="form-group col-12">
-                        <label>Password*</label>
-                        <input type="password" class="form-control" name="password1" id="password1" placeholder="Enter your password" required>
-                    </div>
-                    <div class="form-group col-12">
-                        <label>Confirm password*</label>
-                        <input type="password" class="form-control" name="password2" id="password2" placeholder="Confirm your password" required>
-                    </div>
-                    <div class="form-btn mt-20 col-12">
-                        <button type="submit" class="th-btn btn-fw th-radius2">Sign up</button>
-                    </div>
-                </div>
-                {% if link_send %}
-                <p class="form-messages success" style="color: green;">A confirmation link has been sent to your email. Please check your inbox.</p>
-                {% endif %}
-                {% if form.errors %}
-                <p class="form-messages error" style="color: red;">{{ form.errors }}</p>
-                {% endif %}
-            </form>
-            <div class="mt-20 text-center">
-                <p>Already have an account? <a href="{% url 'login' %}" style="color: blue;" class="text-primary">Login here</a></p>
+    <div id="nimadir" class="form-container">
+        <h3 class="text-center mb-4">Create a new account</h3>
+        <form action="{% url 'register' %}" method="POST" class="login-form ajax-contact">
+            {% csrf_token %}
+            <div class="form-group mb-3">
+                <label for="first_name">First name*</label>
+                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter your first name" required>
             </div>
+            <div class="form-group mb-3">
+                <label for="last_name">Last name*</label>
+                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Enter your last name" required>
+            </div>
+            <div class="form-group mb-3">
+                <label for="email">Your email*</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email address" required>
+            </div>
+            <div class="form-group mb-3">
+                <label for="password1">Password*</label>
+                <input type="password" class="form-control" name="password1" id="password1" placeholder="Enter your password" required>
+            </div>
+            <div class="form-group mb-3">
+                <label for="password2">Confirm password*</label>
+                <input type="password" class="form-control" name="password2" id="password2" placeholder="Confirm your password" required>
+            </div>
+            <div class="d-grid">
+                <button type="submit" class="th-btn btn-fw th-radius2">Sign up</button>
+            </div>
+            {% if link_send %}
+            <p class="form-messages text-success mt-3 text-center">A confirmation link has been sent to your email. Please check your inbox.</p>
+            {% endif %}
+            {% if form.errors %}
+            <p class="form-messages text-danger mt-3 text-center">{{ form.errors }}</p>
+            {% endif %}
+        </form>
+        <div class="text-center mt-3">
+            <p>Already have an account? <a href="{% url 'login' %}" style="color: blue;" class="text-primary">Login here</a></p>
         </div>
     </div>
 </body>
