@@ -200,18 +200,17 @@
                             <form method="get" action="{% url 'set_language' %}">
                                 <div class="currency-menu">
                                     <select class="form-select nice-select" onchange="window.location.href=this.value;">
-                                        <option value="/en/" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>
-                                            {% if LANGUAGE_CODE == 'en' %}ENG - United States{% else %}ENG{% endif %}
-                                        </option>
-                                        <option value="/ru/" {% if LANGUAGE_CODE == 'ru' %}selected{% endif %}>
-                                            {% if LANGUAGE_CODE == 'ru' %}RUS - Russia{% else %}RUS{% endif %}
-                                        </option>
-                                        <option value="/fr/" {% if LANGUAGE_CODE == 'fr' %}selected{% endif %}>
-                                            {% if LANGUAGE_CODE == 'fr' %}FRA - France{% else %}FRA{% endif %}
-                                        </option>
+                                        {% get_available_languages as LANGUAGES %}
+                                        {% get_current_language as LANGUAGE_CODE %}
+                                        {% for lang in LANGUAGES %}
+                                            <option value="/{{ lang.0 }}/" {% if LANGUAGE_CODE == lang.0 %}selected{% endif %}>
+                                                {{ lang.1 }}
+                                            </option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                             </form>
+                            
                             <div class="header-links">
                                 <ul>
                                     {% if user.is_authenticated %}
@@ -233,7 +232,7 @@
                     <div class="row align-items-center justify-content-between" >
                         <div class="col-auto">
                             <div class="header-logo">
-                                <a href="{% url 'main_home_view' %}"><img src="{% static 'assets/img/COLORVAR2.png' %}" style="width: 230px;" alt="NEO TRIP"></a>
+                                <a href="{% url 'main_home_view' %}"><img src="{% static 'assets/img/COLORVAR2.png' %}" style="width: 250px;" alt="NEO TRIP"></a>
                             </div>
                         </div>
                         <div class="col-auto me-xl-auto">
@@ -320,8 +319,8 @@
                                     <img src="{% static 'assets/img/icon/phone.svg' %}" alt="img">
                                 </div>
                                 <div class="details">
-                                    <p><a href="tel:++998979251713" class="info-box_link">+998979251713</a></p>
-                                    <p><a href="tel:+998915577713" class="info-box_link">+998915577713</a></p>
+                                    <p><a href="tel:++998979251713" class="info-box_link">+998 97 925 17 13</a></p>
+                                    <p><a href="tel:+998915577713" class="info-box_link">+998 91 557 77 13</a></p>
                                 </div>
                             </div>
                             <div class="info-box_text">

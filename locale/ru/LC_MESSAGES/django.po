@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-09 14:25+0500\n"
+"POT-Creation-Date: 2024-12-10 15:47+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,17 +22,17 @@ msgstr ""
 
 #: core/settings.py:146
 msgid "English"
-msgstr "Английский"
+msgstr ""
 
 #: core/settings.py:147
 msgid "Russian"
-msgstr "Русский"
+msgstr ""
 
 #: core/settings.py:148
 msgid "French"
-msgstr "Французский"
+msgstr ""
 
-#: templates/base.html:161 templates/base.html:243 templates/base.html:306
+#: templates/base.html:161 templates/base.html:242 templates/base.html:305
 #: templates/main/about.html:13 templates/main/contact.html:14
 #: templates/main/destination_detail.html:13
 #: templates/main/destinations.html:13 templates/main/package_detail.html:12
@@ -41,43 +41,43 @@ msgstr "Французский"
 msgid "Home"
 msgstr "Главная"
 
-#: templates/base.html:163 templates/base.html:245 templates/index.html:21
+#: templates/base.html:163 templates/base.html:244 templates/index.html:21
 #: templates/index.html:38 templates/index.html:55
 msgid "About Us"
 msgstr "О нас"
 
-#: templates/base.html:218
+#: templates/base.html:217
 msgid "Logout"
 msgstr "Выйти"
 
-#: templates/base.html:220
+#: templates/base.html:219
 msgid "Sign In / Register"
 msgstr "Войти / Зарегистрироваться"
 
-#: templates/base.html:247 templates/main/destinations.html:11
+#: templates/base.html:246 templates/main/destinations.html:11
 #: templates/main/destinations.html:14
 msgid "Destination"
 msgstr "Направление"
 
-#: templates/base.html:250 templates/post/blog-archive.html:118
+#: templates/base.html:249 templates/post/blog-archive.html:118
 #: templates/post/blog-single.html:104
 msgid "Tour"
 msgstr "Тур"
 
-#: templates/base.html:253
+#: templates/base.html:252
 msgid "Blog"
 msgstr "Блог"
 
-#: templates/base.html:256
+#: templates/base.html:255
 msgid "Contact us"
 msgstr "Связаться с нами"
 
-#: templates/base.html:264 templates/index.html:224
+#: templates/base.html:263 templates/index.html:224
 #: templates/main/package_detail.html:93
 msgid "Book Now"
 msgstr "Забронировать сейчас"
 
-#: templates/base.html:290
+#: templates/base.html:289
 msgid ""
 "Our agency is your trusted partner in making your dream journey a reality. "
 "We offer unforgettable trips with the best service and affordable prices."
@@ -86,23 +86,23 @@ msgstr ""
 "путешествии. Мы предлагаем незабываемые поездки с лучшим обслуживанием и "
 "доступными ценами."
 
-#: templates/base.html:303
+#: templates/base.html:302
 msgid "Quick Links"
 msgstr "Быстрые ссылки"
 
-#: templates/base.html:307
+#: templates/base.html:306
 msgid "About us"
 msgstr "О нас"
 
-#: templates/base.html:308
+#: templates/base.html:307
 msgid "Terms of Service"
 msgstr "Условия обслуживания"
 
-#: templates/base.html:309
+#: templates/base.html:308
 msgid "Tour Booking Now"
 msgstr "Забронировать тур сейчас"
 
-#: templates/base.html:316
+#: templates/base.html:315
 msgid "Address"
 msgstr "Адрес"
 
@@ -186,13 +186,7 @@ msgstr "Помощь и поддержка"
 msgid "Monday to Friday 9.00am - 7.30pm"
 msgstr "Понедельник по пятницу с 9:00 до 19:30"
 
-#: templates/index.html:16 templates/index.html:33 templates/index.html:50
-#, fuzzy
-#| msgid "Get unforgettable pleasure with us"
-msgid "Get unforgetable pleasure with us"
-msgstr "Получите незабываемое удовольствие вместе с нами"
-
-#: templates/index.html:18
+#: templates/index.html:17
 msgid "Uzbekistan according to your desires"
 msgstr "Узбекистан по вашему желанию"
 
@@ -200,11 +194,11 @@ msgstr "Узбекистан по вашему желанию"
 msgid "Explore Tours"
 msgstr "Исследуйте туры"
 
-#: templates/index.html:35
+#: templates/index.html:34
 msgid "Enchantments and mysteries of the Orient"
 msgstr "Чары и тайны Востока."
 
-#: templates/index.html:52
+#: templates/index.html:51
 msgid "Create your tailor-made trip to Central Asia"
 msgstr "Создайте свое индивидуальное путешествие в Центральную Азию"
 
@@ -215,6 +209,10 @@ msgstr "Лучшее направление"
 #: templates/index.html:84
 msgid "Popular Destination"
 msgstr "Популярное направление"
+
+#: templates/index.html:101
+msgid "View All"
+msgstr ""
 
 #: templates/index.html:136
 msgid "Let’s Go Together"
@@ -232,7 +230,7 @@ msgstr ""
 "Откройте для себя мир с нами! Каждое путешествие уникально, обеспечивая "
 "незабываемые воспоминания и безупречный опыт."
 
-#: templates/index.html:145 templates/main/about.html:48
+#: templates/index.html:145
 msgid "Exclusive Trip"
 msgstr "Эксклюзивные поездки"
 
@@ -244,7 +242,7 @@ msgstr ""
 "Индивидуальные приключения, созданные специально для вас, сочетание комфорта "
 "и волнения."
 
-#: templates/index.html:152 templates/main/about.html:62
+#: templates/index.html:152
 msgid "Professional Guide"
 msgstr "Профессиональные гиды"
 
@@ -310,74 +308,53 @@ msgstr "О NEO TRIP"
 msgid "About"
 msgstr "О компании"
 
-#: templates/main/about.html:40
-msgid "Welcome To NEO TRIP"
-msgstr "Добро пожаловать в NEO TRIP"
-
-#: templates/main/about.html:41
-msgid "We are world reputed travel agency"
-msgstr "Мы всемирно известное туристическое агентство"
+msgid "Dear travelers"
+msgstr "Дорогие путешественники"
 
 #: templates/main/about.html:43
-msgid ""
-"We are a world-renowned and trusted travel agency. We offer the best "
-"services to make your journey unforgettable. We create travel options "
-"tailored to the unique needs of each of our clients."
-msgstr ""
-"Мы — всемирно известное и надежное туристическое агентство. Мы предлагаем "
-"лучшие услуги, чтобы ваше путешествие стало незабываемым. Мы создаем туры, "
-"учитывающие уникальные потребности каждого клиента."
+msgid "Welcome to NEO TRIP, a travel agency born from the passion and dedication of a team that cherishes their homeland, Uzbekistan, and shares a deep fascination with the fabled Silk Road."
+msgstr "Добро пожаловать в NEO TRIP, туристическую компанию, возникшую из страсти и преданности команды, которая любит свою родину, Узбекистан, и испытывает глубокое восхищение легендарным Шелковым путём."
+
+#: templates/main/about.html:46
+msgid "Based in the city of Samarkand, we are proud to be a fully English-speaking agency with over 15 years of experience in curating unique and inspiring journeys."
+msgstr "Наш офис находится в городе Самарканд, и мы гордимся тем, что являемся полностью англоязычным агентством с более чем 15-летним опытом организации уникальных и вдохновляющих путешествий."
 
 #: templates/main/about.html:49
-msgid ""
-"Our exclusive trips will take you to the most beautiful and unique "
-"destinations. We provide the opportunity to travel comfortably and safely, "
-"with carefully crafted programs designed just for you."
-msgstr ""
-"Наши эксклюзивные туры отправят вас в самые красивые и уникальные "
-"направления. Мы предоставляем возможность путешествовать комфортно и "
-"безопасно, с тщательно разработанными программами, созданными специально для "
-"вас."
+msgid "Our mission is to offer you the opportunity to discover Uzbekistan and the wonders of Central Asia through tailor-made travel experiences."
+msgstr "Наша миссия — предоставить вам возможность открыть для себя Узбекистан и чудеса Центральной Азии через индивидуально подобранные туристические маршруты."
+
+#: templates/main/about.html:52
+msgid "With our signature program, Customized Uzbekistan, we create itineraries that are steeped in authenticity, carefully designed to align with your personal interests, pace, and preferences."
+msgstr "С нашей фирменной программой «Индивидуальный Узбекистан» мы создаем маршруты, насыщенные подлинностью, тщательно разработанные с учетом ваших личных интересов, темпа и предпочтений."
 
 #: templates/main/about.html:55
-msgid "Safety First Always"
-msgstr "Безопасность всегда на первом месте"
+msgid "Whether you're seeking cultural immersion, historical exploration, or breathtaking natural landscapes, we are here to guide you every step of the way."
+msgstr "Будь то культурное погружение, исторические исследования или захватывающие природные пейзажи, мы здесь, чтобы направлять вас на каждом шаге вашего путешествия."
 
-#: templates/main/about.html:56
-msgid ""
-"Your safety is our top priority. We ensure that every trip is as safe and "
-"secure as possible. The best safety measures are always in place for each "
-"journey."
-msgstr ""
-"Ваша безопасность — наш главный приоритет. Мы гарантируем, что каждое "
-"путешествие будет максимально безопасным. Для каждого путешествия всегда "
-"предусмотрены лучшие меры безопасности."
+#: templates/main/about.html:58
+msgid "Share your travel aspirations with us, and together we'll craft the perfect journey, ensuring every detail is thoughtfully considered to bring your dream adventure to life."
+msgstr "Поделитесь с нами своими стремлениями в путешествиях, и вместе мы создадим идеальный маршрут, учитывая каждую деталь, чтобы воплотить ваше приключение мечты в реальность."
 
-#: templates/main/about.html:63
-msgid ""
-"Our experienced and knowledgeable guides offer you the best travel "
-"experience. They have the expertise to make your journey even more enriching "
-"and enjoyable."
-msgstr ""
-"Наши опытные и знающие гиды обеспечат вам лучший опыт путешествий. Они "
-"обладают знаниями, которые сделают ваше путешествие еще более увлекательным "
-"и приятным."
+#: templates/main/about.html:61
+msgid "Let us help you create memories that will last a lifetime."
+msgstr "Позвольте нам помочь вам создать воспоминания, которые останутся с вами на всю жизнь."
 
-#: templates/main/about.html:67
+#: templates/main/about.html:66
 msgid "Contact With Us"
 msgstr "Свяжитесь с нами"
 
-#: templates/main/about.html:73 templates/main/about.html:76
-#: templates/main/about.html:79 templates/main/about.html:82
+
+#: templates/main/about.html:75 templates/main/about.html:78
+#: templates/main/about.html:81 templates/main/about.html:84
 msgid "shape"
 msgstr "форма"
 
-#: templates/main/about.html:95 templates/main/about.html:101
-#: templates/main/about.html:107 templates/main/about.html:113
-#: templates/main/about.html:119 templates/main/about.html:125
-#: templates/main/about.html:131 templates/main/about.html:137
-#: templates/main/about.html:143 templates/main/about.html:149
-#: templates/main/about.html:155
+#: templates/main/about.html:97 templates/main/about.html:103
+#: templates/main/about.html:109 templates/main/about.html:115
+#: templates/main/about.html:121 templates/main/about.html:127
+#: templates/main/about.html:133 templates/main/about.html:139
+#: templates/main/about.html:145 templates/main/about.html:151
+#: templates/main/about.html:157
 msgid "Gallery Image"
 msgstr "Изображение галереи"
 
@@ -668,7 +645,7 @@ msgstr "Забыли пароль?"
 
 #: templates/user/login.html:40
 #, fuzzy
-msgid "Create a new account"
+msgid "Don't have an account? "
 msgstr "Создать новый аккаунт"
 
 #: templates/user/login.html:40
@@ -764,8 +741,11 @@ msgid "Check your email!"
 msgstr "Проверьте свою электронную почту!"
 
 #: templates/user/reset_password_sent.html:28
-msgid "An email has been sent to your inbox with instructions to reset your password."
-msgstr "На ваш почтовый ящик было отправлено письмо с инструкциями по сбросу пароля."
+msgid ""
+"An email has been sent to your inbox with instructions to reset your "
+"password."
+msgstr ""
+"На ваш почтовый ящик было отправлено письмо с инструкциями по сбросу пароля."
 
 #: user/models.py:13
 msgid "first name"
@@ -2148,6 +2128,57 @@ msgstr "Подключитесь, получите помощь или внес�
 #| msgid "Gallery Image"
 msgid "Clear image"
 msgstr "Изображение галереи"
+
+#~ msgid "Welcome To NEO TRIP"
+#~ msgstr "Добро пожаловать в NEO TRIP"
+
+#~ msgid "We are world reputed travel agency"
+#~ msgstr "Мы всемирно известное туристическое агентство"
+
+#~ msgid ""
+#~ "We are a world-renowned and trusted travel agency. We offer the best "
+#~ "services to make your journey unforgettable. We create travel options "
+#~ "tailored to the unique needs of each of our clients."
+#~ msgstr ""
+#~ "Мы — всемирно известное и надежное туристическое агентство. Мы предлагаем "
+#~ "лучшие услуги, чтобы ваше путешествие стало незабываемым. Мы создаем "
+#~ "туры, учитывающие уникальные потребности каждого клиента."
+
+#~ msgid ""
+#~ "Our exclusive trips will take you to the most beautiful and unique "
+#~ "destinations. We provide the opportunity to travel comfortably and "
+#~ "safely, with carefully crafted programs designed just for you."
+#~ msgstr ""
+#~ "Наши эксклюзивные туры отправят вас в самые красивые и уникальные "
+#~ "направления. Мы предоставляем возможность путешествовать комфортно и "
+#~ "безопасно, с тщательно разработанными программами, созданными специально "
+#~ "для вас."
+
+#~ msgid "Safety First Always"
+#~ msgstr "Безопасность всегда на первом месте"
+
+#~ msgid ""
+#~ "Your safety is our top priority. We ensure that every trip is as safe and "
+#~ "secure as possible. The best safety measures are always in place for each "
+#~ "journey."
+#~ msgstr ""
+#~ "Ваша безопасность — наш главный приоритет. Мы гарантируем, что каждое "
+#~ "путешествие будет максимально безопасным. Для каждого путешествия всегда "
+#~ "предусмотрены лучшие меры безопасности."
+
+#~ msgid ""
+#~ "Our experienced and knowledgeable guides offer you the best travel "
+#~ "experience. They have the expertise to make your journey even more "
+#~ "enriching and enjoyable."
+#~ msgstr ""
+#~ "Наши опытные и знающие гиды обеспечат вам лучший опыт путешествий. Они "
+#~ "обладают знаниями, которые сделают ваше путешествие еще более "
+#~ "увлекательным и приятным."
+
+#, fuzzy
+#~| msgid "Get unforgettable pleasure with us"
+#~ msgid "Get unforgetable pleasure with us"
+#~ msgstr "Получите незабываемое удовольствие вместе с нами"
 
 #~ msgid "Natural Wonder of the world"
 #~ msgstr "Природное чудо мира"
