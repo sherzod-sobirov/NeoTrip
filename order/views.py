@@ -68,7 +68,7 @@ class PaymentView(View):
         tour = get_object_or_404(Tour, id=tour_id)
         print(tour, request.user)
         serializer = OrderSerializer(data={'user': request.user.id,
-                                           'amount':tour.price,
+                                           'amount': tour.price * 100,
                                            'tour': tour.id})
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
