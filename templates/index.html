@@ -6,16 +6,16 @@
 
 <div class="th-hero-wrapper hero-1" id="hero">
     <div class="swiper th-slider hero-slider-1" id="heroSlide1" data-slider-options='{"effect":"fade","menu": ["", "", ""],"heroSlide1": {"swiper-container": {"pagination": {"el": ".swiper-pagination", "clickable": true }}}}'>
-        <div class="swiper-wrapper" style="height: 750px;">
+        <div class="swiper-wrapper" style="height: 670px;">
             <div class="swiper-slide">
                 <div class="hero-inner">
                     <div class="th-hero-bg" data-bg-src="{% static 'assets/img/hero/hero_bg_1_1.jpg' %}">
                     </div>
                     <div class="container">
                         <div class="hero-style1">
-                            <h1 class="hero-title" style="font-family: 'Lucida Calligraphy', cursive; font-style: italic; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);" data-ani="slideinup" data-ani-delay="0.4s">
+                            <h2 class="hero-title" style="font-family: 'Lucida Calligraphy', cursive; font-style: italic; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);" data-ani="slideinup" data-ani-delay="0.4s">
                                 {% trans 'Uzbekistan according to your desires' %}
-                            </h1>
+                            </h2>
                             <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s">
                                 <a href="{% url 'tours' %}" class="th-btn th-icon">{% trans 'Explore Tours' %}</a>
                                 <a href="service.html" class="th-btn style2 th-icon">{% trans 'About Us' %}</a>
@@ -30,9 +30,9 @@
                     </div>
                     <div class="container">
                         <div class="hero-style1">
-                            <h1 class="hero-title" style="font-family: 'Lucida Calligraphy', cursive; font-style: italic; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);" data-ani="slideinup" data-ani-delay="0.4s">
+                            <h2 class="hero-title" style="font-family: 'Lucida Calligraphy', cursive; font-style: italic; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);" data-ani="slideinup" data-ani-delay="0.4s">
                                 {% trans 'Enchantments and mysteries of the Orient' %}
-                            </h1>
+                            </h2>
                             <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s">
                                 <a href="{% url 'tours' %}" class="th-btn th-icon">{% trans 'Explore Tours' %}</a>
                                 <a href="{% url 'main_about' %}" class="th-btn style2 th-icon">{% trans 'About Us' %}</a>
@@ -47,9 +47,9 @@
                     </div>
                     <div class="container">
                         <div class="hero-style1">
-                            <h1 class="hero-title" style="font-family: 'Lucida Calligraphy', cursive; font-style: italic; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);" data-ani="slideinup" data-ani-delay="0.4s">
+                            <h2 class="hero-title" style="font-family: 'Lucida Calligraphy', cursive; font-style: italic; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);" data-ani="slideinup" data-ani-delay="0.4s">
                                 {% trans 'Create your tailor-made trip to Central Asia' %}
-                            </h1>
+                            </h2>
                             <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s">
                                 <a href="" class="th-btn th-icon">{% trans 'Explore Tours' %}</a>
                                 <a href="service.html" class="th-btn style2 th-icon">{% trans 'About Us' %}</a>
@@ -179,7 +179,7 @@ About Area
 Service Area  
 ==============================-->
 
-<section class="position-relative bg-top-center overflow-hidden space" id="service-sec" style="background-size: 1920px 750px; background-repeat: no-repeat; background-position: center center;" data-bg-src="{% static 'assets/img/bg/tour_bg_1.jpg' %}">
+<section class="position-relative bg-top-center overflow-hidden space" id="service-sec" style="background-size: 1920px 850px; background-repeat: no-repeat; background-position: center center;" data-bg-src="{% static 'assets/img/bg/tour_bg_1.jpg' %}">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 offset-lg-3">
@@ -335,7 +335,7 @@ Counter Area
                 <div class="counter-card">
                     <div class="counter-shape"><span></span></div>
                     <div class="media-body">
-                        <h3 class="box-number"><span class="counter-number">3</span></h3>
+                        <h3 class="box-number"><span class="counter-number">15</span></h3>
                         <h6 class="counter-title">{% trans 'Years Experience' %}</h6>
                     </div>
                 </div>
@@ -344,9 +344,9 @@ Counter Area
             <div class="col-sm-6 col-xl-3 counter-card-wrap">
                 <div class="counter-card">
                     <div class="counter-shape"><span></span></div>
-                    <div class="media-body">
-                        <h3 class="box-number"><span class="counter-number">97</span>%</h3>
-                        <h6 class="counter-title">{% trans 'Retention Rate' %}</h6>
+                    <div style="margin-top: -20px;" class="media-body">
+                        <img style="width: 75px; height: 75px;" src="{% static 'assets/img/bg/1.png' %}" alt="">
+                        <h1 class="counter-title">{% trans 'No intermediary' %}</h1>
                     </div>
                 </div>
             </div>
@@ -355,8 +355,8 @@ Counter Area
                 <div class="counter-card">
                     <div class="counter-shape"><span></span></div>
                     <div class="media-body">
-                        <h3 class="box-number"><span class="counter-number">100</span>+</h3>
-                        <h6 class="counter-title">{% trans 'Tour Completed' %}</h6>
+                        <h3 class="box-number"><span class="counter-number">100</span>%</h3>
+                        <h6 class="counter-title">{% trans 'Tailor-made tours' %}</h6>
                     </div>
                 </div>
             </div>
@@ -365,8 +365,8 @@ Counter Area
                 <div class="counter-card">
                     <div class="counter-shape"><span></span></div>
                     <div class="media-body">
-                        <h3 class="box-number"><span class="counter-number">250</span>+</h3>
-                        <h6 class="counter-title">{% trans 'Happy Travellers' %}</h6>
+                        <h3 class="box-number"><span class="counter-number">24</span>/7</h3>
+                        <h6 class="counter-title">{% trans 'Local assistance' %}</h6>
                     </div>
                 </div>
             </div>

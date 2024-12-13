@@ -117,22 +117,31 @@ from django.utils import translation
 from django.conf import settings
 
 def set_language(request):
-    # Get the language from the GET parameters (e.g., lang=ru or lang=fr)
-    language = request.GET.get('lang', 'en')  # Default to English if no language is selected
+    """
+    Set the language for the current session based on the user's choice.
 
-    # Check if the language is in the list of supported languages
+    Args:
+        request: Django HttpRequest object.
+
+    Returns:
+        HttpResponseRedirect to the referring page or root ('/').
+    """
+    # Get the language from the GET parameters (e.g., lang=fr or lang=ru)
+    language = request.GET.get('lang', 'fr')  # Default to French if no language is selected
+
+    # Check if the selected language is supported
     if language in dict(settings.LANGUAGES):
-        # Activate the language
+        # Activate the selected language
         translation.activate(language)
-        # Set the language cookie to remember the user's choice
+        # Redirect to the previous page or homepage, setting the language cookie
         response = redirect(request.META.get('HTTP_REFERER', '/'))
         response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language)
-        return response
     else:
-        # If the language is invalid, fall back to the default language ('en')
-        translation.activate('en')
+        # If the language is invalid, fall back to French
+        translation.activate('fr')
         response = redirect('/')
-        response.set_cookie(settings.LANGUAGE_COOKIE_NAME, 'en')
-        return response
+        response.set_cookie(settings.LANGUAGE_COOKIE_NAME, 'fr')
+
+    return response
 
 
