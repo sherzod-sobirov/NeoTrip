@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-10 15:47+0500\n"
+"POT-Creation-Date: 2024-12-13 16:44+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,18 +19,18 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: core/settings.py:146
-msgid "English"
-msgstr ""
-
-#: core/settings.py:147
-msgid "Russian"
-msgstr ""
-
-#: core/settings.py:148
 msgid "French"
 msgstr ""
 
-#: templates/base.html:161 templates/base.html:242 templates/base.html:305
+#: core/settings.py:147
+msgid "English"
+msgstr ""
+
+#: core/settings.py:148
+msgid "Russian"
+msgstr ""
+
+#: templates/base.html:160 templates/base.html:241 templates/base.html:304
 #: templates/main/about.html:13 templates/main/contact.html:14
 #: templates/main/destination_detail.html:13
 #: templates/main/destinations.html:13 templates/main/package_detail.html:12
@@ -39,43 +39,43 @@ msgstr ""
 msgid "Home"
 msgstr "Accueil"
 
-#: templates/base.html:163 templates/base.html:244 templates/index.html:21
+#: templates/base.html:162 templates/base.html:243 templates/index.html:21
 #: templates/index.html:38 templates/index.html:55
 msgid "About Us"
 msgstr "À propos de nous"
 
-#: templates/base.html:217
+#: templates/base.html:216
 msgid "Logout"
 msgstr "Se déconnecter"
 
-#: templates/base.html:219
+#: templates/base.html:218
 msgid "Sign In / Register"
 msgstr "Se connecter / S'inscrire"
 
-#: templates/base.html:246 templates/main/destinations.html:11
+#: templates/base.html:245 templates/main/destinations.html:11
 #: templates/main/destinations.html:14
 msgid "Destination"
 msgstr "Destination"
 
-#: templates/base.html:249 templates/post/blog-archive.html:118
+#: templates/base.html:248 templates/post/blog-archive.html:118
 #: templates/post/blog-single.html:104
 msgid "Tour"
-msgstr "Tour"
+msgstr "Circuits"
 
-#: templates/base.html:252
+#: templates/base.html:251
 msgid "Blog"
 msgstr "Blog"
 
-#: templates/base.html:255
+#: templates/base.html:254
 msgid "Contact us"
 msgstr "Contactez-nous"
 
-#: templates/base.html:263 templates/index.html:224
+#: templates/base.html:262 templates/index.html:224
 #: templates/main/package_detail.html:93
 msgid "Book Now"
 msgstr "Réservez maintenant"
 
-#: templates/base.html:289
+#: templates/base.html:288
 msgid ""
 "Our agency is your trusted partner in making your dream journey a reality. "
 "We offer unforgettable trips with the best service and affordable prices."
@@ -84,23 +84,23 @@ msgstr ""
 "rêve. Nous offrons des voyages inoubliables avec le meilleur service et des "
 "prix abordables."
 
-#: templates/base.html:302
+#: templates/base.html:301
 msgid "Quick Links"
 msgstr "Liens rapides"
 
-#: templates/base.html:306
+#: templates/base.html:305
 msgid "About us"
 msgstr "À propos de nous"
 
-#: templates/base.html:307
+#: templates/base.html:306
 msgid "Terms of Service"
 msgstr "Conditions d'utilisation"
 
-#: templates/base.html:308
+#: templates/base.html:307
 msgid "Tour Booking Now"
 msgstr "Réservez votre tour maintenant"
 
-#: templates/base.html:315
+#: templates/base.html:314
 msgid "Address"
 msgstr "Adresse"
 
@@ -120,7 +120,7 @@ msgstr "Prénom"
 msgid "Last name"
 msgstr "Nom"
 
-#: templates/cart/booking.html:46 templates/main/contact.html:111
+#: templates/cart/booking.html:46 templates/main/contact.html:110
 msgid "Email"
 msgstr "Email"
 
@@ -285,16 +285,16 @@ msgid "Years Experience"
 msgstr "Années d'expérience"
 
 #: templates/index.html:349
-msgid "Retention Rate"
-msgstr "Taux de fidélisation"
+msgid "No intermediary"
+msgstr "Aucun intermédiaire"
 
 #: templates/index.html:359
-msgid "Tour Completed"
-msgstr "Tour terminé"
+msgid "Tailor-made tours"
+msgstr "Explorer les circuits"
 
 #: templates/index.html:369
-msgid "Happy Travellers"
-msgstr "Voyageurs heureux"
+msgid "Local assistance"
+msgstr "Assistance locale"
 
 #: templates/main/about.html:11 templates/main/about.html:14
 msgid "About NEO TRIP"
@@ -302,45 +302,80 @@ msgstr "À propos de NEO TRIP"
 
 #: templates/main/about.html:27 templates/main/about.html:30
 #: templates/main/about.html:33 templates/main/destination_detail.html:34
-#: templates/main/package_detail.html:59
 msgid "About"
-msgstr "À propos"
+msgstr "À propos de"
 
+#: templates/main/about.html:40
 msgid "Dear travelers"
 msgstr "Chers voyageurs"
 
 #: templates/main/about.html:43
-msgid "Welcome to NEO TRIP, a travel agency born from the passion and dedication of a team that cherishes their homeland, Uzbekistan, and shares a deep fascination with the fabled Silk Road."
-msgstr "Bienvenue chez NEO TRIP, une agence de voyages née de la passion et de l'engagement d'une équipe qui chérit sa terre natale, l'Ouzbékistan, et partage une profonde fascination pour la légendaire Route de la Soie."
+msgid ""
+"Welcome to NEO TRIP, a travel agency born from the passion and dedication of "
+"a team that cherishes their homeland, Uzbekistan, and shares a deep "
+"fascination with the fabled Silk Road."
+msgstr ""
+"Bienvenue chez NEO TRIP, une agence de voyages née de la passion et de "
+"l'engagement d'une équipe qui chérit sa terre natale, l'Ouzbékistan, et "
+"partage une profonde fascination pour la légendaire Route de la Soie."
 
 #: templates/main/about.html:46
-msgid "Based in the city of Samarkand, we are proud to be a fully English-speaking agency with over 15 years of experience in curating unique and inspiring journeys."
-msgstr "Basée dans la ville de Samarcande, nous sommes fiers d'être une agence entièrement anglophone avec plus de 15 ans d'expérience dans la création de voyages uniques et inspirants."
+msgid ""
+"Based in the city of Samarkand, we are proud to be a fully English-speaking "
+"agency with over 15 years of experience in curating unique and inspiring "
+"journeys."
+msgstr ""
+"Basée dans la ville de Samarcande, nous sommes fiers d'être une agence "
+"entièrement anglophone avec plus de 15 ans d'expérience dans la création de "
+"voyages uniques et inspirants."
 
 #: templates/main/about.html:49
-msgid "Our mission is to offer you the opportunity to discover Uzbekistan and the wonders of Central Asia through tailor-made travel experiences."
-msgstr "Notre mission est de vous offrir l'opportunité de découvrir l'Ouzbékistan et les merveilles de l'Asie centrale à travers des expériences de voyage sur mesure."
+msgid ""
+"Our mission is to offer you the opportunity to discover Uzbekistan and the "
+"wonders of Central Asia through tailor-made travel experiences."
+msgstr ""
+"Notre mission est de vous offrir l'opportunité de découvrir l'Ouzbékistan et "
+"les merveilles de l'Asie centrale à travers des expériences de voyage sur "
+"mesure."
 
 #: templates/main/about.html:52
-msgid "With our signature program, Customized Uzbekistan, we create itineraries that are steeped in authenticity, carefully designed to align with your personal interests, pace, and preferences."
-msgstr "Avec notre programme phare, « Uzbekistan sur mesure », nous créons des itinéraires imprégnés d'authenticité, soigneusement conçus pour s'aligner avec vos intérêts personnels, votre rythme et vos préférences."
+msgid ""
+"With our signature program, Customized Uzbekistan, we create itineraries "
+"that are steeped in authenticity, carefully designed to align with your "
+"personal interests, pace, and preferences."
+msgstr ""
+"Avec notre programme phare, « Uzbekistan sur mesure », nous créons des "
+"itinéraires imprégnés d'authenticité, soigneusement conçus pour s'aligner "
+"avec vos intérêts personnels, votre rythme et vos préférences."
 
 #: templates/main/about.html:55
-msgid "Whether you're seeking cultural immersion, historical exploration, or breathtaking natural landscapes, we are here to guide you every step of the way."
-msgstr "Que vous cherchiez à vous immerger dans la culture, à explorer l'histoire ou à découvrir des paysages naturels à couper le souffle, nous sommes ici pour vous guider à chaque étape de votre voyage."
+msgid ""
+"Whether you're seeking cultural immersion, historical exploration, or "
+"breathtaking natural landscapes, we are here to guide you every step of the "
+"way."
+msgstr ""
+"Que vous cherchiez à vous immerger dans la culture, à explorer l'histoire ou "
+"à découvrir des paysages naturels à couper le souffle, nous sommes ici pour "
+"vous guider à chaque étape de votre voyage."
 
 #: templates/main/about.html:58
-msgid "Share your travel aspirations with us, and together we'll craft the perfect journey, ensuring every detail is thoughtfully considered to bring your dream adventure to life."
-msgstr "Partagez vos aspirations de voyage avec nous, et ensemble, nous créerons le voyage parfait, en veillant à ce que chaque détail soit soigneusement pris en compte pour donner vie à votre aventure de rêve."
+msgid ""
+"Share your travel aspirations with us, and together we'll craft the perfect "
+"journey, ensuring every detail is thoughtfully considered to bring your "
+"dream adventure to life."
+msgstr ""
+"Partagez vos aspirations de voyage avec nous, et ensemble, nous créerons le "
+"voyage parfait, en veillant à ce que chaque détail soit soigneusement pris "
+"en compte pour donner vie à votre aventure de rêve."
 
 #: templates/main/about.html:61
 msgid "Let us help you create memories that will last a lifetime."
-msgstr "Laissez-nous vous aider à créer des souvenirs qui dureront toute une vie."
+msgstr ""
+"Laissez-nous vous aider à créer des souvenirs qui dureront toute une vie."
 
 #: templates/main/about.html:66
 msgid "Contact With Us"
 msgstr "Contactez-nous"
-
 
 #: templates/main/about.html:75 templates/main/about.html:78
 #: templates/main/about.html:81 templates/main/about.html:84
@@ -357,56 +392,52 @@ msgid "Gallery Image"
 msgstr "Image de la galerie"
 
 #: templates/main/contact.html:12 templates/main/contact.html:15
-#: templates/main/contact.html:88
+#: templates/main/contact.html:87
 msgid "Contact Us"
 msgstr "Contactez-nous"
 
 #: templates/main/contact.html:26
-msgid "Get In Touch"
-msgstr "Entrer en contact"
-
-#: templates/main/contact.html:27
 msgid "Our Contact Information"
-msgstr "Nos informations de contact"
+msgstr "Contactez - Nous"
 
-#: templates/main/contact.html:36
+#: templates/main/contact.html:35
 msgid "Our Address"
 msgstr "Notre adresse"
 
-#: templates/main/contact.html:47 templates/main/contact.html:116
-#: templates/main/contact.html:117
+#: templates/main/contact.html:46 templates/main/contact.html:115
+#: templates/main/contact.html:116
 msgid "Phone Number"
 msgstr "Numéro de téléphone"
 
-#: templates/main/contact.html:59
+#: templates/main/contact.html:58
 msgid "Email Address"
 msgstr "Adresse e-mail"
 
-#: templates/main/contact.html:79
+#: templates/main/contact.html:78
 msgid "Play Video"
 msgstr "Lire la vidéo"
 
-#: templates/main/contact.html:101 templates/main/contact.html:102
+#: templates/main/contact.html:100 templates/main/contact.html:101
 msgid "First Name"
 msgstr "Prénom"
 
-#: templates/main/contact.html:106 templates/main/contact.html:107
+#: templates/main/contact.html:105 templates/main/contact.html:106
 msgid "Last Name"
 msgstr "Nom de famille"
 
-#: templates/main/contact.html:112
+#: templates/main/contact.html:111
 msgid "Your Mail"
 msgstr "Votre mail"
 
-#: templates/main/contact.html:120
+#: templates/main/contact.html:119
 msgid "Message"
 msgstr "Message"
 
-#: templates/main/contact.html:121
+#: templates/main/contact.html:120
 msgid "Your Message"
 msgstr "Votre message"
 
-#: templates/main/contact.html:126
+#: templates/main/contact.html:125
 msgid "Send message"
 msgstr "Envoyer le message"
 
@@ -419,49 +450,49 @@ msgid "Destination Details"
 msgstr "Détails de la destination"
 
 #: templates/main/destination_detail.html:47
-#: templates/main/package_list.html:109 templates/post/blog-archive.html:82
+#: templates/main/package_list.html:96 templates/post/blog-archive.html:82
 #: templates/post/blog-single.html:68
 msgid "Search"
 msgstr "Rechercher"
 
 #: templates/main/destination_detail.html:52
-#: templates/main/package_detail.html:103 templates/main/package_list.html:117
+#: templates/main/package_detail.html:103 templates/main/package_list.html:104
 #: templates/post/blog-archive.html:87 templates/post/blog-single.html:73
 msgid "Categories"
 msgstr "Catégories"
 
 #: templates/main/destination_detail.html:55
-#: templates/main/package_detail.html:106 templates/main/package_list.html:120
+#: templates/main/package_detail.html:106 templates/main/package_list.html:107
 #: templates/post/blog-archive.html:90 templates/post/blog-single.html:76
 msgid "City Tour"
 msgstr "Visite de la ville"
 
 #: templates/main/destination_detail.html:59
-#: templates/main/package_list.html:124 templates/post/blog-archive.html:94
+#: templates/main/package_list.html:111 templates/post/blog-archive.html:94
 #: templates/post/blog-single.html:80
 msgid "Beach Tours"
 msgstr "Excursions en plage"
 
 #: templates/main/destination_detail.html:63
-#: templates/main/package_detail.html:114 templates/main/package_list.html:128
+#: templates/main/package_detail.html:114 templates/main/package_list.html:115
 #: templates/post/blog-archive.html:98 templates/post/blog-single.html:84
 msgid "Wildlife Tours"
 msgstr "Excursions dans la nature"
 
 #: templates/main/destination_detail.html:67
-#: templates/main/package_detail.html:118 templates/main/package_list.html:132
+#: templates/main/package_detail.html:118 templates/main/package_list.html:119
 #: templates/post/blog-archive.html:102 templates/post/blog-single.html:88
 msgid "News & Tips"
 msgstr "Actualités et conseils"
 
 #: templates/main/destination_detail.html:71
-#: templates/main/package_detail.html:122 templates/main/package_list.html:136
+#: templates/main/package_detail.html:122 templates/main/package_list.html:123
 #: templates/post/blog-archive.html:106 templates/post/blog-single.html:92
 msgid "Adventure Tours"
 msgstr "Excursions d'aventure"
 
 #: templates/main/destination_detail.html:75
-#: templates/main/package_detail.html:126 templates/main/package_list.html:140
+#: templates/main/package_detail.html:126 templates/main/package_list.html:127
 #: templates/post/blog-archive.html:110 templates/post/blog-single.html:96
 msgid "Mountain Tours"
 msgstr "Excursions en montagne"
@@ -476,7 +507,11 @@ msgstr "Aucune destination disponible."
 
 #: templates/main/package_detail.html:10 templates/main/package_detail.html:13
 msgid "Tour Details"
-msgstr "Détails du tour"
+msgstr "Détails du circuit"
+
+#: templates/main/package_detail.html:59
+msgid "About this tour"
+msgstr "À propos de ce circuit"
 
 #: templates/main/package_detail.html:64
 msgid "Price Includes"
@@ -495,10 +530,6 @@ msgid " Beach Tours"
 msgstr "Excursions en plage"
 
 #: templates/main/package_detail.html:136
-msgid "From our gallery"
-msgstr "De notre galerie"
-
-#: templates/main/package_detail.html:181
 msgid "Location"
 msgstr "Emplacement"
 
@@ -506,35 +537,35 @@ msgstr "Emplacement"
 msgid "Popular Tours"
 msgstr "Tours populaires"
 
-#: templates/main/package_list.html:50
+#: templates/main/package_list.html:37
 msgid "image"
 msgstr "image"
 
-#: templates/main/package_list.html:55
+#: templates/main/package_list.html:42
 msgid "Rated 5.00 out of 5"
 msgstr "Évalué 5,00 sur 5"
 
-#: templates/main/package_list.html:55
+#: templates/main/package_list.html:42
 msgid "Rated"
 msgstr "Évalué"
 
-#: templates/main/package_list.html:56
+#: templates/main/package_list.html:43
 msgid "out of 5 based on"
 msgstr "sur 5 basé sur"
 
-#: templates/main/package_list.html:56
+#: templates/main/package_list.html:43
 msgid "4.8 Rating"
 msgstr "Note de 4.8"
 
-#: templates/main/package_list.html:58
+#: templates/main/package_list.html:45
 msgid "Rating"
 msgstr "Note"
 
-#: templates/main/package_list.html:63
+#: templates/main/package_list.html:50
 msgid "Detail View"
 msgstr "Voir les détails"
 
-#: templates/main/package_list.html:96 templates/post/blog-archive.html:71
+#: templates/main/package_list.html:83 templates/post/blog-archive.html:71
 msgid "Next"
 msgstr "Suivant"
 
@@ -2125,6 +2156,21 @@ msgstr "Connectez-vous, obtenez de l'aide ou contribuez"
 #| msgid "Gallery Image"
 msgid "Clear image"
 msgstr "Image de la galerie"
+
+#~ msgid "Retention Rate"
+#~ msgstr "Taux de fidélisation"
+
+#~ msgid "Tour Completed"
+#~ msgstr "Tour terminé"
+
+#~ msgid "Happy Travellers"
+#~ msgstr "Voyageurs heureux"
+
+#~ msgid "Get In Touch"
+#~ msgstr "Entrer en contact"
+
+#~ msgid "From our gallery"
+#~ msgstr "De notre galerie"
 
 #~ msgid "Welcome To NEO TRIP"
 #~ msgstr "Bienvenue chez NEO TRIP"

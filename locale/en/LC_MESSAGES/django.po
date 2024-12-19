@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-10 15:47+0500\n"
+"POT-Creation-Date: 2024-12-13 16:44+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,18 +19,18 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: core/settings.py:146
-msgid "English"
-msgstr ""
-
-#: core/settings.py:147
-msgid "Russian"
-msgstr ""
-
-#: core/settings.py:148
 msgid "French"
 msgstr ""
 
-#: templates/base.html:161 templates/base.html:242 templates/base.html:305
+#: core/settings.py:147
+msgid "English"
+msgstr ""
+
+#: core/settings.py:148
+msgid "Russian"
+msgstr ""
+
+#: templates/base.html:160 templates/base.html:241 templates/base.html:304
 #: templates/main/about.html:13 templates/main/contact.html:14
 #: templates/main/destination_detail.html:13
 #: templates/main/destinations.html:13 templates/main/package_detail.html:12
@@ -39,65 +39,65 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: templates/base.html:163 templates/base.html:244 templates/index.html:21
+#: templates/base.html:162 templates/base.html:243 templates/index.html:21
 #: templates/index.html:38 templates/index.html:55
 msgid "About Us"
 msgstr ""
 
-#: templates/base.html:217
+#: templates/base.html:216
 msgid "Logout"
 msgstr ""
 
-#: templates/base.html:219
+#: templates/base.html:218
 msgid "Sign In / Register"
 msgstr ""
 
-#: templates/base.html:246 templates/main/destinations.html:11
+#: templates/base.html:245 templates/main/destinations.html:11
 #: templates/main/destinations.html:14
 msgid "Destination"
 msgstr ""
 
-#: templates/base.html:249 templates/post/blog-archive.html:118
+#: templates/base.html:248 templates/post/blog-archive.html:118
 #: templates/post/blog-single.html:104
 msgid "Tour"
 msgstr ""
 
-#: templates/base.html:252
+#: templates/base.html:251
 msgid "Blog"
 msgstr ""
 
-#: templates/base.html:255
+#: templates/base.html:254
 msgid "Contact us"
 msgstr ""
 
-#: templates/base.html:263 templates/index.html:224
+#: templates/base.html:262 templates/index.html:224
 #: templates/main/package_detail.html:93
 msgid "Book Now"
 msgstr ""
 
-#: templates/base.html:289
+#: templates/base.html:288
 msgid ""
 "Our agency is your trusted partner in making your dream journey a reality. "
 "We offer unforgettable trips with the best service and affordable prices."
 msgstr ""
 
-#: templates/base.html:302
+#: templates/base.html:301
 msgid "Quick Links"
 msgstr ""
 
-#: templates/base.html:306
+#: templates/base.html:305
 msgid "About us"
 msgstr ""
 
-#: templates/base.html:307
+#: templates/base.html:306
 msgid "Terms of Service"
 msgstr ""
 
-#: templates/base.html:308
+#: templates/base.html:307
 msgid "Tour Booking Now"
 msgstr ""
 
-#: templates/base.html:315
+#: templates/base.html:314
 msgid "Address"
 msgstr ""
 
@@ -117,7 +117,7 @@ msgstr ""
 msgid "Last name"
 msgstr ""
 
-#: templates/cart/booking.html:46 templates/main/contact.html:111
+#: templates/cart/booking.html:46 templates/main/contact.html:110
 msgid "Email"
 msgstr ""
 
@@ -274,15 +274,15 @@ msgid "Years Experience"
 msgstr ""
 
 #: templates/index.html:349
-msgid "Retention Rate"
+msgid "No intermediary"
 msgstr ""
 
 #: templates/index.html:359
-msgid "Tour Completed"
+msgid "Tailor-made tours"
 msgstr ""
 
 #: templates/index.html:369
-msgid "Happy Travellers"
+msgid "Local assistance"
 msgstr ""
 
 #: templates/main/about.html:11 templates/main/about.html:14
@@ -291,7 +291,6 @@ msgstr ""
 
 #: templates/main/about.html:27 templates/main/about.html:30
 #: templates/main/about.html:33 templates/main/destination_detail.html:34
-#: templates/main/package_detail.html:59
 msgid "About"
 msgstr ""
 
@@ -363,56 +362,52 @@ msgid "Gallery Image"
 msgstr ""
 
 #: templates/main/contact.html:12 templates/main/contact.html:15
-#: templates/main/contact.html:88
+#: templates/main/contact.html:87
 msgid "Contact Us"
 msgstr ""
 
 #: templates/main/contact.html:26
-msgid "Get In Touch"
-msgstr ""
-
-#: templates/main/contact.html:27
 msgid "Our Contact Information"
 msgstr ""
 
-#: templates/main/contact.html:36
+#: templates/main/contact.html:35
 msgid "Our Address"
 msgstr ""
 
-#: templates/main/contact.html:47 templates/main/contact.html:116
-#: templates/main/contact.html:117
+#: templates/main/contact.html:46 templates/main/contact.html:115
+#: templates/main/contact.html:116
 msgid "Phone Number"
 msgstr ""
 
-#: templates/main/contact.html:59
+#: templates/main/contact.html:58
 msgid "Email Address"
 msgstr ""
 
-#: templates/main/contact.html:79
+#: templates/main/contact.html:78
 msgid "Play Video"
 msgstr ""
 
-#: templates/main/contact.html:101 templates/main/contact.html:102
+#: templates/main/contact.html:100 templates/main/contact.html:101
 msgid "First Name"
 msgstr ""
 
-#: templates/main/contact.html:106 templates/main/contact.html:107
+#: templates/main/contact.html:105 templates/main/contact.html:106
 msgid "Last Name"
 msgstr ""
 
-#: templates/main/contact.html:112
+#: templates/main/contact.html:111
 msgid "Your Mail"
 msgstr ""
 
-#: templates/main/contact.html:120
+#: templates/main/contact.html:119
 msgid "Message"
 msgstr ""
 
-#: templates/main/contact.html:121
+#: templates/main/contact.html:120
 msgid "Your Message"
 msgstr ""
 
-#: templates/main/contact.html:126
+#: templates/main/contact.html:125
 msgid "Send message"
 msgstr ""
 
@@ -425,49 +420,49 @@ msgid "Destination Details"
 msgstr ""
 
 #: templates/main/destination_detail.html:47
-#: templates/main/package_list.html:109 templates/post/blog-archive.html:82
+#: templates/main/package_list.html:96 templates/post/blog-archive.html:82
 #: templates/post/blog-single.html:68
 msgid "Search"
 msgstr ""
 
 #: templates/main/destination_detail.html:52
-#: templates/main/package_detail.html:103 templates/main/package_list.html:117
+#: templates/main/package_detail.html:103 templates/main/package_list.html:104
 #: templates/post/blog-archive.html:87 templates/post/blog-single.html:73
 msgid "Categories"
 msgstr ""
 
 #: templates/main/destination_detail.html:55
-#: templates/main/package_detail.html:106 templates/main/package_list.html:120
+#: templates/main/package_detail.html:106 templates/main/package_list.html:107
 #: templates/post/blog-archive.html:90 templates/post/blog-single.html:76
 msgid "City Tour"
 msgstr ""
 
 #: templates/main/destination_detail.html:59
-#: templates/main/package_list.html:124 templates/post/blog-archive.html:94
+#: templates/main/package_list.html:111 templates/post/blog-archive.html:94
 #: templates/post/blog-single.html:80
 msgid "Beach Tours"
 msgstr ""
 
 #: templates/main/destination_detail.html:63
-#: templates/main/package_detail.html:114 templates/main/package_list.html:128
+#: templates/main/package_detail.html:114 templates/main/package_list.html:115
 #: templates/post/blog-archive.html:98 templates/post/blog-single.html:84
 msgid "Wildlife Tours"
 msgstr ""
 
 #: templates/main/destination_detail.html:67
-#: templates/main/package_detail.html:118 templates/main/package_list.html:132
+#: templates/main/package_detail.html:118 templates/main/package_list.html:119
 #: templates/post/blog-archive.html:102 templates/post/blog-single.html:88
 msgid "News & Tips"
 msgstr ""
 
 #: templates/main/destination_detail.html:71
-#: templates/main/package_detail.html:122 templates/main/package_list.html:136
+#: templates/main/package_detail.html:122 templates/main/package_list.html:123
 #: templates/post/blog-archive.html:106 templates/post/blog-single.html:92
 msgid "Adventure Tours"
 msgstr ""
 
 #: templates/main/destination_detail.html:75
-#: templates/main/package_detail.html:126 templates/main/package_list.html:140
+#: templates/main/package_detail.html:126 templates/main/package_list.html:127
 #: templates/post/blog-archive.html:110 templates/post/blog-single.html:96
 msgid "Mountain Tours"
 msgstr ""
@@ -482,6 +477,10 @@ msgstr ""
 
 #: templates/main/package_detail.html:10 templates/main/package_detail.html:13
 msgid "Tour Details"
+msgstr ""
+
+#: templates/main/package_detail.html:59
+msgid "About this tour"
 msgstr ""
 
 #: templates/main/package_detail.html:64
@@ -501,10 +500,6 @@ msgid " Beach Tours"
 msgstr ""
 
 #: templates/main/package_detail.html:136
-msgid "From our gallery"
-msgstr ""
-
-#: templates/main/package_detail.html:181
 msgid "Location"
 msgstr ""
 
@@ -512,35 +507,35 @@ msgstr ""
 msgid "Popular Tours"
 msgstr ""
 
-#: templates/main/package_list.html:50
+#: templates/main/package_list.html:37
 msgid "image"
 msgstr ""
 
-#: templates/main/package_list.html:55
+#: templates/main/package_list.html:42
 msgid "Rated 5.00 out of 5"
 msgstr ""
 
-#: templates/main/package_list.html:55
+#: templates/main/package_list.html:42
 msgid "Rated"
 msgstr ""
 
-#: templates/main/package_list.html:56
+#: templates/main/package_list.html:43
 msgid "out of 5 based on"
 msgstr ""
 
-#: templates/main/package_list.html:56
+#: templates/main/package_list.html:43
 msgid "4.8 Rating"
 msgstr ""
 
-#: templates/main/package_list.html:58
+#: templates/main/package_list.html:45
 msgid "Rating"
 msgstr ""
 
-#: templates/main/package_list.html:63
+#: templates/main/package_list.html:50
 msgid "Detail View"
 msgstr ""
 
-#: templates/main/package_list.html:96 templates/post/blog-archive.html:71
+#: templates/main/package_list.html:83 templates/post/blog-archive.html:71
 msgid "Next"
 msgstr ""
 
