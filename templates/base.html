@@ -100,7 +100,7 @@
                     <div class="about-logo">
                         <a href="{% url 'main_home_view' %}"><img src="{% static 'assets/img/COLORVAR2.png' %}" alt="NEO TRIP"></a>
                     </div>
-                    <p class="about-text">Rapidiously myocardinate cross-platform intellectual capital model. Appropriately create interactive infrastructures</p>
+                    <p class="about-text">{% trans 'Rapidiously myocardinate cross-platform intellectual capital model. Appropriately create interactive infrastructures' %}</p>
                     <div class="th-social">
                         <a href="https://www.facebook.com/profile.php?id=61568818148836"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
@@ -154,16 +154,16 @@
                     </li>
                     <li><a href="{% url 'main_about' %}">{% trans 'About Us' %}</a></li>
                     <li class="">
-                        <a href="{% url 'main_destination' %}">Destination</a>
+                        <a href="{% url 'main_destination' %}">{% trans 'Destination' %}</a>
                     </li>
                     <li class="">
-                        <a href="{% url 'tours' %}">Tour</a>
+                        <a href="{% url 'tours' %}">{% trans 'Tour' %}</a>
                     </li>
                     <li>
-                        <a href="{% url 'post_post_list' %}">Blog</a>
+                        <a href="{% url 'post_post_list' %}">{% trans 'Blog' %}</a>
                     </li>
                     <li>
-                        <a href="{% url 'main_contact' %}">Contact us</a>
+                        <a href="{% url 'main_contact' %}">{% trans 'Contact us' %}</a>
                     </li>
                 </ul>
             </div>
@@ -304,7 +304,7 @@
                 </div>
                 <div class="col-md-6 col-xl-auto">
                     <div class="widget footer-widget">
-                        <h3 class="widget_title">Get In Touch</h3>
+                        <h3 class="widget_title">{% trans 'Get In Touch' %}</h3>
                         <div class="th-widget-contact">
                             <div class="info-box_text">
                                 <div class="icon">
@@ -334,7 +334,7 @@
                 </div>
                 <div class="col-md-6 col-xl-auto">
                     <div class="widget footer-widget">
-                        <h3 class="widget_title">Instagram Post</h3>
+                        <h3 class="widget_title">{% trans 'Instagram Post' %}</h3>
                         <div class="sidebar-gallery">
                             <div class="gallery-thumb">
                                 <img src="{% static 'assets/img/widget/gallery_1_1.jpg' %}" style="height: 96px;" alt="Gallery Image">
