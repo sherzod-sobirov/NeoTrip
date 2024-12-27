@@ -1,11 +1,18 @@
-from tour.models import Tour, IncludeExclude, Country, Destination
+from tour.models import Tour, Country, Destination
 from post.models import Post
 from modeltranslation.translator import register, TranslationOptions
 from .models import TeamMember
+from tour.models import Category
+
+@register(Category)
+class CategoryTranslationOptions(TranslationOptions):
+    fields = ('name',)
+
 
 @register(TeamMember)
 class TeamMemberTranslationOptions(TranslationOptions):
-    fields = ('position',)  # Register the 'position' field for translation
+    fields = ('designation',)  # Bu erda kerakli maydonlarni ro'yxatga oling
+
     
 @register(Post)
 class PostTranslationOptions(TranslationOptions):
@@ -14,12 +21,8 @@ class PostTranslationOptions(TranslationOptions):
 
 @register(Tour)
 class TourTranslationOptions(TranslationOptions):
-    fields = ['title', 'duration', 'overview']
+    fields = ['title', 'duration', 'overview', "price"]
 
-
-@register(IncludeExclude)
-class IncludeExcludeTranslationOptions(TranslationOptions):
-    fields = ['name']
 
 
 @register(Country)

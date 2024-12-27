@@ -18,7 +18,7 @@
                             </h2>
                             <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s">
                                 <a href="{% url 'tours' %}" class="th-btn th-icon">{% trans 'Explore Tours' %}</a>
-                                <a href="service.html" class="th-btn style2 th-icon">{% trans 'About Us' %}</a>
+                                <a href="{% url 'main_about' %}" class="th-btn style2 th-icon">{% trans 'About Us' %}</a>
                             </div>
                         </div>
                     </div>
@@ -51,8 +51,8 @@
                                 {% trans 'Create your tailor-made trip to Central Asia' %}
                             </h2>
                             <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s">
-                                <a href="" class="th-btn th-icon">{% trans 'Explore Tours' %}</a>
-                                <a href="service.html" class="th-btn style2 th-icon">{% trans 'About Us' %}</a>
+                                <a href="{% url 'tours' %}" class="th-btn th-icon">{% trans 'Explore Tours' %}</a>
+                                <a href="{% url 'main_about' %}" class="th-btn style2 th-icon">{% trans 'About Us' %}</a>
                             </div>
                         </div>
                     </div>
@@ -77,10 +77,10 @@ Category Area
 <br></br> <!--==============================
 destination Area  
 ==============================-->
+{% if last_three_dests %}
 <div class="destination-area position-relative overflow-hidden ">
     <div class="container">
         <div class="title-area text-center">
-            <span class="sub-title">{% trans 'Top Destination' %}</span>
             <h2 class="sec-title">{% trans 'Popular Destination' %}</h2>
         </div>
         <div class="swiper th-slider destination-slider slider-drag-wrap" id="aboutSlider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"3"}},"effect":"coverflow","coverflowEffect":{"rotate":"0","stretch":"95","depth":"212","modifier":"1"},"centeredSlides":"true"}'>
@@ -109,7 +109,7 @@ destination Area
         </div>
     </div>
 </div>
-
+{% endif %}
 
 <!--==============================
 About Area  
@@ -170,7 +170,7 @@ About Area
         <img src="{% static 'assets/img/shape/shape_3.png' %}" alt="shape">
     </div>
     <div class="shape-mockup about-rating d-none d-xxl-block" data-bottom="45%" data-right="2%">
-        <i class="fa-sharp fa-solid fa-star"></i><span>4.9k</span>
+        <i class=""></i><span></span>
     </div>
     <div class="shape-mockup about-emoji d-none d-xxl-block" data-bottom="25%" data-right="22%"><img src="{% static 'assets/img/icon/emoji.png' %}" alt="">
     </div>
@@ -178,7 +178,7 @@ About Area
 <!--==============================
 Service Area  
 ==============================-->
-
+{% if last_four_tours %}
 <section class="position-relative bg-top-center overflow-hidden space" id="service-sec" style="background-size: 1920px 850px; background-repeat: no-repeat; background-position: center center;" data-bg-src="{% static 'assets/img/bg/tour_bg_1.jpg' %}">
     <div class="container">
         <div class="row">
@@ -234,6 +234,7 @@ Service Area
     </div>
 
 </section>
+{% endif %}
 
 
 
@@ -243,7 +244,6 @@ Gallery Area
 <div class="gallery-area ">
     <div class="container th-container">
         <div class="title-area text-center">
-            <span class="sub-title">{% trans 'Make Your Tour More Pleasure' %}</span>
             <h2 class="sec-title">{% trans 'Recent Gallery' %}</h2>
         </div>
         <div class="row gy-10 gx-10 justify-content-center align-items-center">
@@ -396,5 +396,59 @@ Brand Area
 <!--==============================
 Blog Area  
 ==============================-->
+{% if last_five_testimonials %}
+<section class="testi-area overflow-hidden space" id="testi-sec">
+    <div class="container-fluid p-0">
+        <div class="title-area mb-20 text-center">
+            <span class="sub-title">Testimonial</span>
+            <h2 class="sec-title">What Client Say About us</h2>
+        </div>
+        <div class="slider-area">
+            <div class="swiper th-slider testiSlider1 has-shadow" id="testiSlider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"767":{"slidesPerView":"2","centeredSlides":"true"},"992":{"slidesPerView":"2","centeredSlides":"true"},"1200":{"slidesPerView":"2","centeredSlides":"true"},"1400":{"slidesPerView":"3","centeredSlides":"true"}}}'>
+                <div class="swiper-wrapper">
+                    {% for testimonial in last_five_testimonials %}
+                        <div class="swiper-slide">
+                            <div class="testi-card">
+                                <div class="testi-card_wrapper">
+                                    <div class="testi-card_profile">
+                                        <div class="testi-card_avater">
+                                            <!-- Add a default or dynamic image later -->
+                                            <img src="{% static 'assets/img/testimonial/testi_1_1.jpg' %}" style="width: 72px;" alt="testimonial">
+                                        </div>
+                                        <div class="media-body">
+                                            <h3 class="box-title">{{ testimonial.name }}</h3>
+                                            <span class="testi-card_desig">Traveller</span>
+                                        </div>
+                                    </div>
+                                    <div class="testi-card_review">
+                                        <!-- Assuming a fixed number of stars -->
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <p class="testi-card_text">{{ testimonial.message }}</p>
+                                <div class="testi-card-quote">
+                                    <img src="{% static 'assets/img/icon/testi-quote.svg' %}" alt="img">
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="slider-pagination"></div>
+            </div>
+        </div>
+    </div>
+    <div class="shape-mockup d-none d-xl-block" data-bottom="-2%" data-right="0%">
+        <img src="{% static 'assets/img/shape/line2.png' %}" alt="shape">
+    </div>
+    <div class="shape-mockup movingX d-none d-xl-block" data-top="30%" data-left="5%">
+        <img src="{% static 'assets/img/shape/shape_7.png' %}" alt="shape">
+    </div>
+</section>
+{% endif %}
 
 {% endblock body %}

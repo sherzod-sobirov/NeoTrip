@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block body %}
+    <!--==============================
+    Breadcumb
+    ============================== -->
+    <div class="breadcumb-wrapper" data-bg-src="{% static 'assets/img/bg/breadcumb-bg.jpg' %}" style="height: 600px;">
+        <div class="container">
+            <div class="breadcumb-content">
+            </div>
+        </div>
+    </div>
+
+    <!--==============================
+    Category Tours Area
+    ==============================-->
+    <section class="space">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-8 col-lg-7">
+                    <h3 class="section-title">{% trans "Tours in" %} {{ category.name }}</h3>
+                    <div class="row gy-24 gx-24">
+                        {% for tour in tours %}
+                            <div class="col-12">
+                                <div class="tour-box style-flex th-ani" style="margin-bottom: 20px;">
+                                    <div class="tour-box_img global-img">
+                                        <a href="{% url 'tour_tour_detail' tour.id %}">
+                                            <img src="{{ tour.photo.url }}" alt="{{ tour.title }}" style="width: 700px; height: 274px;">
+                                        </a>
+                                    </div>
+                                    <div class="tour-content">
+                                        <h3 class="box-title">
+                                            <a href="{% url 'tour_tour_detail' tour.id %}">{{ tour.title }}</a>
+                                        </h3>
+                                        <h4 class="tour-box_price">
+                                            <span class="currency">{{ tour.calc_disc }} €</span>
+                                        </h4>
+                                        <div class="tour-action">
+                                            <span><i class="fa-light fa-clock"></i>{{ tour.duration }}</span>
+                                            <a href="{% url 'tour_tour_detail' tour.id %}" class="th-btn style4">{% trans "Detail View" %}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                        <!-- Pagination Section -->
+                        <div class="th-pagination text-center mt-60">
+                            <ul>
+                                {% if page_obj.has_previous %}
+                                <li>
+                                    <a href="?page={{ page_obj.previous_page_number }}" class="prev-page">
+                                        <img src="{% static 'assets/img/icon/arrow-left4.svg' %}" alt="">
+                                    </a>
+                                </li>
+                                {% endif %}
+
+                                {% for num in page_obj.paginator.page_range %}
+                                <li>
+                                    <a href="?page={{ num }}" class="{% if page_obj.number == num %}active{% endif %}">
+                                        {{ num }}
+                                    </a>
+                                </li>
+                                {% endfor %}
+
+                                {% if page_obj.has_next %}
+                                <li>
+                                    <a href="?page={{ page_obj.next_page_number }}" class="next-page">
+                                        {% trans "Next" %} <img src="{% static 'assets/img/icon/arrow-right4.svg' %}" alt="">
+                                    </a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                </div>
+
+                <!-- Sidebar Section -->
+                <div class="col-xxl-4 col-lg-5"><br>
+                    <br>
+                    <br>
+                    <br>
+                    <!-- Sidebar Categories Section -->
+                    <aside class="sidebar-area">
+                        <div class="widget widget_categories">
+                            <h3 class="widget_title">{% trans "Categories" %}</h3>
+                            <ul>
+                                {% for category in categories %}
+                                    <li>
+                                        <a href="{% url 'category_tours' category.id %}">
+                                            <img src="{% static 'assets/img/theme-img/map.svg' %}" alt="">
+                                            {{ category.name }}
+                                        </a>
+                                        <span>({{ category.tours.count }})</span> <!-- Kategoriyaga tegishli turlar soni -->
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock body %}

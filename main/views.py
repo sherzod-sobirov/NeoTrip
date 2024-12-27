@@ -1,24 +1,14 @@
 from typing import Any
-from django.views.generic import ListView
 from django.shortcuts import redirect, render
 from django.views import View
-from django.contrib.auth.mixins import LoginRequiredMixin
 from post.models import Post
-from tour.models import Tour, Destination
-from user.models import Testimonial
-from user.forms import TestimonialForm
+from tour.models import Tour, Destination, Category
 from django.views.generic import TemplateView
-from .forms import ContactForm
-from django.shortcuts import HttpResponse
+from .forms import ContactForm, CommentForm
 from django.views.generic import DetailView
 from datetime import datetime
 from django.contrib import messages
-from .models import TeamMember
-
-
-def team_view(request):
-    team_members = TeamMember.objects.all().order_by('display_order')
-    return render(request, 'main/about.html', {'team_members': team_members})
+from .models import TeamMember, Comment
 
 
 class HomeView(View):
@@ -27,7 +17,7 @@ class HomeView(View):
         last_three_tours_disc = Tour.objects.filter(status="discount").order_by("-created_at")[:2]
         last_four_tours = Tour.objects.filter(status="available").order_by("-created_at")[:4]
         last_three_dests = Destination.objects.all().order_by("-created_at")[:7]
-        last_five_testimonials = Testimonial.objects.all().order_by("-created_at")[:5]
+        last_five_testimonials = Comment.objects.all().order_by("-created_at")
         context = {
             "last_two_posts": last_two_posts,
             "last_four_tours": last_four_tours,
@@ -51,26 +41,38 @@ class DestinationDetailView(DetailView):
     template_name = "main/destination_detail.html"
     context_object_name = "destination"
     
-    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        # Add categories and their associated tour counts to the context
+        context['categories'] = Category.objects.all()  # Retrieve all categories
+        return context
+
+
 class AboutUsView(View):
     def get(self, request):
-        testimonials = Testimonial.objects.all()
         team_members = TeamMember.objects.all().order_by('display_order')
+        form = CommentForm()  # Initialize an empty form
         return render(request, 'main/about.html', {
-            'testimonials': testimonials,
-            'team_members': team_members
+            'team_members': team_members,
+            'form': form,  # Include the form in the context for GET requests
         })
 
     def post(self, request):
-        form = TestimonialForm(request.POST)
+        form = CommentForm(request.POST)
         if form.is_valid():
-            f = form.save(commit=False)
-            f.user = request.user
-            f.save()
-            return redirect('main_about')
-        return HttpResponse('ERROR!')
-    
-    
+            form.save()  # Save the comment to the database
+            messages.success(request, 'Your comment has been submitted successfully!')
+            return redirect('main_about')  # Redirect to the About Us page after submitting
+        else:
+            messages.error(request, 'There was an error submitting your comment. Please try again.')
+            team_members = TeamMember.objects.all().order_by('display_order')  # Fetch team members again
+            return render(request, 'main/about.html', {
+                'form': form,
+                'team_members': team_members,  # Include team members when the form is invalid
+            })
+
+
 class ContactView(View):
     def get(self, request):
         return render(request, 'main/contact.html')
