@@ -5,13 +5,10 @@
 {% block body %}
 
     <!-- Page Header Start !-->
-    <div class="breadcumb-wrapper " data-bg-src="{% static 'assets/img/bg/breadcumb-bg.jpg' %}" style="height: 500px;">
+    <div class="breadcumb-wrapper " data-bg-src="{% static 'assets/img/bg/breadcumb-bg.jpg' %}" style="height: 600px;">
         <div class="container">
             <div class="breadcumb-content">
-                <h1 class="breadcumb-title">{% trans 'Destination Maldives' %}</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="{% url 'main_home_view' %}">{% trans 'Home' %}</a></li>
-                    <li>{% trans 'Destination Details' %}</li>
                 </ul>
             </div>
         </div>
@@ -42,41 +39,21 @@
                 <!-- Blog Sidebar Start -->
                 <div class="col-xxl-4 col-lg-5">
                     <aside class="sidebar-area style3">
-                        <div class="widget widget_search  ">
-                            <form class="search-form">
-                                <input type="text" placeholder="{% trans 'Search' %}">
-                                <button type="submit"><i class="far fa-search"></i></button>
-                            </form>
-                        </div>
-                        <div class="widget widget_categories  ">
-                            <h3 class="widget_title">{% trans 'Categories' %}</h3>
+                        <br>
+                        <div class="widget widget_categories">
+                            <h3 class="widget_title">{% trans "Categories" %}</h3>
                             <ul>
-                                <li>
-                                    <a href="blog.html"><img src="assets/img/theme-img/map.svg" alt="">{% trans 'City Tour' %}</a>
-                                    <span>(8)</span>
-                                </li>
-                                <li>
-                                    <a href="blog.html"><img src="assets/img/theme-img/map.svg" alt="">{% trans 'Beach Tours' %}</a>
-                                    <span>(6)</span>
-                                </li>
-                                <li>
-                                    <a href="blog.html"><img src="assets/img/theme-img/map.svg" alt="">{% trans 'Wildlife Tours' %}</a>
-                                    <span>(2)</span>
-                                </li>
-                                <li>
-                                    <a href="blog.html"><img src="assets/img/theme-img/map.svg" alt="">{% trans 'News & Tips' %}</a>
-                                    <span>(7)</span>
-                                </li>
-                                <li>
-                                    <a href="blog.html"><img src="assets/img/theme-img/map.svg" alt="">{% trans 'Adventure Tours' %}</a>
-                                    <span>(9)</span>
-                                </li>
-                                <li>
-                                    <a href="blog.html"><img src="assets/img/theme-img/map.svg" alt="">{% trans 'Mountain Tours' %}</a>
-                                    <span>(10)</span>
-                                </li>
+                                {% for category in categories %}
+                                    <li>
+                                        <a href="{% url 'category_tours' category.id %}">
+                                            <img src="{% static 'assets/img/theme-img/map.svg' %}" alt="">
+                                            {{ category.name }}
+                                        </a>
+                                        <span>({{ category.tours.count }})</span> <!-- Kategoriyaga tegishli turlar soni -->
+                                    </li>
+                                {% endfor %}
                             </ul>
-                        </div>
+                        </div>   
                     </aside>
                 </div>
                 <!-- Blog Sidebar End -->

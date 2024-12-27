@@ -326,7 +326,7 @@ msgid ""
 "journeys."
 msgstr ""
 "Basée dans la ville de Samarcande, nous sommes fiers d'être une agence "
-"entièrement anglophone avec plus de 15 ans d'expérience dans la création de "
+"entièrement francophone avec plus de 15 ans d'expérience dans la création de "
 "voyages uniques et inspirants."
 
 #: templates/main/about.html:49

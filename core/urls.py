@@ -40,7 +40,6 @@ urlpatterns += i18n_patterns(
     path("",include("main.urls")),
     path("",include("tour.urls")),
     path("", include('post.urls')),
-    path("", include('cart.urls')),
     path("", include('order.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('set-language/', set_language, name='set_language'),

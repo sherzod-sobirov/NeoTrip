@@ -138,13 +138,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="popup-search-box">
-        <button class="searchClose"><i class="fal fa-times"></i></button>
-        <form action="#">
-            <input type="text" placeholder="What are you looking for?">
-            <button type="submit"><i class="fal fa-search"></i></button>
-        </form>
     </div><!--==============================
     Mobile Menu
   ============================== -->
@@ -186,7 +179,7 @@
                         <div class="header-links">
                             <ul>
                                 <li class="d-none d-xl-inline-block"><i class=""></i>
-                                    <span>contactsardor@gmail.com</span>
+                                    <span>📧 contactsardor@gmail.com</span>
                                 </li>
                                 <li class="d-none d-xl-inline-block"><i class="fas fa-phone"></i>
                                     <span>+998 91 557 77 13</span>
@@ -238,7 +231,7 @@
                             <nav class="main-menu d-none d-xl-inline-block">
                                 <ul>
                                     <li>
-                                        <a class="active" href="{% url 'main_home_view' %}">{% trans 'Home' %}</a>
+                                        <a href="{% url 'main_home_view' %}">{% trans 'Home' %}</a>
                                     </li>
                                     <li><a href="{% url 'main_about' %}">{% trans 'About Us' %}</a></li>
                                     <li class="">
@@ -275,7 +268,7 @@
 <!--==============================
 	Footer Area
 ==============================-->
-<footer class="footer-wrapper footer-layout1">
+<footer class="footer-wrapper bg-title footer-layout2">
     <div class="widget-area">
         <div class="container">
             <div class="row justify-content-between">
@@ -283,7 +276,7 @@
                     <div class="widget footer-widget">
                         <div class="th-widget-about">
                             <div class="about-logo">
-                                <a href="{% url 'main_home_view' %}"><img src="{% static 'assets/img/COLORVAR2.png' %}" alt="NEO TRIP"></a>
+                                <a href="{% url 'main_home_view' %}"><img src="{% static 'assets/img/COLORVAR2.png' %}" style="width: 300px;" alt="NEO TRIP"></a>
                             </div>
                             <p class="about-text">{% trans 'Our agency is your trusted partner in making your dream journey a reality. We offer unforgettable trips with the best service and affordable prices.' %}</p>
                             <div class="th-social">
@@ -298,10 +291,10 @@
                 </div>
                 <div class="col-md-6 col-xl-auto">
                     <div class="widget widget_nav_menu footer-widget">
-                        <h3 class="widget_title">{% trans 'Quick Links' %}</h3>
+                        <h3 class="widget_title">Quick Links</h3>
                         <div class="menu-all-pages-container">
                             <ul class="menu">
-                                <li><a href="index.html">{% trans 'Home' %}</a></li>
+                                <li><a href="{% url 'main_home_view' %}">{% trans 'Home' %}</a></li>
                                 <li><a href="{% url 'main_about' %}">{% trans 'About us' %}</a></li>
                                 <li><a href="{% url 'main_contact' %}">{% trans 'Terms of Service' %}</a></li>
                                 <li><a href="{% url 'tours' %}">{% trans 'Tour Booking Now' %}</a></li>
@@ -311,7 +304,7 @@
                 </div>
                 <div class="col-md-6 col-xl-auto">
                     <div class="widget footer-widget">
-                        <h3 class="widget_title">{% trans 'Address' %}</h3>
+                        <h3 class="widget_title">Get In Touch</h3>
                         <div class="th-widget-contact">
                             <div class="info-box_text">
                                 <div class="icon">
@@ -333,7 +326,7 @@
                             <div class="info-box_text">
                                 <div class="icon"><img src="{% static 'assets/img/icon/location-dot.svg' %}" alt="img"></div>
                                 <div class="details">
-                                    <p>Firdavsiy 84/448, Samarqand, Ouzbékistan</p>
+                                    <p>Firdavsiy 84/448, 140105, Samarqand, Ouzbékistan</p>
                                 </div>
                             </div>
                         </div>
@@ -373,11 +366,13 @@
             </div>
         </div>
     </div>
-    <div class="copyright-wrap" data-bg-src="{% static 'assets/img/bg/copyright_bg_1.jpg' %}" style="height: 90px;">
+    <div class="copyright-wrap" style="height: 70px;">
         <div class="container">
             <div class="row justify-content-between align-items-center">
                 <div class="col-md-6">
-                    <p class="copyright-text">Created By MRIT<a href="{% url 'main_home_view' %}"></a></p>
+                    <p class="copyright-text">
+                        <a href="https://mrit.uz" target="_blank">Created By MRIT</a>
+                    </p>
                 </div>
                 <div class="col-md-6 text-end d-none d-md-block">
                     <div class="footer-card">
@@ -388,66 +383,39 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-
+    <div class="shape-mockup movingX d-none d-xxl-block" data-top="24%" data-left="5%">
+        <img src="{% static 'assets/img/shape/shape_8.png' %}" alt="shape">
+    </div>
 </footer>
-
-<!--********************************
-        Code End  Here 
-******************************** -->
-
-<!-- Scroll To Top -->
-<div class="scroll-top">
-    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
-        </path>
-    </svg>
-</div>
-<!--==============================
-modal Area  
-==============================-->
-
-{% comment %} const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
-
-document.querySelector('#login-form').addEventListener('submit', function(e) {
-    e.preventDefault();  // Prevent the form from submitting in the usual way
-
-    const formData = new FormData(this);
-    
-    fetch('{% url "login_register" %}', {
-        method: 'POST',
-        headers: {
-            'X-CSRFToken': csrftoken,  // Include CSRF token
-        },
-        body: formData  // Form data to be submitted
-    })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error(error));
-}); {% endcomment %}
-
-<!--==============================
-All Js File
+    <!--==============================
+    All Js File
 ============================== -->
 <!-- Jquery -->
-<!-- Jquery -->
 <script src="{% static 'assets/js/vendor/jquery-3.6.0.min.js' %}"></script>
+
 <!-- Swiper Js -->
 <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+
 <!-- Bootstrap -->
 <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+
 <!-- Magnific Popup -->
 <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+
 <!-- Counter Up -->
 <script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+
 <!-- Range Slider -->
 <script src="{% static 'assets/js/jquery-ui.min.js' %}"></script>
+
 <!-- imagesloaded -->
 <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+
 <!-- isotope -->
 <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+
 <!-- gsap -->
 <script src="{% static 'assets/js/gsap.min.js' %}"></script>
 
@@ -457,12 +425,12 @@ All Js File
 <script src="{% static 'assets/js/matter.min.js' %}"></script>
 <script src="{% static 'assets/js/matterjs-custom.js' %}"></script>
 
-
 <!-- nice select -->
 <script src="{% static 'assets/js/nice-select.min.js' %}"></script>
 
 <!-- Main Js File -->
 <script src="{% static 'assets/js/main.js' %}"></script>
+
 </body>
 
 </html>

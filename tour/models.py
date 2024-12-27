@@ -23,12 +23,12 @@ class Destination(models.Model):
         return f"{self.city}"
 
 
-class IncludeExclude(models.Model):
-    name = models.CharField(max_length=256)
+class Category(models.Model):
+    name = models.CharField(max_length=100, unique=True)  # Name of the category
+    created_at = models.DateTimeField(auto_now_add=True)  # Auto-generated timestamp
 
-    def __str__(self) -> str:
-        return f"{self.name}"
-
+    def __str__(self):
+        return self.name
 
 class Tour(models.Model):
     STATUS = (
@@ -36,17 +36,19 @@ class Tour(models.Model):
         ("archived", "в архиве"),
         ("discount", "скидка"),
     )
+    category = models.ForeignKey(
+        Category,
+        on_delete=models.PROTECT,
+        related_name="tours"  # This sets up the reverse relationship
+    )
     photo = models.ImageField(upload_to="tour/")
     title = models.CharField(max_length=256)
-    price = models.DecimalField(max_digits=13, decimal_places=2)  # 15 000 000 000.00
+    price = models.CharField(max_length=13, null=True, blank=True)  # 15 000 000 000.00
     duration = models.CharField(max_length=256)
-    person_count = models.IntegerField()
     country = models.ForeignKey("Country", on_delete=models.PROTECT)
     overview = RichTextField()  # Use RichTextField for the rich text content
-    include = models.ManyToManyField("IncludeExclude", related_name="tour_include")
-    exclude = models.ManyToManyField("IncludeExclude", related_name="tour_exclude")
     status = models.CharField(max_length=30, choices=STATUS)
-    discount = models.FloatField(blank=True, null=True)
+
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:

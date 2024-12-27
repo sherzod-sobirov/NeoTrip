@@ -61,7 +61,6 @@ INSTALLED_APPS = [
     "main",
     "post",
     "tour",
-    'cart',
     'order',
     'ckeditor',
     'ckeditor_uploader',
@@ -106,7 +105,7 @@ WSGI_APPLICATION = "core.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "mydatabase1",
+        "NAME": "db.sqlite3",
     }
 }
 
@@ -207,3 +206,30 @@ PAYME: dict = {
 }
 
 ORDER_MODEL = 'order.models.Order'
+
+
+JAZZMIN_SETTINGS = {
+    "site_title": "Neo Trip",
+    "site_header": "NeoTrip Admin",
+    "site_brand": "Neo Trip",
+    "welcome_sign": "Neo Trip boshqaruv paneliga xush kelibsiz!",
+    "site_logo": "assets/img/favicons/apple-icon-57x57.png",  # Static papkada joylashgan logotip
+    "login_logo": "assets/img/favicons/apple-icon-57x57.png",
+    "login_logo_dark": "assets/img/favicons/apple-icon-57x57.png",
+    "copyright": "Neo Trip",
+    "search_model": "auth.User",  # Qidiruv oynasida modelni qidirish
+    "user_avatar": None,          # Foydalanuvchi avatari (model bilan bog'lash mumkin)
+    "topmenu_links": [            # Yuqoridagi menyu tugmalari
+        {"name": "Home", "url": "/", "permissions": ["auth.view_user"]},
+        {"model": "auth.User"},
+        {"app": "myapp"},
+    ],
+    "usermenu_links": [           # Foydalanuvchi menyusi uchun tugmalar
+        {"name": "Support", "url": "https://support.example.com", "new_window": True},
+    ],
+    "show_sidebar": True,         # Yon panelni ko'rsatish yoki yashirish
+    "navigation_expanded": True,  # Yon panel kengaytirilgan holda ochiladi
+    "hide_apps": ["auth"],        # Ko'rinmas bo'lishi kerak bo'lgan ilovalar
+    "hide_models": ["auth.User"], # Ko'rinmas bo'lishi kerak bo'lgan modellar
+    "order_with_respect_to": ["auth", "myapp"],  # Ilovalar tartibi
+}
