@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
 import os
@@ -16,33 +17,19 @@ from environs import Env
 
 env = Env()
 env.read_env()
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
+# Build paths inside the project
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
+SECRET_KEY = env("SECRET_KEY", default="your-secret-key")
+DEBUG = env.bool("DEBUG", default=True)
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["127.0.0.1"])
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-(2sz2f@eob*q24i&rdu5qxxo_b_hfm6vhe1c5+(6!9rbx5pong'
+CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS", default=["http://127.0.0.1:8000"])
+CORS_ALLOWED_ORIGINS = env.list("CORS_ALLOWED_ORIGINS", default=["http://127.0.0.1:8000"])
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['neotrip.uz', '127.0.0.1']
-
-CSRF_TRUSTED_ORIGINS = [
-    'https://neotrip.uz',
-]
-CORS_ALLOWED_ORIGINS = [
-    "https://neotrip.uz",
-]
 # Application definition
-
 INSTALLED_APPS = [
     'jazzmin',
     'modeltranslation',
@@ -74,7 +61,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.locale.LocaleMiddleware',  # Make sure this line is present
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -100,19 +87,14 @@ TEMPLATES = [
 WSGI_APPLICATION = "core.wsgi.application"
 
 # Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "db.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
-
 # Password validation
-# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
@@ -129,65 +111,43 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
-
-LANGUAGE_CODE = 'fr'
-
+LANGUAGE_CODE = 'fr'  # Asosiy til
 TIME_ZONE = "Asia/Tashkent"
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 LANGUAGES = (
     ('fr', _('French')),
     ('en', _('English')),
     ('ru', _('Russian')),
-
 )
 
-MODELTRANSLATION_DEFAULT_LANGUAGE = ('fr' )
-# MODELTRANSLATION_LANGUAGES = ('ru', 'uz')
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'fr'
 
 LOCALE_PATHS = [
-    BASE_DIR / 'locale/',
+    BASE_DIR / 'locale',
 ]
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
-# URL for static files
+# Static files
 STATIC_URL = '/static/'
-
-# Directory where Django will collect static files for deployment
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# Additional directories to search for static files during development
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# URL for media files
+# Media files
 MEDIA_URL = '/media/'
-
-# Directory where media files are uploaded
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# CKEditor
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
 # Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-
+# Custom user model
 AUTH_USER_MODEL = 'user.User'
 
-
-
+# Email configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_HOST_USER = env("EMAIL_HOST_USER")
@@ -196,7 +156,8 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 PASSWORD_RESET_TIMEOUT = 60 * 30
 
-PAYME: dict = {
+# Payme configuration
+PAYME = {
     'PAYME_ID': env.str("PAYME_ID"),
     'PAYME_KEY': env.str("PAYME_KEY"),
     'PAYME_URL': env.str("PAYME_URL"),
@@ -207,29 +168,29 @@ PAYME: dict = {
 
 ORDER_MODEL = 'order.models.Order'
 
-
+# Jazzmin settings
 JAZZMIN_SETTINGS = {
     "site_title": "Neo Trip",
     "site_header": "NeoTrip Admin",
     "site_brand": "Neo Trip",
     "welcome_sign": "Neo Trip boshqaruv paneliga xush kelibsiz!",
-    "site_logo": "assets/img/favicons/apple-icon-57x57.png",  # Static papkada joylashgan logotip
+    "site_logo": "assets/img/favicons/apple-icon-57x57.png",
     "login_logo": "assets/img/favicons/apple-icon-57x57.png",
     "login_logo_dark": "assets/img/favicons/apple-icon-57x57.png",
     "copyright": "Neo Trip",
-    "search_model": "auth.User",  # Qidiruv oynasida modelni qidirish
-    "user_avatar": None,          # Foydalanuvchi avatari (model bilan bog'lash mumkin)
-    "topmenu_links": [            # Yuqoridagi menyu tugmalari
+    "search_model": "auth.User",
+    "user_avatar": None,
+    "topmenu_links": [
         {"name": "Home", "url": "/", "permissions": ["auth.view_user"]},
         {"model": "auth.User"},
         {"app": "myapp"},
     ],
-    "usermenu_links": [           # Foydalanuvchi menyusi uchun tugmalar
+    "usermenu_links": [
         {"name": "Support", "url": "https://support.example.com", "new_window": True},
     ],
-    "show_sidebar": True,         # Yon panelni ko'rsatish yoki yashirish
-    "navigation_expanded": True,  # Yon panel kengaytirilgan holda ochiladi
-    "hide_apps": ["auth"],        # Ko'rinmas bo'lishi kerak bo'lgan ilovalar
-    "hide_models": ["auth.User"], # Ko'rinmas bo'lishi kerak bo'lgan modellar
-    "order_with_respect_to": ["auth", "myapp"],  # Ilovalar tartibi
+    "show_sidebar": True,
+    "navigation_expanded": True,
+    "hide_apps": ["auth"],
+    "hide_models": ["auth.User"],
+    "order_with_respect_to": ["auth", "myapp"],
 }

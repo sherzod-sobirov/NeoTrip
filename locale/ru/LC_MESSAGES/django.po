@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-13 16:44+0500\n"
+"POT-Creation-Date: 2024-12-27 15:30+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,64 +20,57 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: core/settings.py:146
+#: core/settings.py:121
 msgid "French"
-msgstr ""
+msgstr "Французский"
 
-#: core/settings.py:147
+#: core/settings.py:122
 msgid "English"
-msgstr ""
+msgstr "Английский"
 
-#: core/settings.py:148
+#: core/settings.py:123
 msgid "Russian"
-msgstr ""
+msgstr "Русский"
 
-#: templates/base.html:160 templates/base.html:241 templates/base.html:304
-#: templates/main/about.html:13 templates/main/contact.html:14
-#: templates/main/destination_detail.html:13
-#: templates/main/destinations.html:13 templates/main/package_detail.html:12
-#: templates/main/package_list.html:13 templates/post/blog-archive.html:15
-#: templates/post/blog-single.html:14 templates/user/my_orders.html:17
+#: templates/base.html:153 templates/base.html:234 templates/base.html:297
+#: templates/user/my_orders.html:17
 msgid "Home"
 msgstr "Главная"
 
-#: templates/base.html:162 templates/base.html:243 templates/index.html:21
+#: templates/base.html:155 templates/base.html:236 templates/index.html:21
 #: templates/index.html:38 templates/index.html:55
 msgid "About Us"
 msgstr "О нас"
 
-#: templates/base.html:216
+#: templates/base.html:209
 msgid "Logout"
 msgstr "Выйти"
 
-#: templates/base.html:218
+#: templates/base.html:211
 msgid "Sign In / Register"
 msgstr "Войти / Зарегистрироваться"
 
-#: templates/base.html:245 templates/main/destinations.html:11
-#: templates/main/destinations.html:14
+#: templates/base.html:238
 msgid "Destination"
 msgstr "Направление"
 
-#: templates/base.html:248 templates/post/blog-archive.html:118
-#: templates/post/blog-single.html:104
+#: templates/base.html:241
 msgid "Tour"
 msgstr "Тур"
 
-#: templates/base.html:251
+#: templates/base.html:244
 msgid "Blog"
 msgstr "Блог"
 
-#: templates/base.html:254
+#: templates/base.html:247
 msgid "Contact us"
 msgstr "Связаться с нами"
 
-#: templates/base.html:262 templates/index.html:224
-#: templates/main/package_detail.html:93
+#: templates/base.html:255 templates/index.html:224
 msgid "Book Now"
 msgstr "Забронировать сейчас"
 
-#: templates/base.html:288
+#: templates/base.html:281
 msgid ""
 "Our agency is your trusted partner in making your dream journey a reality. "
 "We offer unforgettable trips with the best service and affordable prices."
@@ -86,105 +79,17 @@ msgstr ""
 "путешествии. Мы предлагаем незабываемые поездки с лучшим обслуживанием и "
 "доступными ценами."
 
-#: templates/base.html:301
-msgid "Quick Links"
-msgstr "Быстрые ссылки"
-
-#: templates/base.html:305
+#: templates/base.html:298
 msgid "About us"
 msgstr "О нас"
 
-#: templates/base.html:306
+#: templates/base.html:299
 msgid "Terms of Service"
 msgstr "Условия обслуживания"
 
-#: templates/base.html:307
+#: templates/base.html:300
 msgid "Tour Booking Now"
 msgstr "Забронировать тур сейчас"
-
-#: templates/base.html:314
-msgid "Address"
-msgstr "Адрес"
-
-#: templates/cart/booking.html:13
-msgid "Booking"
-msgstr "Бронирование"
-
-#: templates/cart/booking.html:29
-msgid "Your Details"
-msgstr "Ваши данные"
-
-#: templates/cart/booking.html:34
-msgid "First name"
-msgstr "Имя"
-
-#: templates/cart/booking.html:40
-msgid "Last name"
-msgstr "Фамилия"
-
-#: templates/cart/booking.html:46 templates/main/contact.html:110
-msgid "Email"
-msgstr "Электронная почта"
-
-#: templates/cart/booking.html:52
-msgid "Phone"
-msgstr "Телефон"
-
-#: templates/cart/booking.html:61
-msgid "Payment Information"
-msgstr "Платежная информация"
-
-#: templates/cart/booking.html:66
-msgid "Name on card"
-msgstr "Имя на карте"
-
-#: templates/cart/booking.html:74
-msgid "Card number"
-msgstr "Номер карты"
-
-#: templates/cart/booking.html:87
-msgid "Expiration date"
-msgstr "Дата окончания"
-
-#: templates/cart/booking.html:90
-msgid "MM"
-msgstr "ММ"
-
-#: templates/cart/booking.html:93
-msgid "Year"
-msgstr "Год"
-
-#: templates/cart/booking.html:100
-msgid "Security code"
-msgstr "Код безопасности"
-
-#: templates/cart/booking.html:108
-msgid "Last 3 digits"
-msgstr "Последние 3 цифры"
-
-#: templates/cart/booking.html:117
-msgid "Or checkout with Paypal"
-msgstr "Или оплатить через Paypal"
-
-#: templates/cart/booking.html:125
-msgid "Pay Now"
-msgstr "Оплатить сейчас"
-
-#: templates/cart/booking.html:133
-msgid "Summary"
-msgstr "Резюме"
-
-#: templates/cart/booking.html:139
-msgid "Total cost"
-msgstr "Общая стоимость"
-
-#: templates/cart/booking.html:153
-msgid "HELP AND SUPPORT"
-msgstr "Помощь и поддержка"
-
-#: templates/cart/booking.html:155
-msgid "Monday to Friday 9.00am - 7.30pm"
-msgstr "Понедельник по пятницу с 9:00 до 19:30"
 
 #: templates/index.html:17
 msgid "Uzbekistan according to your desires"
@@ -202,17 +107,13 @@ msgstr "Чары и тайны Востока."
 msgid "Create your tailor-made trip to Central Asia"
 msgstr "Создайте свое индивидуальное путешествие в Центральную Азию"
 
-#: templates/index.html:83
-msgid "Top Destination"
-msgstr "Лучшее направление"
-
 #: templates/index.html:84
 msgid "Popular Destination"
 msgstr "Популярное направление"
 
 #: templates/index.html:101
 msgid "View All"
-msgstr ""
+msgstr "Просмотреть все"
 
 #: templates/index.html:136
 msgid "Let’s Go Together"
@@ -274,10 +175,6 @@ msgstr ""
 "Начните незабываемое путешествие! Мы выбрали самые захватывающие и "
 "популярные направления специально для вас."
 
-#: templates/index.html:246
-msgid "Make Your Tour More Pleasure"
-msgstr "Сделайте ваш тур более приятным"
-
 #: templates/index.html:247
 msgid "Recent Gallery"
 msgstr "Недавняя галерея"
@@ -299,20 +196,16 @@ msgstr "Исследуйте туры"
 msgid "Local assistance"
 msgstr "Местная помощь"
 
-#: templates/main/about.html:11 templates/main/about.html:14
-msgid "About NEO TRIP"
-msgstr "О NEO TRIP"
-
-#: templates/main/about.html:27 templates/main/about.html:30
-#: templates/main/about.html:33 templates/main/destination_detail.html:34
+#: templates/main/about.html:24 templates/main/about.html:27
+#: templates/main/about.html:30 templates/main/destination_detail.html:31
 msgid "About"
 msgstr "О компании"
 
-#: templates/main/about.html:40
+#: templates/main/about.html:37
 msgid "Dear travelers"
 msgstr "Дорогие путешественники"
 
-#: templates/main/about.html:43
+#: templates/main/about.html:40
 msgid ""
 "Welcome to NEO TRIP, a travel agency born from the passion and dedication of "
 "a team that cherishes their homeland, Uzbekistan, and shares a deep "
@@ -322,7 +215,7 @@ msgstr ""
 "преданности команды, которая любит свою родину, Узбекистан, и испытывает "
 "глубокое восхищение легендарным Шелковым путём."
 
-#: templates/main/about.html:46
+#: templates/main/about.html:43
 msgid ""
 "Based in the city of Samarkand, we are proud to be a fully English-speaking "
 "agency with over 15 years of experience in curating unique and inspiring "
@@ -332,7 +225,7 @@ msgstr ""
 "полностью pусскоязычный агентством с более чем 15-летним опытом организации "
 "уникальных и вдохновляющих путешествий."
 
-#: templates/main/about.html:49
+#: templates/main/about.html:46
 msgid ""
 "Our mission is to offer you the opportunity to discover Uzbekistan and the "
 "wonders of Central Asia through tailor-made travel experiences."
@@ -341,7 +234,7 @@ msgstr ""
 "чудеса Центральной Азии через индивидуально подобранные туристические "
 "маршруты."
 
-#: templates/main/about.html:52
+#: templates/main/about.html:49
 msgid ""
 "With our signature program, Customized Uzbekistan, we create itineraries "
 "that are steeped in authenticity, carefully designed to align with your "
@@ -351,7 +244,7 @@ msgstr ""
 "маршруты, насыщенные подлинностью, тщательно разработанные с учетом ваших "
 "личных интересов, темпа и предпочтений."
 
-#: templates/main/about.html:55
+#: templates/main/about.html:52
 msgid ""
 "Whether you're seeking cultural immersion, historical exploration, or "
 "breathtaking natural landscapes, we are here to guide you every step of the "
@@ -361,7 +254,7 @@ msgstr ""
 "природные пейзажи, мы здесь, чтобы направлять вас на каждом шаге вашего "
 "путешествия."
 
-#: templates/main/about.html:58
+#: templates/main/about.html:55
 msgid ""
 "Share your travel aspirations with us, and together we'll craft the perfect "
 "journey, ensuring every detail is thoughtfully considered to bring your "
@@ -371,287 +264,210 @@ msgstr ""
 "идеальный маршрут, учитывая каждую деталь, чтобы воплотить ваше приключение "
 "мечты в реальность."
 
-#: templates/main/about.html:61
+#: templates/main/about.html:58
 msgid "Let us help you create memories that will last a lifetime."
 msgstr ""
 "Позвольте нам помочь вам создать воспоминания, которые останутся с вами на "
 "всю жизнь."
 
-#: templates/main/about.html:66
+#: templates/main/about.html:63
 msgid "Contact With Us"
 msgstr "Свяжитесь с нами"
 
-#: templates/main/about.html:75 templates/main/about.html:78
-#: templates/main/about.html:81 templates/main/about.html:84
+#: templates/main/about.html:72 templates/main/about.html:75
+#: templates/main/about.html:78 templates/main/about.html:81
 msgid "shape"
 msgstr "форма"
 
-#: templates/main/about.html:97 templates/main/about.html:103
-#: templates/main/about.html:109 templates/main/about.html:115
-#: templates/main/about.html:121 templates/main/about.html:127
-#: templates/main/about.html:133 templates/main/about.html:139
-#: templates/main/about.html:145 templates/main/about.html:151
-#: templates/main/about.html:157
-msgid "Gallery Image"
-msgstr "Изображение галереи"
+#: templates/main/about.html:89
+msgid "Meet with Our Team"
+msgstr "Познакомьтесь с нашей командой"
 
-#: templates/main/contact.html:12 templates/main/contact.html:15
-#: templates/main/contact.html:87
-msgid "Contact Us"
-msgstr "Свяжитесь с нами"
+#: templates/main/about.html:90
+msgid "Our Team Members"
+msgstr "Члены нашей команды"
 
-#: templates/main/contact.html:26
-msgid "Our Contact Information"
-msgstr "Наши контактные данные"
-
-#: templates/main/contact.html:35
-msgid "Our Address"
-msgstr "Наш адрес"
-
-#: templates/main/contact.html:46 templates/main/contact.html:115
-#: templates/main/contact.html:116
-msgid "Phone Number"
-msgstr "Номер телефона"
-
-#: templates/main/contact.html:58
-msgid "Email Address"
-msgstr "Адрес электронной почты"
-
-#: templates/main/contact.html:78
+#: templates/main/about.html:154 templates/main/contact.html:75
 msgid "Play Video"
 msgstr "Посмотреть видео"
 
-#: templates/main/contact.html:100 templates/main/contact.html:101
-msgid "First Name"
+#: templates/main/about.html:163
+msgid "Leave a Comment"
+msgstr "Оставить комментарий"
+
+#: templates/main/about.html:166 templates/main/about.html:167
+#, fuzzy
+#| msgid "First Name"
+msgid "Full Name"
 msgstr "Имя"
 
-#: templates/main/contact.html:105 templates/main/contact.html:106
-msgid "Last Name"
-msgstr "Фамилия"
-
-#: templates/main/contact.html:111
-msgid "Your Mail"
-msgstr "Ваша почта"
-
-#: templates/main/contact.html:119
+#: templates/main/about.html:171 templates/main/contact.html:116
 msgid "Message"
 msgstr "Сообщение"
 
-#: templates/main/contact.html:120
-msgid "Your Message"
-msgstr "Ваше сообщение"
+#: templates/main/about.html:172
+#, fuzzy
+#| msgid "Tour Completed"
+msgid "Your Comment"
+msgstr "Тур завершен"
 
-#: templates/main/contact.html:125
-msgid "Send message"
-msgstr "Отправить сообщение"
+#: templates/main/about.html:184
+msgid "Post Comment"
+msgstr "Оставить комментарий"
 
-#: templates/main/destination_detail.html:11
-msgid "Destination Maldives"
-msgstr "Направление Мальдивы"
+#: templates/main/about.html:200 templates/main/about.html:206
+#: templates/main/about.html:212 templates/main/about.html:218
+#: templates/main/about.html:224 templates/main/about.html:230
+#: templates/main/about.html:236 templates/main/about.html:242
+#: templates/main/about.html:248 templates/main/about.html:254
+#: templates/main/about.html:260
+msgid "Gallery Image"
+msgstr "Изображение галереи"
 
-#: templates/main/destination_detail.html:14
-msgid "Destination Details"
-msgstr "Детали направления"
+#: templates/main/category_detail.html:23
+#, fuzzy
+#| msgid "Tour"
+msgid "Tours in"
+msgstr "Тур"
 
-#: templates/main/destination_detail.html:47
-#: templates/main/package_list.html:96 templates/post/blog-archive.html:82
-#: templates/post/blog-single.html:68
-msgid "Search"
-msgstr "Поиск"
-
-#: templates/main/destination_detail.html:52
-#: templates/main/package_detail.html:103 templates/main/package_list.html:104
-#: templates/post/blog-archive.html:87 templates/post/blog-single.html:73
-msgid "Categories"
-msgstr "Категории"
-
-#: templates/main/destination_detail.html:55
-#: templates/main/package_detail.html:106 templates/main/package_list.html:107
-#: templates/post/blog-archive.html:90 templates/post/blog-single.html:76
-msgid "City Tour"
-msgstr "Городской тур"
-
-#: templates/main/destination_detail.html:59
-#: templates/main/package_list.html:111 templates/post/blog-archive.html:94
-#: templates/post/blog-single.html:80
-msgid "Beach Tours"
-msgstr "Пляжные туры"
-
-#: templates/main/destination_detail.html:63
-#: templates/main/package_detail.html:114 templates/main/package_list.html:115
-#: templates/post/blog-archive.html:98 templates/post/blog-single.html:84
-msgid "Wildlife Tours"
-msgstr "Туры по дикой природе"
-
-#: templates/main/destination_detail.html:67
-#: templates/main/package_detail.html:118 templates/main/package_list.html:119
-#: templates/post/blog-archive.html:102 templates/post/blog-single.html:88
-msgid "News & Tips"
-msgstr "Новости и советы"
-
-#: templates/main/destination_detail.html:71
-#: templates/main/package_detail.html:122 templates/main/package_list.html:123
-#: templates/post/blog-archive.html:106 templates/post/blog-single.html:92
-msgid "Adventure Tours"
-msgstr "Приключенческие туры"
-
-#: templates/main/destination_detail.html:75
-#: templates/main/package_detail.html:126 templates/main/package_list.html:127
-#: templates/post/blog-archive.html:110 templates/post/blog-single.html:96
-msgid "Mountain Tours"
-msgstr "Горные туры"
-
-#: templates/main/destinations.html:25
-msgid "Popular destination"
-msgstr "Популярное направление"
-
-#: templates/main/destinations.html:86
-msgid "No destinations available."
-msgstr "Нет доступных направлений."
-
-#: templates/main/package_detail.html:10 templates/main/package_detail.html:13
-msgid "Tour Details"
-msgstr "Детали тура"
-
-#: templates/main/package_detail.html:59
-msgid "About this tour"
-msgstr "О данном туре"
-
-#: templates/main/package_detail.html:64
-msgid "Price Includes"
-msgstr "Цена включает"
-
-#: templates/main/package_detail.html:72
-msgid "Price Excludes"
-msgstr "Цена не включает"
-
-#: templates/main/package_detail.html:95
-msgid "Login to Book"
-msgstr "Войти, чтобы забронировать"
-
-#: templates/main/package_detail.html:110
-msgid " Beach Tours"
-msgstr "Пляжные туры"
-
-#: templates/main/package_detail.html:136
-msgid "Location"
-msgstr "Местоположение"
-
-#: templates/main/package_list.html:11 templates/main/package_list.html:14
-msgid "Popular Tours"
-msgstr "Популярные туры"
-
-#: templates/main/package_list.html:37
-msgid "image"
-msgstr "изображение"
-
-#: templates/main/package_list.html:42
-msgid "Rated 5.00 out of 5"
-msgstr "Оценка 5.00 из 5"
-
-#: templates/main/package_list.html:42
-msgid "Rated"
-msgstr "Оценено"
-
-#: templates/main/package_list.html:43
-msgid "out of 5 based on"
-msgstr "из 5 на основе"
-
-#: templates/main/package_list.html:43
-msgid "4.8 Rating"
-msgstr "Рейтинг 4.8"
-
-#: templates/main/package_list.html:45
-msgid "Rating"
-msgstr "Рейтинг"
-
-#: templates/main/package_list.html:50
+#: templates/main/category_detail.html:42 templates/main/package_list.html:47
 msgid "Detail View"
 msgstr "Подробный просмотр"
 
-#: templates/main/package_list.html:83 templates/post/blog-archive.html:71
+#: templates/main/category_detail.html:72 templates/main/package_list.html:79
+#: templates/post/blog-archive.html:68
 msgid "Next"
 msgstr "Далее"
 
-#: templates/post/blog-archive.html:13 templates/post/blog-archive.html:16
-msgid "Blog Lists View"
-msgstr "Просмотр списка блогов"
+#: templates/main/category_detail.html:88
+#: templates/main/destination_detail.html:44
+#: templates/main/package_detail.html:65 templates/main/package_list.html:93
+#: templates/post/blog-archive.html:78 templates/post/blog-single.html:64
+msgid "Categories"
+msgstr "Категории"
 
-#: templates/post/blog-archive.html:30 templates/post/blog-single.html:28
+#: templates/main/contact.html:23
+msgid "Our Contact Information"
+msgstr "Наши контактные данные"
+
+#: templates/main/contact.html:32
+msgid "Our Address"
+msgstr "Наш адрес"
+
+#: templates/main/contact.html:43 templates/main/contact.html:112
+#: templates/main/contact.html:113
+msgid "Phone Number"
+msgstr "Номер телефона"
+
+#: templates/main/contact.html:55
+msgid "Email Address"
+msgstr "Адрес электронной почты"
+
+#: templates/main/contact.html:84
+msgid "Contact Us"
+msgstr "Свяжитесь с нами"
+
+#: templates/main/contact.html:97 templates/main/contact.html:98
+msgid "First Name"
+msgstr "Имя"
+
+#: templates/main/contact.html:102 templates/main/contact.html:103
+msgid "Last Name"
+msgstr "Фамилия"
+
+#: templates/main/contact.html:107
+msgid "Email"
+msgstr "Электронная почта"
+
+#: templates/main/contact.html:108
+msgid "Your Mail"
+msgstr "Ваша почта"
+
+#: templates/main/contact.html:117
+msgid "Your Message"
+msgstr "Ваше сообщение"
+
+#: templates/main/contact.html:122
+msgid "Send message"
+msgstr "Отправить сообщение"
+
+#: templates/main/destinations.html:22
+msgid "Popular destination"
+msgstr "Популярное направление"
+
+#: templates/main/destinations.html:83
+msgid "No destinations available."
+msgstr "Нет доступных направлений."
+
+#: templates/main/package_detail.html:48
+msgid "About this tour"
+msgstr "О данном туре"
+
+#: templates/main/package_detail.html:82
+msgid "Location"
+msgstr "Местоположение"
+
+#: templates/main/package_list.html:34
+msgid "image"
+msgstr "изображение"
+
+#: templates/main/package_list.html:39
+msgid "Rated 5.00 out of 5"
+msgstr "Оценка 5.00 из 5"
+
+#: templates/main/package_list.html:40
+msgid "Rated"
+msgstr "Оценено"
+
+#: templates/main/package_list.html:40
+msgid "out of 5 based on"
+msgstr "из 5 на основе"
+
+#: templates/main/package_list.html:40
+msgid "4.8 Rating"
+msgstr "Рейтинг 4.8"
+
+#: templates/main/package_list.html:42
+msgid "Rating"
+msgstr "Рейтинг"
+
+#: templates/post/blog-archive.html:27 templates/post/blog-single.html:25
 msgid "Blog Image"
 msgstr "Изображение блога"
 
-#: templates/post/blog-archive.html:34
-msgid "by David Smith"
-msgstr "автор: Дэвид Смит"
-
-#: templates/post/blog-archive.html:36
-msgid "Tour Guide"
-msgstr "Гид"
-
-#: templates/post/blog-archive.html:41
-msgid "Read More"
-msgstr "Читать далее"
-
-#: templates/post/blog-archive.html:116 templates/post/blog-single.html:102
-msgid "Popular Tags"
-msgstr "Популярные теги"
-
-#: templates/post/blog-archive.html:119 templates/post/blog-single.html:105
-msgid "Adventure"
-msgstr "Приключение"
-
-#: templates/post/blog-archive.html:120 templates/post/blog-single.html:106
-msgid "Rent"
-msgstr "Аренда"
-
-#: templates/post/blog-archive.html:121 templates/post/blog-single.html:107
-msgid "Innovate"
-msgstr "Инновация"
-
-#: templates/post/blog-archive.html:122 templates/post/blog-single.html:108
-msgid "Hotel"
-msgstr "Отель"
-
-#: templates/post/blog-archive.html:123 templates/post/blog-single.html:44
-#: templates/post/blog-single.html:109
-msgid "Modern"
-msgstr "Современный"
-
-#: templates/post/blog-archive.html:124 templates/post/blog-single.html:45
-#: templates/post/blog-single.html:110
-msgid "Luxury"
-msgstr "Роскошь"
-
-#: templates/post/blog-archive.html:125 templates/post/blog-single.html:111
-msgid "Travel"
-msgstr "Путешествие"
-
-#: templates/post/blog-single.html:12
-msgid "Exploring Love Iceland in Maldives"
-msgstr "Исследование любви Исландии на Мальдивах"
-
-#: templates/post/blog-single.html:15
-msgid "Single Blog"
-msgstr "Отдельный блог"
-
-#: templates/post/blog-single.html:32
+#: templates/post/blog-archive.html:31 templates/post/blog-single.html:29
 msgid "By Admin"
 msgstr "Администратор"
 
-#: templates/post/blog-single.html:40
+#: templates/post/blog-archive.html:33
+msgid "Tour Guide"
+msgstr "Гид"
+
+#: templates/post/blog-archive.html:38
+msgid "Read More"
+msgstr "Читать далее"
+
+#: templates/post/blog-single.html:37
 msgid "Tags:"
 msgstr "Теги:"
 
-#: templates/post/blog-single.html:42
+#: templates/post/blog-single.html:39
 msgid "Apartment"
 msgstr "Квартира"
 
-#: templates/post/blog-single.html:43
+#: templates/post/blog-single.html:40
 msgid "Buyer"
 msgstr "Покупатель"
 
-#: templates/post/blog-single.html:50
+#: templates/post/blog-single.html:41
+msgid "Modern"
+msgstr "Современный"
+
+#: templates/post/blog-single.html:42
+msgid "Luxury"
+msgstr "Роскошь"
+
+#: templates/post/blog-single.html:47
 msgid "Share:"
 msgstr "Поделиться:"
 
@@ -736,7 +552,7 @@ msgstr "Сброс пароля прошел успешно"
 msgid ""
 "Your password has been successfully reset. You can now log in with your new "
 "password."
-msgstr ""
+msgstr "Ваш пароль успешно сброшен. Теперь вы можете войти с новым паролем."
 
 #: templates/user/reset_password_complete.html:30
 msgid "Log In"
@@ -780,28 +596,28 @@ msgid ""
 msgstr ""
 "На ваш почтовый ящик было отправлено письмо с инструкциями по сбросу пароля."
 
-#: user/models.py:13
+#: user/models.py:12
 msgid "first name"
 msgstr "имя"
 
-#: user/models.py:14
+#: user/models.py:13
 msgid "last name"
 msgstr "фамилия"
 
-#: user/models.py:15
+#: user/models.py:14
 msgid "email address"
 msgstr "адрес электронной почты"
 
-#: user/models.py:18
+#: user/models.py:17
 msgid "username"
 msgstr "имя пользователя"
 
-#: user/models.py:22
+#: user/models.py:21
 msgid "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
 msgstr ""
 "Обязательно. Не более 150 символов. Только буквы, цифры и символы @/./+/-/_."
 
-#: user/models.py:26
+#: user/models.py:25
 msgid "A user with that username already exists."
 msgstr "Пользователь с таким именем уже существует."
 
@@ -819,17 +635,21 @@ msgstr "Поиск"
 
 #: venv/lib/python3.10/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:5
 msgid "Select an image to embed"
-msgstr ""
+msgstr "Выберите изображение для вставки"
 
 #: venv/lib/python3.10/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:27
 msgid "Browse for the image you want, then click 'Embed Image' to continue..."
 msgstr ""
+"Найдите нужное изображение, затем нажмите «Встроить изображение», чтобы "
+"продолжить..."
 
 #: venv/lib/python3.10/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:29
 msgid ""
 "No images found. Upload images using the 'Image Button' dialog's 'Upload' "
 "tab."
 msgstr ""
+"Изображения не найдены. Загрузите изображения с помощью вкладки «Загрузить» "
+"диалогового окна «Кнопка изображения»."
 
 #: venv/lib/python3.10/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:50
 #, fuzzy
@@ -852,23 +672,23 @@ msgstr "Посмотреть видео"
 
 #: venv/lib/python3.10/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:147
 msgid "Pause Slideshow"
-msgstr ""
+msgstr "Пауза слайд-шоу"
 
 #: venv/lib/python3.10/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:148
 msgid "&lsaquo; Previous Photo"
-msgstr ""
+msgstr "Предыдущее фото"
 
 #: venv/lib/python3.10/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:149
 msgid "Next Photo &rsaquo;"
-msgstr ""
+msgstr "Следующее фото"
 
 #: venv/lib/python3.10/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:150
 msgid "Next &rsaquo;"
-msgstr ""
+msgstr "Следующий"
 
 #: venv/lib/python3.10/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:151
 msgid "&lsaquo; Prev"
-msgstr ""
+msgstr "Предыдущая"
 
 #: venv/lib/python3.10/site-packages/django/contrib/messages/apps.py:15
 msgid "Messages"
@@ -2162,11 +1982,155 @@ msgstr "Подключитесь, получите помощь или внес�
 msgid "Clear image"
 msgstr "Изображение галереи"
 
+#~ msgid "Quick Links"
+#~ msgstr "Быстрые ссылки"
+
+#~ msgid "Address"
+#~ msgstr "Адрес"
+
+#~ msgid "Booking"
+#~ msgstr "Бронирование"
+
+#~ msgid "Your Details"
+#~ msgstr "Ваши данные"
+
+#~ msgid "First name"
+#~ msgstr "Имя"
+
+#~ msgid "Last name"
+#~ msgstr "Фамилия"
+
+#~ msgid "Phone"
+#~ msgstr "Телефон"
+
+#~ msgid "Payment Information"
+#~ msgstr "Платежная информация"
+
+#~ msgid "Name on card"
+#~ msgstr "Имя на карте"
+
+#~ msgid "Card number"
+#~ msgstr "Номер карты"
+
+#~ msgid "Expiration date"
+#~ msgstr "Дата окончания"
+
+#~ msgid "MM"
+#~ msgstr "ММ"
+
+#~ msgid "Year"
+#~ msgstr "Год"
+
+#~ msgid "Security code"
+#~ msgstr "Код безопасности"
+
+#~ msgid "Last 3 digits"
+#~ msgstr "Последние 3 цифры"
+
+#~ msgid "Or checkout with Paypal"
+#~ msgstr "Или оплатить через Paypal"
+
+#~ msgid "Pay Now"
+#~ msgstr "Оплатить сейчас"
+
+#~ msgid "Summary"
+#~ msgstr "Резюме"
+
+#~ msgid "Total cost"
+#~ msgstr "Общая стоимость"
+
+#~ msgid "HELP AND SUPPORT"
+#~ msgstr "Помощь и поддержка"
+
+#~ msgid "Monday to Friday 9.00am - 7.30pm"
+#~ msgstr "Понедельник по пятницу с 9:00 до 19:30"
+
+#~ msgid "Top Destination"
+#~ msgstr "Лучшее направление"
+
+#~ msgid "Make Your Tour More Pleasure"
+#~ msgstr "Сделайте ваш тур более приятным"
+
+#~ msgid "About NEO TRIP"
+#~ msgstr "О NEO TRIP"
+
+#~ msgid "Destination Maldives"
+#~ msgstr "Направление Мальдивы"
+
+#~ msgid "Destination Details"
+#~ msgstr "Детали направления"
+
+#~ msgid "Search"
+#~ msgstr "Поиск"
+
+#~ msgid "City Tour"
+#~ msgstr "Городской тур"
+
+#~ msgid "Beach Tours"
+#~ msgstr "Пляжные туры"
+
+#~ msgid "Wildlife Tours"
+#~ msgstr "Туры по дикой природе"
+
+#~ msgid "News & Tips"
+#~ msgstr "Новости и советы"
+
+#~ msgid "Adventure Tours"
+#~ msgstr "Приключенческие туры"
+
+#~ msgid "Mountain Tours"
+#~ msgstr "Горные туры"
+
+#~ msgid "Tour Details"
+#~ msgstr "Детали тура"
+
+#~ msgid "Price Includes"
+#~ msgstr "Цена включает"
+
+#~ msgid "Price Excludes"
+#~ msgstr "Цена не включает"
+
+#~ msgid "Login to Book"
+#~ msgstr "Войти, чтобы забронировать"
+
+#~ msgid " Beach Tours"
+#~ msgstr "Пляжные туры"
+
+#~ msgid "Popular Tours"
+#~ msgstr "Популярные туры"
+
+#~ msgid "Blog Lists View"
+#~ msgstr "Просмотр списка блогов"
+
+#~ msgid "by David Smith"
+#~ msgstr "автор: Дэвид Смит"
+
+#~ msgid "Popular Tags"
+#~ msgstr "Популярные теги"
+
+#~ msgid "Adventure"
+#~ msgstr "Приключение"
+
+#~ msgid "Rent"
+#~ msgstr "Аренда"
+
+#~ msgid "Innovate"
+#~ msgstr "Инновация"
+
+#~ msgid "Hotel"
+#~ msgstr "Отель"
+
+#~ msgid "Travel"
+#~ msgstr "Путешествие"
+
+#~ msgid "Exploring Love Iceland in Maldives"
+#~ msgstr "Исследование любви Исландии на Мальдивах"
+
+#~ msgid "Single Blog"
+#~ msgstr "Отдельный блог"
+
 #~ msgid "Retention Rate"
 #~ msgstr "Уровень удержания"
-
-#~ msgid "Tour Completed"
-#~ msgstr "Тур завершен"
 
 #~ msgid "Happy Travellers"
 #~ msgstr "Счастливые путешественники"
