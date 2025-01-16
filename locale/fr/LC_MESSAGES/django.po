@@ -297,7 +297,7 @@ msgstr "forme"
 
 #: templates/main/about.html:91
 msgid "Our team"
-msgstr ""
+msgstr "Notre équipe"
 
 #: templates/main/about.html:156 templates/main/contact.html:75
 msgid "Play Video"
