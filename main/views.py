@@ -111,39 +111,18 @@ class ContactView(View):
 #         return render(request, "search.html", context)
 
 
-# views.py
-# main/views.py
-# main/views.py
 from django.shortcuts import redirect
 from django.utils import translation
 from django.conf import settings
 
 def set_language(request):
-    """
-    Set the language for the current session based on the user's choice.
-
-    Args:
-        request: Django HttpRequest object.
-
-    Returns:
-        HttpResponseRedirect to the referring page or root ('/').
-    """
-    # Get the language from the GET parameters (e.g., lang=fr or lang=ru)
-    language = request.GET.get('lang', 'fr')  # Default to French if no language is selected
-
-    # Check if the selected language is supported
+    language = request.GET.get('lang', 'fr')  # Default language as 'fr'
     if language in dict(settings.LANGUAGES):
-        # Activate the selected language
         translation.activate(language)
-        # Redirect to the previous page or homepage, setting the language cookie
         response = redirect(request.META.get('HTTP_REFERER', '/'))
         response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language)
     else:
-        # If the language is invalid, fall back to French
         translation.activate('fr')
         response = redirect('/')
         response.set_cookie(settings.LANGUAGE_COOKIE_NAME, 'fr')
-
     return response
-
-

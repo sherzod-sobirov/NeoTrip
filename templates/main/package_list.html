@@ -30,8 +30,8 @@
                                     {% for i in page_obj %}
                                     <div class="col-12">
                                         <div class="tour-box style-flex th-ani" style="margin-bottom: 20px;">
-                                            <div class="tour-box_img global-img">
-                                                <a href="{% url 'tour_tour_detail' i.id %}"><img src="{{ i.photo.url }}" alt="{% trans 'image' %}" style="width: 700px; height: 274px;"></a>
+                                            <div class="tour-box_img global-img" style="width: 400px;">
+                                                <a href="{% url 'tour_tour_detail' i.id %}"><img src="{{ i.photo.url }}" alt="{% trans 'image' %}" style="width: 400px; height: 274px;"></a>
                                             </div>
                                             <div class="tour-content">
                                                 <h3 class="box-title"><a href="{% url 'tour_tour_detail' i.id %}">{{ i.title }}</a></h3>
@@ -98,7 +98,7 @@
                                             <img src="{% static 'assets/img/theme-img/map.svg' %}" alt="">
                                             {{ category.name }}
                                         </a>
-                                        <span>({{ category.tour_set.count }})</span> <!-- Kategoriyaga tegishli turlar soni -->
+                                        <span>({{ category.tours.count }})</span> <!-- Kategoriyaga tegishli turlar soni -->
                                     </li>
                                 {% endfor %}
                             </ul>

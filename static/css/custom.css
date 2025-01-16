@@ -1,0 +1,5 @@
+/* static/css/custom.css */
+#header-logo img {
+    width: 50px; /* Logotip kengligi */
+    height: auto; /* Proportsiyani saqlash */
+}

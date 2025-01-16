@@ -66,16 +66,24 @@ INSTALLED_APPS = [
     'easy_thumbnails',
 ]
 
+LANGUAGE_COOKIE_NAME = 'django_language'
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_COOKIE_NAME = 'django_session'
+
 MIDDLEWARE = [
+    'core.middleware.ForceFrenchLanguageMiddleware',  # Custom middleware
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.locale.LocaleMiddleware',  # Make sure this line is present
+    'django.middleware.locale.LocaleMiddleware',  # Ensure this is after the custom middleware
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+
 
 ROOT_URLCONF = "core.urls"
 
@@ -135,20 +143,16 @@ LANGUAGE_CODE = 'fr'
 TIME_ZONE = "Asia/Tashkent"
 
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 LANGUAGES = (
     ('fr', _('French')),
     ('en', _('English')),
     ('ru', _('Russian')),
-
 )
 
-MODELTRANSLATION_DEFAULT_LANGUAGE = ('fr' )
-# MODELTRANSLATION_LANGUAGES = ('ru', 'uz')
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'fr'
 
 LOCALE_PATHS = [
     BASE_DIR / 'locale/',
@@ -206,29 +210,43 @@ PAYME: dict = {
 
 ORDER_MODEL = 'order.models.Order'
 
-
 JAZZMIN_SETTINGS = {
+    # Custom CSS file for styling
+    "custom_css": "assets/css/custom.css",
+
+    # Site and branding settings
     "site_title": "Neo Trip",
     "site_header": "NeoTrip Admin",
     "site_brand": "Neo Trip",
     "welcome_sign": "Neo Trip boshqaruv paneliga xush kelibsiz!",
-    "site_logo": "assets/img/favicons/apple-icon-57x57.png",  # Static papkada joylashgan logotip
-    "login_logo": "assets/img/favicons/apple-icon-57x57.png",
-    "login_logo_dark": "assets/img/favicons/apple-icon-57x57.png",
     "copyright": "Neo Trip",
-    "search_model": "auth.User",  # Qidiruv oynasida modelni qidirish
-    "user_avatar": None,          # Foydalanuvchi avatari (model bilan bog'lash mumkin)
-    "topmenu_links": [            # Yuqoridagi menyu tugmalari
+
+    # Search model for the top search bar
+    "search_model": "auth.User",
+
+    # User avatar configuration (optional)
+    "user_avatar": None,
+
+    # Top menu links configuration
+    "topmenu_links": [
         {"name": "Home", "url": "/", "permissions": ["auth.view_user"]},
         {"model": "auth.User"},
         {"app": "myapp"},
     ],
-    "usermenu_links": [           # Foydalanuvchi menyusi uchun tugmalar
+
+    # User menu links configuration
+    "usermenu_links": [
         {"name": "Support", "url": "https://support.example.com", "new_window": True},
     ],
-    "show_sidebar": True,         # Yon panelni ko'rsatish yoki yashirish
-    "navigation_expanded": True,  # Yon panel kengaytirilgan holda ochiladi
-    "hide_apps": ["auth"],        # Ko'rinmas bo'lishi kerak bo'lgan ilovalar
-    "hide_models": ["auth.User"], # Ko'rinmas bo'lishi kerak bo'lgan modellar
-    "order_with_respect_to": ["auth", "myapp"],  # Ilovalar tartibi
+
+    # Sidebar and navigation settings
+    "show_sidebar": True,
+    "navigation_expanded": True,
+
+    # Visibility control for apps and models
+    "hide_apps": ["auth"],
+    "hide_models": ["auth.User"],
+
+    # Order of apps in the sidebar
+    "order_with_respect_to": ["auth", "myapp"],
 }

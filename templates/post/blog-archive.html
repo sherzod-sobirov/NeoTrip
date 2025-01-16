@@ -72,24 +72,6 @@ Blog Area
                     </ul>
                 </div>
             </div>
-            <div class="col-xxl-4 col-lg-5">
-                <aside class="sidebar-area">
-                    <div class="widget widget_categories">
-                        <h3 class="widget_title">{% trans "Categories" %}</h3>
-                        <ul>
-                            {% for category in categories %}
-                                <li>
-                                    <a href="{% url 'category_tours' category.id %}">
-                                        <img src="{% static 'assets/img/theme-img/map.svg' %}" alt="">
-                                        {{ category.name }}
-                                    </a>
-                                    <span>({{ category.tours.count }})</span> <!-- Kategoriyaga tegishli turlar soni -->
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </div>                   
-                </aside>
-            </div>
         </div>
     </div>
 </section>

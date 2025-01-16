@@ -133,28 +133,23 @@ About Area
             <div class="col-xl-6">
                 <div class="ps-xl-4 ms-xl-2">
                     <div class="title-area mb-20 pe-xl-5 me-xl-5">
-                        <span class="sub-title style1 ">{% trans "Let’s Go Together" %}</span>
-                        <h2 class="sec-title mb-20 pe-xl-5 me-xl-5 heading">{% trans 'Plan Your Trip With us' %}</h2>
-
-                        <p class="sec-text mb-30">{% trans 'Discover the world with us! Every journey is uniquely crafted, ensuring unforgettable memories and seamless experiences.' %}</p>
+                        <h4 class="sec-title mb-20 pe-xl-5 me-xl-5 heading">{% trans 'We specialize in the following tours in Uzbekistan :' %}</h4>
                     </div>
                     <div class="about-item-wrap">
-                        <div class="about-item">
-                            <div class="about-item_img"><img src="{% static 'assets/img/icon/map3.svg' %}" alt=""></div>
-                            <div class="about-item_centent">
-                                <h5 class="box-title">{% trans 'Exclusive Trip' %}</h5>
-                                <p class="about-item_text">{% trans 'Tailored adventures designed just for you, offering a perfect blend of comfort and excitement.' %}</p>
-                            </div>
-                        </div>
-                        <div class="about-item">
-                            <div class="about-item_img"><img src="{% static 'assets/img/icon/guide.svg' %}" alt=""></div>
-                            <div class="about-item_centent">
-                                <h5 class="box-title">{% trans 'Professional Guide' %}</h5>
-                                <p class="about-item_text">{% trans 'Expert guides passionate about sharing insights, culture, and hidden gems, making every moment remarkable.' %}</p>
-                            </div>
-                        </div>
+                        <p class="sec-text mb-30">{% trans 'Custom Tours in Uzbekistan' %}</p>
+                        <p class="sec-text mb-30">{% trans 'Large Group Tours' %}</p>
+                        <p class="sec-text mb-30">{% trans 'Small Group Tours' %}</p>
+                        <p class="sec-text mb-30">{% trans 'VIP Tours' %}</p>
+                        <p class="sec-text mb-30">{% trans 'Tours to Samarkand and Shakhrisabz' %}</p>
+                        <p class="sec-text mb-30">{% trans 'Tours to Bukhara' %}</p>
+                        <p class="sec-text mb-30">{% trans 'Tours to Nukus and Khiva' %}</p>
+                        <p class="sec-text mb-30">{% trans 'Tours in the Fergana Valley' %}</p>
+                        <p class="sec-text mb-30">{% trans 'Tours to Tashkent and Chimgan' %}</p>
+                        <p class="sec-text mb-30">{% trans 'Tours to Nurata, Yurt Camps, and Aydarkul Lake' %}</p>
+                        <p class="sec-text mb-30">{% trans 'Tours to Southern Uzbekistan, including Termez' %}</p>
+                        <p class="sec-text mb-30">{% trans 'Horseback Riding Tours' %}</p>
                     </div>
-                    <div class="mt-35"><a href="{% url 'main_about' %}" class="th-btn style3 th-icon">{% trans 'Learn More' %}</a></div>
+                    <div class="mt-35"><a href="{% url 'tours' %}" class="th-btn style3 th-icon">{% trans 'Learn More' %}</a></div>
                 </div>
             </div>
         </div>
@@ -172,21 +167,18 @@ About Area
     <div class="shape-mockup about-rating d-none d-xxl-block" data-bottom="45%" data-right="2%">
         <i class=""></i><span></span>
     </div>
-    <div class="shape-mockup about-emoji d-none d-xxl-block" data-bottom="25%" data-right="22%"><img src="{% static 'assets/img/icon/emoji.png' %}" alt="">
     </div>
 </div>
 <!--==============================
 Service Area  
 ==============================-->
 {% if last_four_tours %}
-<section class="position-relative bg-top-center overflow-hidden space" id="service-sec" style="background-size: 1920px 850px; background-repeat: no-repeat; background-position: center center;" data-bg-src="{% static 'assets/img/bg/tour_bg_1.jpg' %}">
+<section class="position-relative bg-top-center overflow-hidden space" id="service-sec" style="background-size: 1920px 800px; background-repeat: no-repeat; background-position: center center;" data-bg-src="{% static 'assets/img/bg/tour_bg_1.jpg' %}">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 offset-lg-3">
                 <div class="title-area text-center">
-                    <span class="sub-title" style="color: white;">{% trans 'Best Place For You' %}</span>
-                    <h2 class="sec-title" style="color: white;">{% trans 'Most Popular Tour' %}</h2>
-                    <p class="sec-text" style="color: white;">{% trans 'Start an unforgettable journey! We’ve selected the most exciting and popular destinations just for you.' %}</p>
+                    <h2 class="sec-title" style="color: whitesmoke;">{% trans 'The most famous circuits' %}</h2>
                 </div>
             </div>
         </div>
@@ -205,19 +197,8 @@ Service Area
                                     <!-- Ensure the URL name 'tour_tour_detail' matches your Django URL configuration -->
                                     <a href="{% url 'tour_tour_detail' tour.id %}">{{ tour.title }}</a>
                                 </h3>
-                                <div class="tour-rating">
-                                    <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                        <span style="width:100%">
-                                            Rated <strong class="rating"></strong> out of 5 based on 
-                                            <span class="rating">4.8</span> (4.8 Rating)
-                                        </span>
-                                    </div>
-                                    <a href="{% url 'tour_tour_detail' tour.id %}" class="woocommerce-review-link">
-                                        (<span class="count">4.8</span> Rating)
-                                    </a>
-                                </div>
                                 <h4 class="tour-box_price">
-                                    <span class="currency">{{ tour.calc_disc }} UZS</span>
+                                    <span class="currency">{{ tour.calc_disc }}</span>
                                 </h4>
                                 <div class="tour-action">
                                     <span><i class="fa-light fa-clock"></i> {{ tour.duration }}</span>
@@ -400,8 +381,7 @@ Blog Area
 <section class="testi-area overflow-hidden space" id="testi-sec">
     <div class="container-fluid p-0">
         <div class="title-area mb-20 text-center">
-            <span class="sub-title">Testimonial</span>
-            <h2 class="sec-title">What Client Say About us</h2>
+            <h2 class="sec-title">{% trans 'Traveler Reviews' %}</h2>
         </div>
         <div class="slider-area">
             <div class="swiper th-slider testiSlider1 has-shadow" id="testiSlider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"767":{"slidesPerView":"2","centeredSlides":"true"},"992":{"slidesPerView":"2","centeredSlides":"true"},"1200":{"slidesPerView":"2","centeredSlides":"true"},"1400":{"slidesPerView":"3","centeredSlides":"true"}}}'>

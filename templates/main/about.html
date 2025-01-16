@@ -83,11 +83,12 @@ About Area
     </div> <!--==============================
 elements Area  
 ==============================-->
+
+{% if team_members %}
 <section class="team-area3 position-relative bg-top-center space" data-bg-src="{% static 'assets/img/bg/team_bg_2.jpg' %}" style="height: 650px;">
     <div class="container z-index-common">
         <div class="title-area text-center">
-            <span class="sub-title">{% trans 'Meet with Our Team' %}</span>
-            <h2 class="sec-title">{% trans 'Our Team Members' %}</h2>
+            <h2 class="sec-title">{% trans 'Our team' %}</h2>
         </div>
         <div class="slider-area">
             <div class="swiper th-slider teamSlider3 has-shadow" id="teamSlider3" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"3"}}}'>
@@ -141,6 +142,7 @@ elements Area
 <br>
 <br>
 <br>
+{% endif %}
 <br>
 <br>
 <br>

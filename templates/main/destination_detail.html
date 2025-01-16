@@ -29,7 +29,7 @@
                         <div class="post-content-wrapper">
                             <div class="post-content">
                                 <h4>{% trans 'About' %} {{ destination.country }}</h4>
-                                <p>{% trans destination.about %}</p>
+                                <p>{% trans destination.about|safe %}</p>
                             </div>
                         </div>
                     </article>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-27 15:29+0500\n"
+"POT-Creation-Date: 2025-01-16 17:08+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,72 +18,86 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: core/settings.py:121
+#: core/settings.py:150
 msgid "French"
 msgstr ""
 
-#: core/settings.py:122
+#: core/settings.py:151
 msgid "English"
 msgstr ""
 
-#: core/settings.py:123
+#: core/settings.py:152
 msgid "Russian"
 msgstr ""
 
-#: templates/base.html:153 templates/base.html:234 templates/base.html:297
+#: templates/base.html:103
+msgid ""
+"Rapidiously myocardinate cross-platform intellectual capital model. "
+"Appropriately create interactive infrastructures"
+msgstr ""
+
+#: templates/base.html:153 templates/base.html:237 templates/base.html:300
 #: templates/user/my_orders.html:17
 msgid "Home"
 msgstr ""
 
-#: templates/base.html:155 templates/base.html:236 templates/index.html:21
+#: templates/base.html:155 templates/base.html:239 templates/index.html:21
 #: templates/index.html:38 templates/index.html:55
 msgid "About Us"
 msgstr ""
 
-#: templates/base.html:209
-msgid "Logout"
-msgstr ""
-
-#: templates/base.html:211
-msgid "Sign In / Register"
-msgstr ""
-
-#: templates/base.html:238
+#: templates/base.html:157 templates/base.html:241
 msgid "Destination"
 msgstr ""
 
-#: templates/base.html:241
+#: templates/base.html:160 templates/base.html:244
 msgid "Tour"
 msgstr ""
 
-#: templates/base.html:244
+#: templates/base.html:163 templates/base.html:247
 msgid "Blog"
 msgstr ""
 
-#: templates/base.html:247
+#: templates/base.html:166 templates/base.html:250
 msgid "Contact us"
 msgstr ""
 
-#: templates/base.html:255 templates/index.html:224
+#: templates/base.html:212
+msgid "Logout"
+msgstr ""
+
+#: templates/base.html:214
+msgid "Sign In / Register"
+msgstr ""
+
+#: templates/base.html:258 templates/index.html:205
 msgid "Book Now"
 msgstr ""
 
-#: templates/base.html:281
+#: templates/base.html:284
 msgid ""
 "Our agency is your trusted partner in making your dream journey a reality. "
 "We offer unforgettable trips with the best service and affordable prices."
 msgstr ""
 
-#: templates/base.html:298
+#: templates/base.html:301
 msgid "About us"
 msgstr ""
 
-#: templates/base.html:299
+#: templates/base.html:302
 msgid "Terms of Service"
 msgstr ""
 
-#: templates/base.html:300
+#: templates/base.html:303
 msgid "Tour Booking Now"
+msgstr ""
+
+#: templates/base.html:310
+msgid "Get In Touch"
+msgstr ""
+
+#: templates/base.html:340
+msgid "Instagram Post"
 msgstr ""
 
 #: templates/index.html:17
@@ -111,75 +125,87 @@ msgid "View All"
 msgstr ""
 
 #: templates/index.html:136
-msgid "Let’s Go Together"
-msgstr ""
-
-#: templates/index.html:137
-msgid "Plan Your Trip With us"
+msgid "We specialize in the following tours in Uzbekistan :"
 msgstr ""
 
 #: templates/index.html:139
-msgid ""
-"Discover the world with us! Every journey is uniquely crafted, ensuring "
-"unforgettable memories and seamless experiences."
+msgid "Custom Tours in Uzbekistan"
+msgstr ""
+
+#: templates/index.html:140
+msgid "Large Group Tours"
+msgstr ""
+
+#: templates/index.html:141
+msgid "Small Group Tours"
+msgstr ""
+
+#: templates/index.html:142
+msgid "VIP Tours"
+msgstr ""
+
+#: templates/index.html:143
+msgid "Tours to Samarkand and Shakhrisabz"
+msgstr ""
+
+#: templates/index.html:144
+msgid "Tours to Bukhara"
 msgstr ""
 
 #: templates/index.html:145
-msgid "Exclusive Trip"
+msgid "Tours to Nukus and Khiva"
 msgstr ""
 
 #: templates/index.html:146
-msgid ""
-"Tailored adventures designed just for you, offering a perfect blend of "
-"comfort and excitement."
+msgid "Tours in the Fergana Valley"
+msgstr ""
+
+#: templates/index.html:147
+msgid "Tours to Tashkent and Chimgan"
+msgstr ""
+
+#: templates/index.html:148
+msgid "Tours to Nurata, Yurt Camps, and Aydarkul Lake"
+msgstr ""
+
+#: templates/index.html:149
+msgid "Tours to Southern Uzbekistan, including Termez"
+msgstr ""
+
+#: templates/index.html:150
+msgid "Horseback Riding Tours"
 msgstr ""
 
 #: templates/index.html:152
-msgid "Professional Guide"
-msgstr ""
-
-#: templates/index.html:153
-msgid ""
-"Expert guides passionate about sharing insights, culture, and hidden gems, "
-"making every moment remarkable."
-msgstr ""
-
-#: templates/index.html:157
 msgid "Learn More"
 msgstr ""
 
-#: templates/index.html:187
-msgid "Best Place For You"
+#: templates/index.html:181
+msgid "The most famous circuits"
 msgstr ""
 
-#: templates/index.html:188
-msgid "Most Popular Tour"
-msgstr ""
-
-#: templates/index.html:189
-msgid ""
-"Start an unforgettable journey! We’ve selected the most exciting and popular "
-"destinations just for you."
-msgstr ""
-
-#: templates/index.html:247
+#: templates/index.html:228
 msgid "Recent Gallery"
 msgstr ""
 
-#: templates/index.html:339
+#: templates/index.html:320
 msgid "Years Experience"
 msgstr ""
 
-#: templates/index.html:349
+#: templates/index.html:330
 msgid "No intermediary"
 msgstr ""
 
-#: templates/index.html:359
+#: templates/index.html:340
 msgid "Tailor-made tours"
 msgstr ""
 
-#: templates/index.html:369
+#: templates/index.html:350
 msgid "Local assistance"
+msgstr ""
+
+#: templates/index.html:384
+msgid "Traveler Reviews"
 msgstr ""
 
 #: templates/main/about.html:24 templates/main/about.html:27
@@ -245,44 +271,40 @@ msgstr ""
 msgid "shape"
 msgstr ""
 
-#: templates/main/about.html:89
-msgid "Meet with Our Team"
+#: templates/main/about.html:91
+msgid "Our team"
 msgstr ""
 
-#: templates/main/about.html:90
-msgid "Our Team Members"
-msgstr ""
-
-#: templates/main/about.html:154 templates/main/contact.html:75
+#: templates/main/about.html:156 templates/main/contact.html:75
 msgid "Play Video"
 msgstr ""
 
-#: templates/main/about.html:163
+#: templates/main/about.html:165
 msgid "Leave a Comment"
 msgstr ""
 
-#: templates/main/about.html:166 templates/main/about.html:167
+#: templates/main/about.html:168 templates/main/about.html:169
 msgid "Full Name"
 msgstr ""
 
-#: templates/main/about.html:171 templates/main/contact.html:116
+#: templates/main/about.html:173 templates/main/contact.html:116
 msgid "Message"
 msgstr ""
 
-#: templates/main/about.html:172
+#: templates/main/about.html:174
 msgid "Your Comment"
 msgstr ""
 
-#: templates/main/about.html:184
+#: templates/main/about.html:186
 msgid "Post Comment"
 msgstr ""
 
-#: templates/main/about.html:200 templates/main/about.html:206
-#: templates/main/about.html:212 templates/main/about.html:218
-#: templates/main/about.html:224 templates/main/about.html:230
-#: templates/main/about.html:236 templates/main/about.html:242
-#: templates/main/about.html:248 templates/main/about.html:254
-#: templates/main/about.html:260
+#: templates/main/about.html:202 templates/main/about.html:208
+#: templates/main/about.html:214 templates/main/about.html:220
+#: templates/main/about.html:226 templates/main/about.html:232
+#: templates/main/about.html:238 templates/main/about.html:244
+#: templates/main/about.html:250 templates/main/about.html:256
+#: templates/main/about.html:262
 msgid "Gallery Image"
 msgstr ""
 
@@ -302,7 +324,6 @@ msgstr ""
 #: templates/main/category_detail.html:88
 #: templates/main/destination_detail.html:44
 #: templates/main/package_detail.html:65 templates/main/package_list.html:93
-#: templates/post/blog-archive.html:78 templates/post/blog-single.html:64
 msgid "Categories"
 msgstr ""
 
