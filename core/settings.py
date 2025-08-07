@@ -168,10 +168,10 @@ STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Additional directories to search for static files during development
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, 'static'),
+#]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # URL for media files
 MEDIA_URL = '/media/'
