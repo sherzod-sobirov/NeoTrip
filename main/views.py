@@ -1,39 +1,27 @@
 from typing import Any
-from django.views.generic import ListView
-from django.shortcuts import redirect, render
+from django.shortcuts import render, redirect
 from django.views import View
+from django.views.generic import TemplateView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
+from django.http import HttpResponse
+
 from post.models import Post
 from tour.models import Tour, Destination
 from user.models import Testimonial
 from user.forms import TestimonialForm
-from django.views.generic import TemplateView
 from .forms import ContactForm
-from django.shortcuts import HttpResponse
-from django.views.generic import DetailView
-from datetime import datetime
-from django.contrib import messages
 from .models import TeamMember
-
-
-def team_view(request):
-    team_members = TeamMember.objects.all().order_by('display_order')
-    return render(request, 'main/about.html', {'team_members': team_members})
 
 
 class HomeView(View):
     def get(self, request):
-        last_two_posts = Post.objects.all().order_by("-created_at")[:2]
-        last_three_tours_disc = Tour.objects.filter(status="discount").order_by("-created_at")[:2]
-        last_four_tours = Tour.objects.filter(status="available").order_by("-created_at")[:4]
-        last_three_dests = Destination.objects.all().order_by("-created_at")[:7]
-        last_five_testimonials = Testimonial.objects.all().order_by("-created_at")[:5]
         context = {
-            "last_two_posts": last_two_posts,
-            "last_four_tours": last_four_tours,
-            "last_three_dests": last_three_dests,
-            "last_three_tours_disc": last_three_tours_disc,
-            "last_five_testimonials": last_five_testimonials
+            "last_two_posts": Post.objects.order_by("-created_at")[:2],
+            "last_four_tours": Tour.objects.filter(status="available").order_by("-created_at")[:4],
+            "last_three_tours_disc": Tour.objects.filter(status="discount").order_by("-created_at")[:2],
+            "last_three_dests": Destination.objects.order_by("-created_at")[:7],
+            "last_five_testimonials": Testimonial.objects.order_by("-created_at")[:5],
         }
         return render(request, "index.html", context)
 
@@ -46,46 +34,58 @@ class DestinationView(TemplateView):
         context['dests'] = Destination.objects.all()
         return context
 
+
 class DestinationDetailView(DetailView):
     model = Destination
     template_name = "main/destination_detail.html"
     context_object_name = "destination"
-    
-    
+
+
 class AboutUsView(View):
     def get(self, request):
+        # Use select_related or prefetch_related if Testimonial or TeamMember has foreign keys
         testimonials = Testimonial.objects.all()
-        team_members = TeamMember.objects.all().order_by('display_order')
+        team_members = TeamMember.objects.order_by('display_order')
         return render(request, 'main/about.html', {
             'testimonials': testimonials,
-            'team_members': team_members
+            'team_members': team_members,
+            'form': TestimonialForm(),  # show form on GET page
         })
 
     def post(self, request):
+        if not request.user.is_authenticated:
+            messages.error(request, "You must be logged in to leave a testimonial.")
+            return redirect('login')
+
         form = TestimonialForm(request.POST)
         if form.is_valid():
-            f = form.save(commit=False)
-            f.user = request.user
-            f.save()
+            testimonial = form.save(commit=False)
+            testimonial.user = request.user
+            testimonial.save()
+            messages.success(request, "Thank you for your testimonial!")
             return redirect('main_about')
-        return HttpResponse('ERROR!')
-    
-    
+        messages.error(request, "Failed to submit testimonial.")
+        return redirect('main_about')
+
+
 class ContactView(View):
     def get(self, request):
-        return render(request, 'main/contact.html')
+        return render(request, 'main/contact.html', {'form': ContactForm()})
 
     def post(self, request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            # Display a success message
             messages.success(request, 'Your message has been sent successfully!')
-            return redirect('main_contact')  # Adjust the redirect to the correct URL name
         else:
-            # Display an error message if the form is not valid
             messages.error(request, 'There was an error submitting your form. Please try again.')
-            return redirect('main_contact')
+        return redirect('main_contact')
+
+
+def team_view(request):
+    team_members = TeamMember.objects.order_by('display_order')
+    return render(request, 'main/about.html', {'team_members': team_members})
+
 
 # class FilterTourView(View):
 #     def get(self, request):

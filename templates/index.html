@@ -89,7 +89,7 @@ destination Area
                 <div class="swiper-slide">
                     <div class="destination-box gsap-cursor">
                         <div class="destination-img" style="width: 100%; height: 100%;">
-                            <img src="{{ destination.photo.url }}" style="width: 500px; height: 700px;" alt="destination image">
+                            <img src="{{ destination.photo.url }}" loading="lazy" style="width: 500px; height: 700px;" alt="destination image">
                             <div class="destination-content">
                                 <div class="media-left">
                                     <h4 class="box-title">
@@ -202,7 +202,7 @@ Service Area
                         <div class="tour-box th-ani gsap-cursor">
                             <div class="tour-box_img global-img">
                                 <!-- Fixed the image src -->
-                                <img src="{{ tour.photo.url }}" alt="Tour Image" style="width: 600px; height: 274px;">
+                                <img src="{{ tour.photo.url }}" loading="lazy" alt="Tour Image" style="width: 600px; height: 274px;">
                             </div>
                             <div class="tour-content">
                                 <h3 class="box-title">
