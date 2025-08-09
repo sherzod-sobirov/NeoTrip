@@ -11,13 +11,43 @@ from django.contrib import messages
 from .models import TeamMember, Comment
 
 
+from django.core.cache import cache
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
+from django.conf import settings
+
+CACHE_TTL = getattr(settings, 'CACHE_TTL', 60 * 15)  # 15 min default
+
+
+@method_decorator(cache_page(CACHE_TTL), name='dispatch')
 class HomeView(View):
     def get(self, request):
-        last_two_posts = Post.objects.all().order_by("-created_at")[:2]
-        last_three_tours_disc = Tour.objects.filter(status="discount").order_by("-created_at")[:2]
-        last_four_tours = Tour.objects.filter(status="available").order_by("-created_at")[:4]
-        last_three_dests = Destination.objects.all().order_by("-created_at")[:7]
-        last_five_testimonials = Comment.objects.all().order_by("-created_at")
+        last_two_posts = cache.get_or_set(
+            'last_two_posts',
+            lambda: Post.objects.all().order_by("-created_at")[:2],
+            CACHE_TTL
+        )
+        last_three_tours_disc = cache.get_or_set(
+            'last_three_tours_disc',
+            lambda: Tour.objects.filter(status="discount").order_by("-created_at")[:2],
+            CACHE_TTL
+        )
+        last_four_tours = cache.get_or_set(
+            'last_four_tours',
+            lambda: Tour.objects.filter(status="available").order_by("-created_at")[:4],
+            CACHE_TTL
+        )
+        last_three_dests = cache.get_or_set(
+            'last_three_dests',
+            lambda: Destination.objects.all().order_by("-created_at")[:7],
+            CACHE_TTL
+        )
+        last_five_testimonials = cache.get_or_set(
+            'last_five_testimonials',
+            lambda: Comment.objects.all().order_by("-created_at"),
+            CACHE_TTL
+        )
+
         context = {
             "last_two_posts": last_two_posts,
             "last_four_tours": last_four_tours,
@@ -28,14 +58,21 @@ class HomeView(View):
         return render(request, "index.html", context)
 
 
+@method_decorator(cache_page(CACHE_TTL), name='dispatch')
 class DestinationView(TemplateView):
     template_name = "main/destinations.html"
 
     def get_context_data(self, **kwargs: Any):
         context = super().get_context_data(**kwargs)
-        context['dests'] = Destination.objects.all()
+        context['dests'] = cache.get_or_set(
+            'all_destinations',
+            lambda: Destination.objects.all(),
+            CACHE_TTL
+        )
         return context
 
+
+@method_decorator(cache_page(CACHE_TTL), name='dispatch')
 class DestinationDetailView(DetailView):
     model = Destination
     template_name = "main/destination_detail.html"
@@ -43,36 +80,45 @@ class DestinationDetailView(DetailView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        
-        # Add categories and their associated tour counts to the context
-        context['categories'] = Category.objects.all()  # Retrieve all categories
+        context['categories'] = cache.get_or_set(
+            'all_categories',
+            lambda: Category.objects.all(),
+            CACHE_TTL
+        )
         return context
 
 
+@method_decorator(cache_page(CACHE_TTL), name='dispatch')
 class AboutUsView(View):
     def get(self, request):
-        team_members = TeamMember.objects.all().order_by('display_order')
-        form = CommentForm()  # Initialize an empty form
+        team_members = cache.get_or_set(
+            'team_members',
+            lambda: TeamMember.objects.all().order_by('display_order'),
+            CACHE_TTL
+        )
+        form = CommentForm()
         return render(request, 'main/about.html', {
             'team_members': team_members,
-            'form': form,  # Include the form in the context for GET requests
+            'form': form,
         })
 
     def post(self, request):
         form = CommentForm(request.POST)
         if form.is_valid():
-            form.save()  # Save the comment to the database
+            form.save()
+            cache.delete('team_members')  # Clear cache after new comment
             messages.success(request, 'Your comment has been submitted successfully!')
-            return redirect('main_about')  # Redirect to the About Us page after submitting
+            return redirect('main_about')
         else:
             messages.error(request, 'There was an error submitting your comment. Please try again.')
-            team_members = TeamMember.objects.all().order_by('display_order')  # Fetch team members again
+            team_members = TeamMember.objects.all().order_by('display_order')
             return render(request, 'main/about.html', {
                 'form': form,
-                'team_members': team_members,  # Include team members when the form is invalid
+                'team_members': team_members,
             })
 
 
+@method_decorator(cache_page(CACHE_TTL), name='dispatch')
 class ContactView(View):
     def get(self, request):
         return render(request, 'main/contact.html')
@@ -81,13 +127,12 @@ class ContactView(View):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            # Display a success message
             messages.success(request, 'Your message has been sent successfully!')
-            return redirect('main_contact')  # Adjust the redirect to the correct URL name
+            return redirect('main_contact')
         else:
-            # Display an error message if the form is not valid
             messages.error(request, 'There was an error submitting your form. Please try again.')
             return redirect('main_contact')
+
 
 # class FilterTourView(View):
 #     def get(self, request):

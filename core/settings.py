@@ -250,3 +250,14 @@ JAZZMIN_SETTINGS = {
     # Order of apps in the sidebar
     "order_with_respect_to": ["auth", "myapp"],
 }
+
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': BASE_DIR / 'django_cache',  # or Redis in production
+    }
+}
+
+# Optional: Cache timeout for language cookies or other settings
+CACHE_TTL = 60 * 15  # 15 minutes
