@@ -6,17 +6,14 @@
     <!--==============================
     Breadcumb
 ============================== -->
-    <div class="breadcumb-wrapper " data-bg-src="{% static 'assets/img/bg/breadcumb-bg1.jpg' %}">
-        <div class="container">
-            <div class="breadcumb-content">
-                <h1 class="breadcumb-title">{% trans "Exploring Love Iceland in Maldives" %}</h1>
-                <ul class="breadcumb-menu">
-                    <li><a href="{% url 'main_home_view' %}">{% trans "Home" %}</a></li>
-                    <li>{% trans "Single Blog" %}</li>
-                </ul>
-            </div>
+<div class="breadcumb-wrapper " data-bg-src="{% static 'assets/img/bg/breadcumb-bg.jpg' %}" style="height: 600px;">
+    <div class="container">
+        <div class="breadcumb-content">
+            <ul class="breadcumb-menu">
+            </ul>
         </div>
-    </div><!--==============================
+    </div>
+</div><!--==============================
         Blog Area
     ==============================-->
     <section class="th-blog-wrapper blog-details space-top space-extra-bottom">
@@ -60,58 +57,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xxl-4 col-lg-5">
-                    <aside class="sidebar-area">
-                        <div class="widget widget_search  ">
-                            <form class="search-form">
-                                <input type="text" placeholder="{% trans 'Search' %}">
-                                <button type="submit"><i class="far fa-search"></i></button>
-                            </form>
-                        </div>
-                        <div class="widget widget_categories  ">
-                            <h3 class="widget_title">{% trans "Categories" %}</h3>
-                            <ul>
-                                <li>
-                                    <a href="{% url 'post_post_list' %}"><img src="{% static 'assets/img/theme-img/map.svg' %}" alt="">{% trans "City Tour" %}</a>
-                                    <span>(8)</span>
-                                </li>
-                                <li>
-                                    <a href="{% url 'post_post_list' %}"><img src="{% static 'assets/img/theme-img/map.svg' %}" alt="">{% trans "Beach Tours" %}</a>
-                                    <span>(6)</span>
-                                </li>
-                                <li>
-                                    <a href="{% url 'post_post_list' %}"><img src="{% static 'assets/img/theme-img/map.svg' %}" alt="">{% trans "Wildlife Tours" %}</a>
-                                    <span>(2)</span>
-                                </li>
-                                <li>
-                                    <a href="{% url 'post_post_list' %}"><img src="{% static 'assets/img/theme-img/map.svg' %}" alt="">{% trans "News & Tips" %}</a>
-                                    <span>(7)</span>
-                                </li>
-                                <li>
-                                    <a href="{% url 'post_post_list' %}"><img src="{% static 'assets/img/theme-img/map.svg' %}" alt="">{% trans "Adventure Tours" %}</a>
-                                    <span>(9)</span>
-                                </li>
-                                <li>
-                                    <a href="{% url 'post_post_list' %}"><img src="{% static 'assets/img/theme-img/map.svg' %}" alt="">{% trans "Mountain Tours" %}</a>
-                                    <span>(10)</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="widget widget_tag_cloud  ">
-                            <h3 class="widget_title">{% trans "Popular Tags" %}</h3>
-                            <div class="tagcloud">
-                                <a href="{% url 'post_post_list' %}">{% trans "Tour" %}</a>
-                                <a href="{% url 'post_post_list' %}">{% trans "Adventure" %}</a>
-                                <a href="{% url 'post_post_list' %}">{% trans "Rent" %}</a>
-                                <a href="{% url 'post_post_list' %}">{% trans "Innovate" %}</a>
-                                <a href="{% url 'post_post_list' %}">{% trans "Hotel" %}</a>
-                                <a href="{% url 'post_post_list' %}">{% trans "Modern" %}</a>
-                                <a href="{% url 'post_post_list' %}">{% trans "Luxury" %}</a>
-                                <a href="{% url 'post_post_list' %}">{% trans "Travel" %}</a>
-                            </div>
-                        </div>
-                    </aside>
                 </div>
             </div>
         </div>

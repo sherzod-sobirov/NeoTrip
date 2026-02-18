@@ -1,33 +1,53 @@
 from typing import Any
-from django.views.generic import ListView
 from django.shortcuts import redirect, render
 from django.views import View
-from django.contrib.auth.mixins import LoginRequiredMixin
 from post.models import Post
-from tour.models import Tour, Destination
-from user.models import Testimonial
-from user.forms import TestimonialForm
+from tour.models import Tour, Destination, Category
 from django.views.generic import TemplateView
-from .forms import ContactForm
-from django.shortcuts import HttpResponse
+from .forms import ContactForm, CommentForm
 from django.views.generic import DetailView
 from datetime import datetime
 from django.contrib import messages
-from .models import TeamMember
+from .models import TeamMember, Comment
 
 
-def team_view(request):
-    team_members = TeamMember.objects.all().order_by('display_order')
-    return render(request, 'main/about.html', {'team_members': team_members})
+from django.core.cache import cache
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
+from django.conf import settings
+
+CACHE_TTL = getattr(settings, 'CACHE_TTL', 60 * 15)  # 15 min default
 
 
+@method_decorator(cache_page(CACHE_TTL), name='dispatch')
 class HomeView(View):
     def get(self, request):
-        last_two_posts = Post.objects.all().order_by("-created_at")[:2]
-        last_three_tours_disc = Tour.objects.filter(status="discount").order_by("-created_at")[:2]
-        last_four_tours = Tour.objects.filter(status="available").order_by("-created_at")[:4]
-        last_three_dests = Destination.objects.all().order_by("-created_at")[:7]
-        last_five_testimonials = Testimonial.objects.all().order_by("-created_at")[:5]
+        last_two_posts = cache.get_or_set(
+            'last_two_posts',
+            lambda: Post.objects.all().order_by("-created_at")[:2],
+            CACHE_TTL
+        )
+        last_three_tours_disc = cache.get_or_set(
+            'last_three_tours_disc',
+            lambda: Tour.objects.filter(status="discount").order_by("-created_at")[:2],
+            CACHE_TTL
+        )
+        last_four_tours = cache.get_or_set(
+            'last_four_tours',
+            lambda: Tour.objects.filter(status="available").order_by("-created_at")[:4],
+            CACHE_TTL
+        )
+        last_three_dests = cache.get_or_set(
+            'last_three_dests',
+            lambda: Destination.objects.all().order_by("-created_at")[:7],
+            CACHE_TTL
+        )
+        last_five_testimonials = cache.get_or_set(
+            'last_five_testimonials',
+            lambda: Comment.objects.all().order_by("-created_at"),
+            CACHE_TTL
+        )
+
         context = {
             "last_two_posts": last_two_posts,
             "last_four_tours": last_four_tours,
@@ -38,39 +58,67 @@ class HomeView(View):
         return render(request, "index.html", context)
 
 
+@method_decorator(cache_page(CACHE_TTL), name='dispatch')
 class DestinationView(TemplateView):
     template_name = "main/destinations.html"
 
     def get_context_data(self, **kwargs: Any):
         context = super().get_context_data(**kwargs)
-        context['dests'] = Destination.objects.all()
+        context['dests'] = cache.get_or_set(
+            'all_destinations',
+            lambda: Destination.objects.all(),
+            CACHE_TTL
+        )
         return context
 
+
+@method_decorator(cache_page(CACHE_TTL), name='dispatch')
 class DestinationDetailView(DetailView):
     model = Destination
     template_name = "main/destination_detail.html"
     context_object_name = "destination"
     
-    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = cache.get_or_set(
+            'all_categories',
+            lambda: Category.objects.all(),
+            CACHE_TTL
+        )
+        return context
+
+
+@method_decorator(cache_page(CACHE_TTL), name='dispatch')
 class AboutUsView(View):
     def get(self, request):
-        testimonials = Testimonial.objects.all()
-        team_members = TeamMember.objects.all().order_by('display_order')
+        team_members = cache.get_or_set(
+            'team_members',
+            lambda: TeamMember.objects.all().order_by('display_order'),
+            CACHE_TTL
+        )
+        form = CommentForm()
         return render(request, 'main/about.html', {
-            'testimonials': testimonials,
-            'team_members': team_members
+            'team_members': team_members,
+            'form': form,
         })
 
     def post(self, request):
-        form = TestimonialForm(request.POST)
+        form = CommentForm(request.POST)
         if form.is_valid():
-            f = form.save(commit=False)
-            f.user = request.user
-            f.save()
+            form.save()
+            cache.delete('team_members')  # Clear cache after new comment
+            messages.success(request, 'Your comment has been submitted successfully!')
             return redirect('main_about')
-        return HttpResponse('ERROR!')
-    
-    
+        else:
+            messages.error(request, 'There was an error submitting your comment. Please try again.')
+            team_members = TeamMember.objects.all().order_by('display_order')
+            return render(request, 'main/about.html', {
+                'form': form,
+                'team_members': team_members,
+            })
+
+
+@method_decorator(cache_page(CACHE_TTL), name='dispatch')
 class ContactView(View):
     def get(self, request):
         return render(request, 'main/contact.html')
@@ -79,13 +127,12 @@ class ContactView(View):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            # Display a success message
             messages.success(request, 'Your message has been sent successfully!')
-            return redirect('main_contact')  # Adjust the redirect to the correct URL name
+            return redirect('main_contact')
         else:
-            # Display an error message if the form is not valid
             messages.error(request, 'There was an error submitting your form. Please try again.')
             return redirect('main_contact')
+
 
 # class FilterTourView(View):
 #     def get(self, request):
@@ -109,30 +156,18 @@ class ContactView(View):
 #         return render(request, "search.html", context)
 
 
-# views.py
-# main/views.py
-# main/views.py
 from django.shortcuts import redirect
 from django.utils import translation
 from django.conf import settings
 
 def set_language(request):
-    # Get the language from the GET parameters (e.g., lang=ru or lang=fr)
-    language = request.GET.get('lang', 'en')  # Default to English if no language is selected
-
-    # Check if the language is in the list of supported languages
+    language = request.GET.get('lang', 'fr')  # Default language as 'fr'
     if language in dict(settings.LANGUAGES):
-        # Activate the language
         translation.activate(language)
-        # Set the language cookie to remember the user's choice
         response = redirect(request.META.get('HTTP_REFERER', '/'))
         response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language)
-        return response
     else:
-        # If the language is invalid, fall back to the default language ('en')
-        translation.activate('en')
+        translation.activate('fr')
         response = redirect('/')
-        response.set_cookie(settings.LANGUAGE_COOKIE_NAME, 'en')
-        return response
-
-
+        response.set_cookie(settings.LANGUAGE_COOKIE_NAME, 'fr')
+    return response

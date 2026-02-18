@@ -3,7 +3,6 @@ from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.validators import UnicodeUsernameValidator
 from django.utils.translation import gettext_lazy as _
 
-from cart.models import Cart, CartItem
 from .managers import UserManager
 
 
@@ -32,14 +31,6 @@ class User(AbstractUser):
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['first_name', 'last_name']
-
-    @property
-    def count_cart_items(self):
-        count = 0
-        user_cart = Cart.objects.filter(user_id=self.id)
-        if user_cart:
-            count = CartItem.objects.filter(cart_id=user_cart.first().id).count()
-        return count
 
     objects = UserManager()
 

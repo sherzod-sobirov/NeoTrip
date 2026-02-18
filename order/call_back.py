@@ -4,7 +4,7 @@ from rest_framework import status
 from rest_framework.response import Response
 
 from .models import Order
-from cart.models import Cart
+# from cart.models import Cart
 
 
 # class PaymeCallBackAPIView(MerchantAPIView):

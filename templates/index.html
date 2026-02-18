@@ -6,19 +6,19 @@
 
 <div class="th-hero-wrapper hero-1" id="hero">
     <div class="swiper th-slider hero-slider-1" id="heroSlide1" data-slider-options='{"effect":"fade","menu": ["", "", ""],"heroSlide1": {"swiper-container": {"pagination": {"el": ".swiper-pagination", "clickable": true }}}}'>
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper" style="height: 670px;">
             <div class="swiper-slide">
                 <div class="hero-inner">
                     <div class="th-hero-bg" data-bg-src="{% static 'assets/img/hero/hero_bg_1_1.jpg' %}">
                     </div>
                     <div class="container">
                         <div class="hero-style1">
-                            <span class="sub-title style1" data-ani="slideinup" data-ani-delay="0.2s">{% trans 'Get unforgetable pleasure with us' %}</span>
-                            <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">
-                                {% trans 'Natural Wonder of the world' %} </h1>
+                            <h2 class="hero-title" style="font-family: 'Lucida Calligraphy', cursive; font-style: italic; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);" data-ani="slideinup" data-ani-delay="0.4s">
+                                {% trans 'Uzbekistan according to your desires' %}
+                            </h2>
                             <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s">
                                 <a href="{% url 'tours' %}" class="th-btn th-icon">{% trans 'Explore Tours' %}</a>
-                                <a href="service.html" class="th-btn style2 th-icon">{% trans 'About Us' %}</a>
+                                <a href="{% url 'main_about' %}" class="th-btn style2 th-icon">{% trans 'About Us' %}</a>
                             </div>
                         </div>
                     </div>
@@ -30,9 +30,9 @@
                     </div>
                     <div class="container">
                         <div class="hero-style1">
-                            <span class="sub-title style1" data-ani="slideinup" data-ani-delay="0.2s">{% trans 'Get unforgetable pleasure with us' %}</span>
-                            <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">
-                                {% trans 'Let’s make your best trip with us' %} </h1>
+                            <h2 class="hero-title" style="font-family: 'Lucida Calligraphy', cursive; font-style: italic; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);" data-ani="slideinup" data-ani-delay="0.4s">
+                                {% trans 'Enchantments and mysteries of the Orient' %}
+                            </h2>
                             <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s">
                                 <a href="{% url 'tours' %}" class="th-btn th-icon">{% trans 'Explore Tours' %}</a>
                                 <a href="{% url 'main_about' %}" class="th-btn style2 th-icon">{% trans 'About Us' %}</a>
@@ -47,19 +47,19 @@
                     </div>
                     <div class="container">
                         <div class="hero-style1">
-                            <span class="sub-title style1" data-ani="slideinup" data-ani-delay="0.2s">{% trans 'Get unforgetable pleasure with us' %}</span>
-                            <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">
-                                {% trans 'Explore beauty of the whole world' %} </h1>
+                            <h2 class="hero-title" style="font-family: 'Lucida Calligraphy', cursive; font-style: italic; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);" data-ani="slideinup" data-ani-delay="0.4s">
+                                {% trans 'Create your tailor-made trip to Central Asia' %}
+                            </h2>
                             <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s">
-                                <a href="" class="th-btn th-icon">{% trans 'Explore Tours' %}</a>
-                                <a href="service.html" class="th-btn style2 th-icon">{% trans 'About Us' %}</a>
+                                <a href="{% url 'tours' %}" class="th-btn th-icon">{% trans 'Explore Tours' %}</a>
+                                <a href="{% url 'main_about' %}" class="th-btn style2 th-icon">{% trans 'About Us' %}</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
+        
         <div class="th-swiper-custom">
             <button data-slider-prev="#heroSlide1" class="slider-arrow slider-prev"><img src="{% static 'assets/img/icon/right-arrow.svg' %}" alt=""></button>
             <div class="slider-pagination"></div>
@@ -77,10 +77,10 @@ Category Area
 <br></br> <!--==============================
 destination Area  
 ==============================-->
+{% if last_three_dests %}
 <div class="destination-area position-relative overflow-hidden ">
     <div class="container">
         <div class="title-area text-center">
-            <span class="sub-title">{% trans 'Top Destination' %}</span>
             <h2 class="sec-title">{% trans 'Popular Destination' %}</h2>
         </div>
         <div class="swiper th-slider destination-slider slider-drag-wrap" id="aboutSlider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"3"}},"effect":"coverflow","coverflowEffect":{"rotate":"0","stretch":"95","depth":"212","modifier":"1"},"centeredSlides":"true"}'>
@@ -98,7 +98,7 @@ destination Area
                                     <span class="destination-subtitle">{{ destination.country.name }}</span>
                                 </div>
                                 <div class="">
-                                    <a href="{% url 'destination_detail' destination.id %}" class="th-btn style2 th-icon">View All</a>
+                                    <a href="{% url 'destination_detail' destination.id %}" class="th-btn style2 th-icon">{% trans 'View All' %}</a>
                                 </div>
                             </div>
                         </div>
@@ -109,7 +109,7 @@ destination Area
         </div>
     </div>
 </div>
-
+{% endif %}
 
 <!--==============================
 About Area  
@@ -120,41 +120,36 @@ About Area
             <div class="col-xl-6">
                 <div class="img-box1">
                     <div class="img1">
-                        <img src="{% static 'assets/img/normal/about_1_1.jpg' %}" alt="About">
+                        <img src="{% static 'assets/img/normal/about_1_1.jpg' %}" style="width: 312px; height: 630px;" alt="About">
                     </div>
                     <div class="img2">
-                        <img src="{% static 'assets/img/normal/about_1_2.jpg' %}" alt="About">
+                        <img src="{% static 'assets/img/normal/about_1_2.jpg' %}" style="width: 312px; height: 315px;" alt="About">
                     </div>
                     <div class="img3">
-                        <img src="{% static 'assets/img/normal/about_1_3.jpg' %}" alt="About">
+                        <img src="{% static 'assets/img/normal/about_1_3.jpg' %}" style="width: 312px; height: 315px;" alt="About">
                     </div>
                 </div>
             </div>
             <div class="col-xl-6">
                 <div class="ps-xl-4 ms-xl-2">
                     <div class="title-area mb-20 pe-xl-5 me-xl-5">
-                        <span class="sub-title style1 ">{% trans "Let’s Go Together" %}</span>
-                        <h2 class="sec-title mb-20 pe-xl-5 me-xl-5 heading">{% trans 'Plan Your Trip With us' %}</h2>
-
-                        <p class="sec-text mb-30">{% trans 'Discover the world with us! Every journey is uniquely crafted, ensuring unforgettable memories and seamless experiences.' %}</p>
+                        <h4 class="sec-title mb-20 pe-xl-5 me-xl-5 heading">{% trans 'We specialize in the following tours in Uzbekistan :' %}</h4>
                     </div>
                     <div class="about-item-wrap">
-                        <div class="about-item">
-                            <div class="about-item_img"><img src="{% static 'assets/img/icon/map3.svg' %}" alt=""></div>
-                            <div class="about-item_centent">
-                                <h5 class="box-title">{% trans 'Exclusive Trip' %}</h5>
-                                <p class="about-item_text">{% trans 'Tailored adventures designed just for you, offering a perfect blend of comfort and excitement.' %}</p>
-                            </div>
-                        </div>
-                        <div class="about-item">
-                            <div class="about-item_img"><img src="{% static 'assets/img/icon/guide.svg' %}" alt=""></div>
-                            <div class="about-item_centent">
-                                <h5 class="box-title">{% trans 'Professional Guide' %}</h5>
-                                <p class="about-item_text">{% trans 'Expert guides passionate about sharing insights, culture, and hidden gems, making every moment remarkable.' %}</p>
-                            </div>
-                        </div>
+                        <p class="sec-text mb-30">{% trans 'Custom Tours in Uzbekistan' %}</p>
+                        <p class="sec-text mb-30">{% trans 'Large Group Tours' %}</p>
+                        <p class="sec-text mb-30">{% trans 'Small Group Tours' %}</p>
+                        <p class="sec-text mb-30">{% trans 'VIP Tours' %}</p>
+                        <p class="sec-text mb-30">{% trans 'Tours to Samarkand and Shakhrisabz' %}</p>
+                        <p class="sec-text mb-30">{% trans 'Tours to Bukhara' %}</p>
+                        <p class="sec-text mb-30">{% trans 'Tours to Nukus and Khiva' %}</p>
+                        <p class="sec-text mb-30">{% trans 'Tours in the Fergana Valley' %}</p>
+                        <p class="sec-text mb-30">{% trans 'Tours to Tashkent and Chimgan' %}</p>
+                        <p class="sec-text mb-30">{% trans 'Tours to Nurata, Yurt Camps, and Aydarkul Lake' %}</p>
+                        <p class="sec-text mb-30">{% trans 'Tours to Southern Uzbekistan, including Termez' %}</p>
+                        <p class="sec-text mb-30">{% trans 'Horseback Riding Tours' %}</p>
                     </div>
-                    <div class="mt-35"><a href="{% url 'main_about' %}" class="th-btn style3 th-icon">{% trans 'Learn More' %}</a></div>
+                    <div class="mt-35"><a href="{% url 'tours' %}" class="th-btn style3 th-icon">{% trans 'Learn More' %}</a></div>
                 </div>
             </div>
         </div>
@@ -169,28 +164,21 @@ About Area
     <div class="shape-mockup shape3 d-none d-xl-block" data-top="14%" data-left="8%">
         <img src="{% static 'assets/img/shape/shape_3.png' %}" alt="shape">
     </div>
-
-    <div class="shape-mockup about-shape movingX d-none d-xxl-block" data-bottom="0%" data-right="8%">
-        <img src="{% static 'assets/img/hero/travel1.png' %}" style="width: 310px; height: 546px;" alt="shape">
-    </div>
     <div class="shape-mockup about-rating d-none d-xxl-block" data-bottom="45%" data-right="2%">
-        <i class="fa-sharp fa-solid fa-star"></i><span>4.9k</span>
+        <i class=""></i><span></span>
     </div>
-    <div class="shape-mockup about-emoji d-none d-xxl-block" data-bottom="25%" data-right="22%"><img src="{% static 'assets/img/icon/emoji.png' %}" alt="">
     </div>
 </div>
 <!--==============================
 Service Area  
 ==============================-->
-
-<section class="position-relative bg-top-center overflow-hidden space" id="service-sec" style="background-size: 1920px 750px; background-repeat: no-repeat; background-position: center center;" data-bg-src="{% static 'assets/img/bg/tour_bg_1.jpg' %}">
+{% if last_four_tours %}
+<section class="position-relative bg-top-center overflow-hidden space" id="service-sec" style="background-size: 1920px 800px; background-repeat: no-repeat; background-position: center center;" data-bg-src="{% static 'assets/img/bg/tour_bg_1.jpg' %}">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 offset-lg-3">
                 <div class="title-area text-center">
-                    <span class="sub-title">{% trans 'Best Place For You' %}</span>
-                    <h2 class="sec-title">{% trans 'Most Popular Tour' %}</h2>
-                    <p class="sec-text">{% trans 'Start an unforgettable journey! We’ve selected the most exciting and popular destinations just for you.' %}</p>
+                    <h2 class="sec-title" style="color: whitesmoke;">{% trans 'The most famous circuits' %}</h2>
                 </div>
             </div>
         </div>
@@ -209,19 +197,8 @@ Service Area
                                     <!-- Ensure the URL name 'tour_tour_detail' matches your Django URL configuration -->
                                     <a href="{% url 'tour_tour_detail' tour.id %}">{{ tour.title }}</a>
                                 </h3>
-                                <div class="tour-rating">
-                                    <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                        <span style="width:100%">
-                                            Rated <strong class="rating"></strong> out of 5 based on 
-                                            <span class="rating">4.8</span> (4.8 Rating)
-                                        </span>
-                                    </div>
-                                    <a href="{% url 'tour_tour_detail' tour.id %}" class="woocommerce-review-link">
-                                        (<span class="count">4.8</span> Rating)
-                                    </a>
-                                </div>
                                 <h4 class="tour-box_price">
-                                    <span class="currency">{{ tour.calc_disc }} UZS</span>
+                                    <span class="currency">{{ tour.calc_disc }}</span>
                                 </h4>
                                 <div class="tour-action">
                                     <span><i class="fa-light fa-clock"></i> {{ tour.duration }}</span>
@@ -238,6 +215,7 @@ Service Area
     </div>
 
 </section>
+{% endif %}
 
 
 
@@ -247,7 +225,6 @@ Gallery Area
 <div class="gallery-area ">
     <div class="container th-container">
         <div class="title-area text-center">
-            <span class="sub-title">{% trans 'Make Your Tour More Pleasure' %}</span>
             <h2 class="sec-title">{% trans 'Recent Gallery' %}</h2>
         </div>
         <div class="row gy-10 gx-10 justify-content-center align-items-center">
@@ -256,7 +233,7 @@ Gallery Area
                     <div class="box-img global-img">
                         <a href="{% static 'assets/img/gallery/gallery_1_1.jpg' %}" class="popup-image">
                             <div class="icon-btn"><i class="fal fa-magnifying-glass-plus"></i></div>
-                            <img src="{% static 'assets/img/gallery/gallery_1_1.jpg' %}" alt="gallery image">
+                            <img src="{% static 'assets/img/gallery/gallery_1_1.jpg' %}" style="width: 742px; height: 256px;" alt="gallery image">
                         </a>
                     </div>
                 </div>
@@ -267,7 +244,7 @@ Gallery Area
                     <div class="box-img global-img">
                         <a href="{% static 'assets/img/gallery/gallery_1_2.jpg' %}" class="popup-image">
                             <div class="icon-btn"><i class="fal fa-magnifying-glass-plus"></i></div>
-                            <img src="{% static 'assets/img/gallery/gallery_1_2.jpg' %}" alt="gallery image">
+                            <img src="{% static 'assets/img/gallery/gallery_1_2.jpg' %}" style="width: 742px; height: 206px;" alt="gallery image">
                         </a>
                     </div>
                 </div>
@@ -275,7 +252,7 @@ Gallery Area
                     <div class="box-img global-img">
                         <a href="{% static 'assets/img/gallery/gallery_1_3.jpg' %}" class="popup-image">
                             <div class="icon-btn"><i class="fal fa-magnifying-glass-plus"></i></div>
-                            <img src="{% static 'assets/img/gallery/gallery_1_3.jpg' %}" alt="gallery image">
+                            <img src="{% static 'assets/img/gallery/gallery_1_3.jpg' %}" style="width: 742px; height: 206px;" alt="gallery image">
                         </a>
                     </div>
                 </div>
@@ -295,7 +272,7 @@ Gallery Area
                     <div class="box-img global-img">
                         <a href="{% static 'assets/img/gallery/gallery_1_5.jpg' %}" class="popup-image">
                             <div class="icon-btn"><i class="fal fa-magnifying-glass-plus"></i></div>
-                            <img src="{% static 'assets/img/gallery/gallery_1_5.jpg' %}" alt="gallery image">
+                            <img src="{% static 'assets/img/gallery/gallery_1_5.jpg' %}" style="width: 742px; height: 206px;" alt="gallery image">
                         </a>
                     </div>
                 </div>
@@ -303,7 +280,7 @@ Gallery Area
                     <div class="box-img global-img">
                         <a href="{% static 'assets/img/gallery/gallery_1_6.jpg' %}" class="popup-image">
                             <div class="icon-btn"><i class="fal fa-magnifying-glass-plus"></i></div>
-                            <img src="{% static 'assets/img/gallery/gallery_1_6.jpg' %}" alt="gallery image">
+                            <img src="{% static 'assets/img/gallery/gallery_1_6.jpg' %}" style="width: 742px; height: 206px;" alt="gallery image">
                         </a>
                     </div>
                 </div>
@@ -313,7 +290,7 @@ Gallery Area
                     <div class="box-img global-img">
                         <a href="{% static 'assets/img/gallery/gallery_1_7.jpg' %}" class="popup-image">
                             <div class="icon-btn"><i class="fal fa-magnifying-glass-plus"></i></div>
-                            <img src="{% static 'assets/img/gallery/gallery_1_7.jpg' %}" alt="gallery image">
+                            <img src="{% static 'assets/img/gallery/gallery_1_7.jpg' %}" style="width: 742px; height: 256px;" alt="gallery image">
                         </a>
                     </div>
                 </div>
@@ -339,7 +316,7 @@ Counter Area
                 <div class="counter-card">
                     <div class="counter-shape"><span></span></div>
                     <div class="media-body">
-                        <h3 class="box-number"><span class="counter-number">3</span></h3>
+                        <h3 class="box-number"><span class="counter-number">15</span></h3>
                         <h6 class="counter-title">{% trans 'Years Experience' %}</h6>
                     </div>
                 </div>
@@ -348,9 +325,9 @@ Counter Area
             <div class="col-sm-6 col-xl-3 counter-card-wrap">
                 <div class="counter-card">
                     <div class="counter-shape"><span></span></div>
-                    <div class="media-body">
-                        <h3 class="box-number"><span class="counter-number">97</span>%</h3>
-                        <h6 class="counter-title">{% trans 'Retention Rate' %}</h6>
+                    <div style="margin-top: -20px;" class="media-body">
+                        <img style="width: 75px; height: 75px;" src="{% static 'assets/img/bg/1.png' %}" alt="">
+                        <h1 class="counter-title">{% trans 'No intermediary' %}</h1>
                     </div>
                 </div>
             </div>
@@ -359,8 +336,8 @@ Counter Area
                 <div class="counter-card">
                     <div class="counter-shape"><span></span></div>
                     <div class="media-body">
-                        <h3 class="box-number"><span class="counter-number">100</span>+</h3>
-                        <h6 class="counter-title">{% trans 'Tour Completed' %}</h6>
+                        <h3 class="box-number"><span class="counter-number">100</span>%</h3>
+                        <h6 class="counter-title">{% trans 'Tailor-made tours' %}</h6>
                     </div>
                 </div>
             </div>
@@ -369,8 +346,8 @@ Counter Area
                 <div class="counter-card">
                     <div class="counter-shape"><span></span></div>
                     <div class="media-body">
-                        <h3 class="box-number"><span class="counter-number">250</span>+</h3>
-                        <h6 class="counter-title">{% trans 'Happy Travellers' %}</h6>
+                        <h3 class="box-number"><span class="counter-number">24</span>/7</h3>
+                        <h6 class="counter-title">{% trans 'Local assistance' %}</h6>
                     </div>
                 </div>
             </div>
@@ -400,5 +377,58 @@ Brand Area
 <!--==============================
 Blog Area  
 ==============================-->
+{% if last_five_testimonials %}
+<section class="testi-area overflow-hidden space" id="testi-sec">
+    <div class="container-fluid p-0">
+        <div class="title-area mb-20 text-center">
+            <h2 class="sec-title">{% trans 'Traveler Reviews' %}</h2>
+        </div>
+        <div class="slider-area">
+            <div class="swiper th-slider testiSlider1 has-shadow" id="testiSlider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"767":{"slidesPerView":"2","centeredSlides":"true"},"992":{"slidesPerView":"2","centeredSlides":"true"},"1200":{"slidesPerView":"2","centeredSlides":"true"},"1400":{"slidesPerView":"3","centeredSlides":"true"}}}'>
+                <div class="swiper-wrapper">
+                    {% for testimonial in last_five_testimonials %}
+                        <div class="swiper-slide">
+                            <div class="testi-card">
+                                <div class="testi-card_wrapper">
+                                    <div class="testi-card_profile">
+                                        <div class="testi-card_avater">
+                                            <!-- Add a default or dynamic image later -->
+                                            <img src="{% static 'assets/img/testimonial/testi_1_1.jpg' %}" style="width: 72px;" alt="testimonial">
+                                        </div>
+                                        <div class="media-body">
+                                            <h3 class="box-title">{{ testimonial.name }}</h3>
+                                            <span class="testi-card_desig">Traveller</span>
+                                        </div>
+                                    </div>
+                                    <div class="testi-card_review">
+                                        <!-- Assuming a fixed number of stars -->
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <p class="testi-card_text">{{ testimonial.message }}</p>
+                                <div class="testi-card-quote">
+                                    <img src="{% static 'assets/img/icon/testi-quote.svg' %}" alt="img">
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="slider-pagination"></div>
+            </div>
+        </div>
+    </div>
+    <div class="shape-mockup d-none d-xl-block" data-bottom="-2%" data-right="0%">
+        <img src="{% static 'assets/img/shape/line2.png' %}" alt="shape">
+    </div>
+    <div class="shape-mockup movingX d-none d-xl-block" data-top="30%" data-left="5%">
+        <img src="{% static 'assets/img/shape/shape_7.png' %}" alt="shape">
+    </div>
+</section>
+{% endif %}
 
 {% endblock body %}

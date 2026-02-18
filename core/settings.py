@@ -9,10 +9,10 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-from environs import Env
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
 import os
+from environs import Env
 
 env = Env()
 env.read_env()
@@ -33,9 +33,14 @@ SECRET_KEY = 'django-insecure-(2sz2f@eob*q24i&rdu5qxxo_b_hfm6vhe1c5+(6!9rbx5pong
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['neotrip.uz', '127.0.0.1']
 
-# Application definition
+CSRF_TRUSTED_ORIGINS = [
+    'https://neotrip.uz',
+]
+CORS_ALLOWED_ORIGINS = [
+    "https://neotrip.uz",
+]
 
 INSTALLED_APPS = [
     'jazzmin',
@@ -55,23 +60,30 @@ INSTALLED_APPS = [
     "main",
     "post",
     "tour",
-    'cart',
     'order',
     'ckeditor',
     'ckeditor_uploader',
     'easy_thumbnails',
 ]
 
+LANGUAGE_COOKIE_NAME = 'django_language'
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_COOKIE_NAME = 'django_session'
+
 MIDDLEWARE = [
+    'core.middleware.ForceFrenchLanguageMiddleware',  # Custom middleware
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
-    "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
-    "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "django.contrib.messages.middleware.MessageMiddleware",
-    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.locale.LocaleMiddleware',  # Ensure this is after the custom middleware
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+
 
 ROOT_URLCONF = "core.urls"
 
@@ -86,7 +98,6 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-
                 "user.views.my_context_processor",
             ],
         },
@@ -101,7 +112,7 @@ WSGI_APPLICATION = "core.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "mydatabase1",
+        "NAME": "db.sqlite3",
     }
 }
 
@@ -127,24 +138,21 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'fr'
 
 TIME_ZONE = "Asia/Tashkent"
 
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 LANGUAGES = (
+    ('fr', _('French')),
     ('en', _('English')),
     ('ru', _('Russian')),
-    ('fr', _('French')),
 )
 
-# MODELTRANSLATION_DEFAULT_LANGUAGE = ('en', )
-# MODELTRANSLATION_LANGUAGES = ('ru', 'uz')
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'fr'
 
 LOCALE_PATHS = [
     BASE_DIR / 'locale/',
@@ -160,10 +168,10 @@ STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Additional directories to search for static files during development
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, 'static'),
+#]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # URL for media files
 MEDIA_URL = '/media/'
@@ -201,3 +209,55 @@ PAYME: dict = {
 }
 
 ORDER_MODEL = 'order.models.Order'
+
+JAZZMIN_SETTINGS = {
+    # Custom CSS file for styling
+    "custom_css": "assets/css/custom.css",
+
+    # Site and branding settings
+    "site_title": "Neo Trip",
+    "site_header": "NeoTrip Admin",
+    "site_brand": "Neo Trip",
+    "welcome_sign": "Neo Trip boshqaruv paneliga xush kelibsiz!",
+    "copyright": "Neo Trip",
+
+    # Search model for the top search bar
+    "search_model": "auth.User",
+
+    # User avatar configuration (optional)
+    "user_avatar": None,
+
+    # Top menu links configuration
+    "topmenu_links": [
+        {"name": "Home", "url": "/", "permissions": ["auth.view_user"]},
+        {"model": "auth.User"},
+        {"app": "myapp"},
+    ],
+
+    # User menu links configuration
+    "usermenu_links": [
+        {"name": "Support", "url": "https://support.example.com", "new_window": True},
+    ],
+
+    # Sidebar and navigation settings
+    "show_sidebar": True,
+    "navigation_expanded": True,
+
+    # Visibility control for apps and models
+    "hide_apps": ["auth"],
+    "hide_models": ["auth.User"],
+
+    # Order of apps in the sidebar
+    "order_with_respect_to": ["auth", "myapp"],
+}
+
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': BASE_DIR / 'django_cache',  # or Redis in production
+    }
+}
+
+# Optional: Cache timeout for language cookies or other settings
+CACHE_TTL = 60 * 15  # 15 minutes

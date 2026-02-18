@@ -3,12 +3,21 @@ from django.db import models
 
 class TeamMember(models.Model):
     name = models.CharField(max_length=100)
-    position = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='team_images/')
-    display_order = models.IntegerField(default=0)
+    designation = models.CharField(max_length=100)  # Bu maydonni tekshiring
+    profile_image = models.ImageField(upload_to='team_members/')
+    facebook_url = models.URLField(blank=True, null=True)
+    twitter_url = models.URLField(blank=True, null=True)
+    linkedin_url = models.URLField(blank=True, null=True)
+    youtube_url = models.URLField(blank=True, null=True)
+    instagram_url = models.URLField(blank=True, null=True)
+    display_order = models.PositiveIntegerField(default=0)
 
-    def __str__(self) -> str:
-        return f"{self.name}"
+    class Meta:
+        ordering = ['display_order']
+
+    def __str__(self):
+        return self.name
+
 
 
 class Contact(models.Model):
@@ -27,3 +36,12 @@ class BannerImg(models.Model):
 
     def __str__(self) -> str:
         return self.photo
+
+
+class Comment(models.Model):
+    name = models.CharField(max_length=255)
+    message = models.CharField(max_length=500)
+    created_at = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Comment by {self.name} on {self.created_at}"

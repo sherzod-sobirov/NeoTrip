@@ -5,17 +5,14 @@
     <!--==============================
     Breadcumb
 ============================== -->
-    <div class="breadcumb-wrapper " data-bg-src="{% static 'assets/img/bg/breadcumb-bg.jpg' %}">
-        <div class="container">
-            <div class="breadcumb-content">
-                <h1 class="breadcumb-title">{% trans "About NEO TRIP" %}</h1>
-                <ul class="breadcumb-menu">
-                    <li><a href="{% url 'main_home_view' %}">{% trans "Home" %}</a></li>
-                    <li>{% trans "About NEO TRIP" %}</li>
-                </ul>
-            </div>
+<div class="breadcumb-wrapper " data-bg-src="{% static 'assets/img/bg/breadcumb-bg.jpg' %}" style="height: 600px;">
+    <div class="container">
+        <div class="breadcumb-content">
+            <ul class="breadcumb-menu">
+            </ul>
         </div>
-    </div><!--==============================
+    </div>
+</div><!--==============================
 About Area  
 ==============================-->
     <div class="about-area position-relative overflow-hidden overflow-hidden space" id="about-sec">
@@ -23,50 +20,52 @@ About Area
             <div class="row">
                 <div class="col-xl-7">
                     <div class="img-box3">
-                        <div class="img1">
-                            <img src="{% static 'assets/img/normal/about_3_1.jpg' %}" alt="{% trans 'About' %}">
+                        <div class="img1 movingX">
+                            <img src="{% static 'assets/img/normal/about_3_1.jpg' %}" style="width: 35em; height: 20em;" alt="{% trans 'About' %}">
                         </div>
-                        <div class="img2">
-                            <img src="{% static 'assets/img/normal/about_3_2.jpg' %}" alt="{% trans 'About' %}">
+                        <div class="img2 movingX">
+                            <img src="{% static 'assets/img/normal/about_3_2.jpg' %}" style="width: 35em; height: 20em;" alt="{% trans 'About' %}">
                         </div>
                         <div class="img3 movingX">
-                            <img src="{% static 'assets/img/normal/about_3_3.jpg' %}" alt="{% trans 'About' %}">
+                            <img src="{% static 'assets/img/normal/about_3_3.jpg' %}" style="width: 35em; height: 20em;" alt="{% trans 'About' %}">
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-5">
                     <div class="ps-xl-4">
                         <div class="title-area mb-20">
-                            <span class="sub-title style1 ">{% trans "Welcome To NEO TRIP" %}</span>
-                            <h2 class="sec-title mb-20 pe-xl-5 me-xl-5 heading">{% trans "We are world reputed travel agency" %}</h2>
+                            <h3 class="">{% trans "Dear travelers" %}</h3>
                         </div>
-                        <p class="pe-xl-5">{% trans "We are a world-renowned and trusted travel agency. We offer the best services to make your journey unforgettable. We create travel options tailored to the unique needs of each of our clients." %}</p>
-                        <div class="about-item-wrap">
-                            <div class="about-item style2">
-                                <div class="about-item_img"><img src="{% static 'assets/img/icon/about_1_1.svg' %}" alt=""></div>
-                                <div class="about-item_centent">
-                                    <h5 class="box-title">{% trans "Exclusive Trip" %}</h5>
-                                    <p class="about-item_text">{% trans "Our exclusive trips will take you to the most beautiful and unique destinations. We provide the opportunity to travel comfortably and safely, with carefully crafted programs designed just for you." %}</p>
-                                </div>
-                            </div>
-                            <div class="about-item style2">
-                                <div class="about-item_img"><img src="{% static 'assets/img/icon/about_1_2.svg' %}" alt=""></div>
-                                <div class="about-item_centent">
-                                    <h5 class="box-title">{% trans "Safety First Always" %}</h5>
-                                    <p class="about-item_text">{% trans "Your safety is our top priority. We ensure that every trip is as safe and secure as possible. The best safety measures are always in place for each journey." %}</p>
-                                </div>
-                            </div>
-                            <div class="about-item style2">
-                                <div class="about-item_img"><img src="{% static 'assets/img/icon/about_1_3.svg' %}" alt=""></div>
-                                <div class="about-item_centent">
-                                    <h5 class="box-title">{% trans "Professional Guide" %}</h5>
-                                    <p class="about-item_text">{% trans "Our experienced and knowledgeable guides offer you the best travel experience. They have the expertise to make your journey even more enriching and enjoyable." %}</p>
-                                </div>
-                            </div>
-                        </div><br><br>
-                        <div class="mt-35"><a href="{% url 'main_contact' %}" class="th-btn style3 th-icon">{% trans "Contact With Us" %}</a></div>
+                        <p class="pe-xl-5">
+                            {% trans "Welcome to NEO TRIP, a travel agency born from the passion and dedication of a team that cherishes their homeland, Uzbekistan, and shares a deep fascination with the fabled Silk Road." %}
+                        </p>
+                        <p class="pe-xl-5">
+                            {% trans "Based in the city of Samarkand, we are proud to be a fully English-speaking agency with over 15 years of experience in curating unique and inspiring journeys." %}
+                        </p>
+                        <p class="pe-xl-5">
+                            {% trans "Our mission is to offer you the opportunity to discover Uzbekistan and the wonders of Central Asia through tailor-made travel experiences." %}
+                        </p>
+                        <p class="pe-xl-5">
+                            {% trans "With our signature program, Customized Uzbekistan, we create itineraries that are steeped in authenticity, carefully designed to align with your personal interests, pace, and preferences." %}
+                        </p>
+                        <p class="pe-xl-5">
+                            {% trans "Whether you're seeking cultural immersion, historical exploration, or breathtaking natural landscapes, we are here to guide you every step of the way." %}
+                        </p>
+                        <p class="pe-xl-5">
+                            {% trans "Share your travel aspirations with us, and together we'll craft the perfect journey, ensuring every detail is thoughtfully considered to bring your dream adventure to life." %}
+                        </p>
+                        <p class="pe-xl-5">
+                            {% trans "Let us help you create memories that will last a lifetime." %}
+                        </p>
+                        <br>
+                        <div class="mt-35">
+                            <a href="{% url 'main_contact' %}" class="th-btn style3 th-icon">
+                                {% trans "Contact With Us" %}
+                            </a>
+                        </div>                        
                     </div>
                 </div>
+                
             </div>
         </div>
         <div class="shape-mock up movingX d-none d-xxl-block" data-top="4%" data-left="2%">
@@ -81,7 +80,118 @@ About Area
         <div class="shape-mockup movixgX d-none d-xxl-block" data-bottom="18%" data-right="2%">
             <img src="{% static 'assets/img/shape/shape_2_4.png' %}" alt="{% trans 'shape' %}">
         </div>
+    </div> <!--==============================
+elements Area  
+==============================-->
+
+{% if team_members %}
+<section class="team-area3 position-relative bg-top-center space" data-bg-src="{% static 'assets/img/bg/team_bg_2.jpg' %}" style="height: 650px;">
+    <div class="container z-index-common">
+        <div class="title-area text-center">
+            <h2 class="sec-title">{% trans 'Our team' %}</h2>
+        </div>
+        <div class="slider-area">
+            <div class="swiper th-slider teamSlider3 has-shadow" id="teamSlider3" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"3"}}}'>
+                <div class="swiper-wrapper">
+                    {% for member in team_members %}
+                        <div class="swiper-slide">
+                            <div class="th-team team-grid">
+                                <div class="team-img">
+                                    <img style="height: 250px;" src="{% static 'assets/img/bg/silk.jpg' %}" alt="{{ member.name }}">
+                                </div>
+                                <div class="team-img2" style="height: 240px; width: 240px;">
+                                        <img src="{{ member.profile_image.url }}" alt="{{ member.name }}" style="width: 240px; height: 240px; border-radius: 50%; object-fit: cover;">
+                                </div>                                                                                                                                                                           
+                                <div class="team-content">
+                                    <div class="media-body">
+                                        <h3 class="box-title"><a href="">{{ member.name }}</a></h3>
+                                        <span class="team-desig">{{ member.designation }}</span>
+                                        <div class="th-social">
+                                            {% if member.facebook_url %}
+                                                <a target="_blank" href="{{ member.facebook_url }}"><i class="fab fa-facebook-f"></i></a>
+                                            {% endif %}
+                                            {% if member.twitter_url %}
+                                                <a target="_blank" href="{{ member.twitter_url }}"><i class="fab fa-twitter"></i></a>
+                                            {% endif %}
+                                            {% if member.linkedin_url %}
+                                                <a target="_blank" href="{{ member.linkedin_url }}"><i class="fab fa-linkedin-in"></i></a>
+                                            {% endif %}
+                                            {% if member.youtube_url %}
+                                                <a target="_blank" href="{{ member.youtube_url }}"><i class="fab fa-youtube"></i></a>
+                                            {% endif %}
+                                            {% if member.instagram_url %}
+                                                <a target="_blank" href="{{ member.instagram_url }}"><i class="fab fa-instagram"></i></a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="slider-pagination"></div>
+            </div>
+            <button data-slider-prev="#teamSlider3" class="slider-arrow slider-prev"><img src="{% static 'assets/img/icon/right-arrow2.svg' %}" alt=""></button>
+            <button data-slider-next="#teamSlider3" class="slider-arrow slider-next"><img src="{% static 'assets/img/icon/left-arrow2.svg' %}" alt=""></button>
+        </div>
     </div>
+</section>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endif %}
+<br>
+<br>
+<br>
+<div class="space-extra2-top space-extra2-bottom" data-bg-src="{% static 'assets/img/bg/video_bg_12.jpg' %}" style="border: 1px solid #000; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);">
+    <div class="container">
+        <div class="row flex-row-reverse justify-content-center align-items-center">
+            <div class="col-lg-6">
+                <div class="video-box1">
+                    <a href="https://www.youtube.com/watch?v=01_upSvzTRs" 
+                        class="play-btn style2 popup-video" 
+                        aria-label="{% trans 'Play Video' %}">
+                        <i class="fa-sharp fa-solid fa-play"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6" style="background-color: white; padding: 40px; border-radius: 20px; box-shadow: 0px 0px 15px 0px;">
+                <div>
+                    <form method="POST" action="{% url 'main_about' %}" class="comment-form">
+                        {% csrf_token %}
+                        <h3 class="sec-title mb-30">{% trans "Leave a Comment" %}</h3>
+                        <!-- Comment Form -->
+                        <div class="form-group">
+                            <label for="name" class="sr-only">{% trans "Full Name" %}</label>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="{% trans 'Full Name' %}">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="sr-only">{% trans "Message" %}</label>
+                            <textarea name="message" id="message" class="form-control" placeholder="{% trans 'Your Comment' %}"
+                                        rows="5"></textarea>
+                            {% if form.message.errors %}
+                                <div class="text-danger">
+                                    {% for error in form.message.errors %}
+                                        <p style="color: red;">{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="form-btn">
+                            <button type="submit" class="th-btn style3">{% trans "Post Comment" %}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     <div class="sidebar-gallery-area space">
         <div class="container-fluid">
             <div class="slider-area">
@@ -119,31 +229,31 @@ About Area
                         </div>
                         <div class="swiper-slide">
                             <div class="gallery-thumb style2 global-img">
-                                <img src="{% static 'assets/img/gallery/gallery_4_1.jpg' %}" style="width: 450px; height: 420px;" alt="{% trans 'Gallery Image' %}">
+                                <img src="{% static 'assets/img/gallery/gallery_4_6.jpg' %}" style="width: 450px; height: 420px;" alt="{% trans 'Gallery Image' %}">
                                 <a target="_blank" href="https://www.instagram.com/neotripuz/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="gallery-thumb style2 global-img">
-                                <img src="{% static 'assets/img/gallery/gallery_4_2.jpg' %}" style="width: 450px; height: 420px;" alt="{% trans 'Gallery Image' %}">
+                                <img src="{% static 'assets/img/gallery/gallery_4_7.jpg' %}" style="width: 450px; height: 420px;" alt="{% trans 'Gallery Image' %}">
                                 <a target="_blank" href="https://www.instagram.com/neotripuz/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="gallery-thumb style2 global-img">
-                                <img src="{% static 'assets/img/gallery/gallery_4_3.jpg' %}" style="width: 450px; height: 420px;" alt="{% trans 'Gallery Image' %}">
+                                <img src="{% static 'assets/img/gallery/gallery_4_8.jpg' %}" style="width: 450px; height: 420px;" alt="{% trans 'Gallery Image' %}">
                                 <a target="_blank" href="https://www.instagram.com/neotripuz/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="gallery-thumb style2 global-img">
-                                <img src="{% static 'assets/img/gallery/gallery_4_4.jpg' %}" style="width: 450px; height: 420px;" alt="{% trans 'Gallery Image' %}">
+                                <img src="{% static 'assets/img/gallery/gallery_4_9.jpg' %}" style="width: 450px; height: 420px;" alt="{% trans 'Gallery Image' %}">
                                 <a target="_blank" href="https://www.instagram.com/neotripuz/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="gallery-thumb style2 global-img">
-                                <img src="{% static 'assets/img/gallery/gallery_4_5.jpg' %}" style="width: 450px; height: 420px;" alt="{% trans 'Gallery Image' %}">
+                                <img src="{% static 'assets/img/gallery/gallery_4_10.jpg' %}" style="width: 450px; height: 420px;" alt="{% trans 'Gallery Image' %}">
                                 <a target="_blank" href="https://www.instagram.com/neotripuz//" class="gallery-btn"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
